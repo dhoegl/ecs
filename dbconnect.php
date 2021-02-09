@@ -1,9 +1,9 @@
 <?php
 session_start();
 	$host="localhost"; // Host name - LINUX required
-	$username="db_tecapp"; // Mysql username
+	$username="db_ecsdir"; // Mysql username
 	$password="Thr33Bl!ndM!c3"; // Mysql password
-	$db_name="db_tecapp"; // Database name
+	$db_name="db_ecsdir"; // Database name
 	$login_tbl_name="login"; // Master User Login Table name
 	$admin_tbl_name="admins"; //Administration Table name
 	$dir_tbl_name="directory"; // Members Table name
