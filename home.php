@@ -5,7 +5,7 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tec_welcome.php");
+	header("location:welcome.php");
 	exit();
 }
 else {
@@ -30,7 +30,7 @@ else {
   <!-- Your custom styles (optional) -->
   <link href="css/MDBootstrap4191/style.css" rel="stylesheet">
   <!-- Test custom styles (Includes TEC style details) -->
-  <link href="css/tec_home.css" rel="stylesheet">
+  <link href="css/home.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,8 +39,8 @@ else {
         <!--Navbar-->
         <?php
                 $activeparam = '1'; // sets nav element highlight
-                require_once('tec_nav.php');
-                require_once('includes/tec_footer.php');
+                require_once('nav.php');
+                require_once('includes/footer.php');
             ?>
 <!-- </header> -->
 
@@ -51,11 +51,11 @@ else {
             <div class="row d-flex justify-content-center text-center">
                 <div class="col-md-10">
                     <!-- Heading -->
-                    <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">TEC Family Connections</h2>
+                    <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">ECS Family Connections</h2>
                     <!-- Divider -->
                     <hr class="hr-light">
                     <!-- Description -->
-                    <h4 class="white-text my-4">Access to your church family starts here!</h4>
+                    <h4 class="white-text my-4">Access to your school family starts here!</h4>
                     <h6 class="white-text my-4">Click on the navigation bar above to go to your desired page.</h4>
                 </div>
             </div>
@@ -74,8 +74,8 @@ else {
   <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-  <!-- Tenant Configuration JavaScript Call in tec_nav -->
-  <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
+  <!-- Tenant Configuration JavaScript Call in nav -->
+  <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 </body>
 
 </html>

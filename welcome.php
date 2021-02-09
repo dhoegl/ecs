@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Welcome to TEC Family Connections</title>
+    <title>Welcome to ECS Family Connections</title>
 <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Bootstrap core CSS -->
@@ -20,8 +20,8 @@ session_start();
     <link href="css/MDBootstrap4191/mdb.min.css" rel="stylesheet">
 <!-- Your custom styles (optional) -->
     <link href="css/MDBootstrap4191/style.css" rel="stylesheet">
-    <link href="css/tec_css_style.css" rel="stylesheet" />
-    <link href="css/tec_welcome_style.css" rel="stylesheet" />
+    <link href="css/css_style.css" rel="stylesheet" />
+    <link href="css/welcome_style.css" rel="stylesheet" />
 
   <style type="text/css">
     /* Chart.js */
@@ -51,14 +51,14 @@ session_start();
 <body>
   <!--Footer-->
     <?php
-        require_once('includes/tec_footer.php');
+        require_once('includes/footer.php');
     ?>
 
     <header>
         <!-- Navbar -->
 <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-dark primary-color"> -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark orange darken-4">
-    <a class="navbar-brand" href="tec_welcome.php">
+    <a class="navbar-brand" href="welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
     </a>
@@ -74,12 +74,12 @@ session_start();
             echo '</ul>';
             echo '<span class="nav-link">';
             // echo '<a class="btn btn-light" href="https://trinityevangelchurch.snappages.site/" role="button">Back to App</a>';
-            echo '<a class="btn btn-light" href="http://trinityevangel.org/" role="button">Go to TEC website</a>';
+            echo '<a class="btn btn-light" href="http://evangelcs.org/" role="button">Go to ECS website</a>';
             echo '</span>';
         }
         else
         {
-            $homeurl = "location:tec_home.php";
+            $homeurl = "location:home.php";
             header($homeurl);
         }
     ?>
@@ -97,13 +97,13 @@ session_start();
                         <div class="card-body text-center">
                             <div class="text-center">
                                 <h3 class="white-text">
-                                    <i class="white-text"></i> TEC Family Connections
+                                    <i class="white-text"></i> ECS Family Connections
                                 </h3>
                                 <h3 class="white-text">
                                     <i class="white-text"></i>Please sign in
                                 </h3>
                             </div><!--text-center-->
-                            <form name="form1" method="post" class="text-center" action="tec_checklogin.php">
+                            <form name="form1" method="post" class="text-center" action="checklogin.php">
                                 <div class="md-form">
                                     <i class="white-text active"></i>
                                     <input type="text" id="form-user" name="myusername" class="white-text form-control" />
@@ -121,8 +121,8 @@ session_start();
                             <div>
                                 <!--btn-->
                                 <span>
-                                    <a class="btn btn-primary" href="tec_register.php" role="button">Register</a>
-                                    <a class="btn btn-danger" href="tec_recover.php" role="button">Forgot Password</a>
+                                    <a class="btn btn-primary" href="register.php" role="button">Register</a>
+                                    <a class="btn btn-danger" href="recover.php" role="button">Forgot Password</a>
                                 </span>
                                 <h6 class="text-center white-text">
                                     If you have not yet registered, click on the REGISTER button above, and fill out your information on the form
@@ -131,7 +131,7 @@ session_start();
                                     If you forgot your password, click on the FORGOT PASSWORD button above to be sent a temporary password to your email address on file
                                 </h6>
                                 <p class="fs-6 text-start white-text">
-                                    (version tec_20210130.1)
+                                    (version ecs_20210208.1)
                                 </p>
                             </div><!--btn-->
                         </div><!--card-body-->
@@ -186,8 +186,8 @@ session_start();
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Tenant Configuration JavaScript Call in tec_nav -->
-    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
+    <!-- Tenant Configuration JavaScript Call in nav -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
     <!--<script>
         new WOW().init();
     </script>-->
