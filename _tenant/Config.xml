@@ -14,7 +14,7 @@
         ecs.ourfamilyconnections.org
       </domain>
       <title> <!--Webpage Title – this is what’s shown on browser tab-->
-        ECS Family Connections
+        Evangel Classical School
       </title>
       <reg_notify_from>
         <!--From email address when new registrant approved by RegAdmin-->
@@ -30,7 +30,7 @@
         url('/_tenant/images/xxxxxxx')
       </banner>
       <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
-        #ffffff
+        #e0e0e0
       </banner_color>
       <backsplash> <!--Shown on homepage-->
         url('/_tenant/images/cropped-ECS-2016-45.jpg')
