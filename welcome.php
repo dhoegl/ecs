@@ -57,7 +57,7 @@ session_start();
     <header>
         <!-- Navbar -->
 <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-dark primary-color"> -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark orange darken-4">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light cyan lighten-5">
     <a class="navbar-brand" href="welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
