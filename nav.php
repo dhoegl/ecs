@@ -1,5 +1,5 @@
 <!-- Navbar-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light" id="header">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" id="header headercolor">
 <a class="navbar-brand" href="welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
