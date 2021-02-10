@@ -1,13 +1,13 @@
 <!-- Footer -->
 <!-- <footer class="page-footer fixed-bottom font-small orange accent-4"> -->
-<footer class="page-footer fixed-bottom font-small" style="background-color: #F05F2B">
+<footer class="page-footer fixed-bottom font-small" style="background-color: #e0f7fa">
     <!-- Grid row -->
     <div class="row">
       <!-- Grid column -->
       <div class="col-12">
         <!--Copyright-->
         <p class="text-center">© 2021 Copyright:
-          <a href="//tec.ourfamilyconnections.org"><strong> OurFamilyConnections.org</strong></a>
+          <a href="//ecs.ourfamilyconnections.org"><strong> OurFamilyConnections.org</strong></a>
         </p>
       </div>
       <!-- Grid column -->
