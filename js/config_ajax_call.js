@@ -130,7 +130,8 @@ function xmlParser(xml) {
     var welcomesplash;
     welcomesplash = (navJQ(xml).find('homesplash').text());
     if (document.getElementById("homesplash")) {
-        document.getElementById("homesplash").style.backgroundImage = welcomesplash;
+        // document.getElementById("homesplash").style.backgroundImage = welcomesplash;
+        document.getElementById("homesplash").src = welcomesplash;
     }
 
     //Get backsplash_Welcome image (half-screen image on Master Splash screen) name from config.xml
