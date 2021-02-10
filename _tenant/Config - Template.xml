@@ -24,7 +24,7 @@
         xxxxxxxxxxxxxxxxxxxxxxxxx
       </homepage>
       <homesplash> <!--Homepage Splash image-->
-        url('/_tenant/images/xxxxxx')
+        /_tenant/images/xxxxxx
       </homesplash>
       <banner> <!--Webpage banner image-->
         url('/_tenant/images/xxxxxxx')

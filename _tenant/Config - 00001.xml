@@ -24,7 +24,7 @@
         http://trinityevangel.org
       </homepage>
       <homesplash> <!--Homepage Splash image-->
-        url('/_tenant/images/xxxxxx')
+        /_tenant/images/xxxxxx
       </homesplash>
       <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
         #F05F2B
