@@ -126,6 +126,13 @@ function xmlParser(xml) {
         document.getElementById("backsplash").style.backgroundAttachment = "fixed"; // background won't scroll
 
     }
+    //Get Homepage Splash image
+    var welcomesplash;
+    welcomesplash = (navJQ(xml).find('homesplash').text());
+    if (document.getElementById("homesplash")) {
+        document.getElementById("homesplash").style.backgroundImage = welcomesplash;
+    }
+
     //Get backsplash_Welcome image (half-screen image on Master Splash screen) name from config.xml
     var backsplash_Welcome_text;
     backsplash_Welcome_text = (navJQ(xml).find('backsplash_Welcome').text());

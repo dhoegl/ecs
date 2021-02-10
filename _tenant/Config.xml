@@ -23,6 +23,9 @@
       <homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
         http://evangelcs.org
       </homepage>
+      <homesplash> <!--Homepage Splash image-->
+        url('/_tenant/images/RaggantLogo_Left.png')
+      </homesplash>
       <banner> <!--Webpage banner image-->
         url('/_tenant/images/xxxxxxx')
       </banner>

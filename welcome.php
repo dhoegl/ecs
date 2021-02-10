@@ -91,7 +91,8 @@ session_start();
                 <div class="row mt-5 pt-5 mx-auto">
                     <div class="card mx-auto mt-3 pt-5" style="width: 100%">
                         <div class="card mx-auto" style="width: 15rem;">
-                            <img src="_tenant/images/TEC App Icon 08.png" class="card-img-top max-width: 100%" alt="..." />
+                            <!-- <img src="_tenant/images/TEC App Icon 08.png" class="card-img-top max-width: 100%" alt="..." /> -->
+                            <img id="homesplash" class="card-img-top max-width: 100%" alt="..." />
                             <!-- <img src="..." class="card-img-top" alt="..."> -->
                         </div>
                         <div class="card-body text-center">
