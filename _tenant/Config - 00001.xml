@@ -24,7 +24,7 @@
         http://trinityevangel.org
       </homepage>
       <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
-        #0000
+        #F05F2B
       </banner_color>
       <banner> <!--Webpage banner image-->
         url('/_tenant/images/x.jpg')
