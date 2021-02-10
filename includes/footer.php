@@ -1,6 +1,6 @@
 <!-- Footer -->
 <!-- <footer class="page-footer fixed-bottom font-small orange accent-4"> -->
-<footer class="page-footer fixed-bottom font-small" style="background-color: #e0f7fa color: black">
+<footer class="page-footer fixed-bottom font-small" style="background-color: #e0f7fa">
     <!-- Grid row -->
     <div class="row">
       <!-- Grid column -->
