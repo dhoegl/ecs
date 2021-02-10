@@ -23,6 +23,9 @@
       <homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
         http://trinityevangel.org
       </homepage>
+      <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
+        #0000
+      </banner_color>
       <banner> <!--Webpage banner image-->
         url('/_tenant/images/x.jpg')
       </banner>

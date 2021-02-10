@@ -26,6 +26,9 @@
       <banner> <!--Webpage banner image-->
         url('/_tenant/images/xxxxxxx')
       </banner>
+      <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
+        #0000
+      </banner_color>
       <backsplash> <!--Shown on homepage-->
         url('/_tenant/images/xxxxxxx')
       </backsplash>

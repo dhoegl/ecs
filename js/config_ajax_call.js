@@ -98,7 +98,16 @@ function xmlParser(xml) {
     var expires = "expires=" + d.toUTCString();
     document.cookie = cookie_name + "=" + regnotifylink + ";" + expires + ";path=/";
 
-
+    //Get banner header/footer background color from config.xml
+    var bannercolor;
+    bannercolor = (navJQ(xml).find('banner_color').text());
+    if (document.getElementById("headercolor")) {
+        document.getElementById("headercolor").style.backgroundColor = bannercolor;
+    }
+    if (document.getElementById("footercolor")) {
+        document.getElementById("footercolor").style.backgroundColor = bannercolor;
+    }
+    
     //Get banner image name from config.xml
     var bannertext;
     bannertext = (navJQ(xml).find('banner').text());

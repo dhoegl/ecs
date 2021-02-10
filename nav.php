@@ -1,5 +1,5 @@
 <!-- Navbar-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark orange darken-4">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="header">
 <a class="navbar-brand" href="tec_welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
