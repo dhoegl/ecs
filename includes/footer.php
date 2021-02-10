@@ -7,7 +7,7 @@
       <div class="col-12">
         <!--Copyright-->
         <p class="text-center">© 2021 Copyright:
-          <a href="//ecs.ourfamilyconnections.org"><strong> OurFamilyConnections.org</strong></a>
+          <a href="//ecs.ourfamilyconnections.org" class="text-decoration-none"><strong> OurFamilyConnections.org</strong></a>
         </p>
       </div>
       <!-- Grid column -->
