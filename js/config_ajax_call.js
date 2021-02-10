@@ -203,10 +203,10 @@ function xmlParser(xml) {
     if (eventsservicetext == 'NO') {
         var testeventsservice = document.getElementById("events_service");
         testeventsservice.style.display = "none";
-        var testeventsserviceclass0 = document.getElementsByClassName("events_service")[0];
-        testeventsserviceclass0.style.display = "none";
-        var testeventsserviceclass1 = document.getElementsByClassName("events_service")[1];
-        testeventsserviceclass1.style.display = "none";
+        // var testeventsserviceclass0 = document.getElementsByClassName("events_service")[0];
+        // testeventsserviceclass0.style.display = "none";
+        // var testeventsserviceclass1 = document.getElementsByClassName("events_service")[1];
+        // testeventsserviceclass1.style.display = "none";
 
     }
 //***********************************************************************************************************
