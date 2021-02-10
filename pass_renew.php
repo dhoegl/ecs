@@ -1,12 +1,12 @@
 <?php 
 session_start();
 
-require_once('tec_dbconnect.php');
+require_once('dbconnect.php');
 
 if(!isset($_GET['a']) && ($_GET['email']) && ($_GET['u']))
 {
 	session_destroy();
-	header("location:tec_welcome.php");
+	header("location:welcome.php");
 	exit();
 }
 ?>
@@ -42,7 +42,7 @@ if(!isset($_GET['a']) && ($_GET['email']) && ($_GET['u']))
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
   <!-- Test custom styles (Includes tec style details) -->
-  <link href="css/tec_css_style.css" rel="stylesheet">
+  <link href="css/css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
 
@@ -61,13 +61,13 @@ function focus_on_start()
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 
 <!-- Password Strength Check script -->
-<script type="text/javascript" src="js/tec_password_check.js"></script>
+<script type="text/javascript" src="js/password_check.js"></script>
 
 </head>
 
 <body>
 <?php
-    require_once('includes/tec_footer.php');
+    require_once('includes/footer.php');
 	
 	if (isset($_GET['a']) && ($_GET['a'] == 'recover') && ($_GET['email'] != "") && ($_GET['u'] != "")) 
 	{
@@ -150,7 +150,7 @@ function focus_on_start()
 	?>
 <nav class="navbar navbar-dark orange darken-4 fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="tec_welcome.php">Trinity Evangel Church</a>
+        <a class="navbar-brand" href="welcome.php">Trinity Evangel Church</a>
     </div>
 </nav>
 <div class="container-fluid profile_bg">

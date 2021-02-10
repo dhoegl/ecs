@@ -1,12 +1,12 @@
 <?php
-// From tec_profile.php 'Extract Family Data'
+// From profile.php 'Extract Family Data'
 // Last Updated 11/28/2020
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-   require_once('../tec_dbconnect.php');
+   require_once('../dbconnect.php');
 
  	if (isset($_POST['profile_id']) )
 	{

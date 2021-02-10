@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once('../tec_dbconnect.php');
-/* Download TEC Directory to PDF file; called from 'tec_family.php */
+require_once('../dbconnect.php');
+/* Download TEC Directory to PDF file; called from 'family.php */
 $output = "";
 
 // Get Directory data
@@ -68,7 +68,7 @@ $pdf->Output("I", $file_pdf);
 //if(isset($_POST['export_csv']))
 //{
 	// header('Content-Type: text/csv');
-	// header('Content-Disposition:attachment;filename=TEC_Directory.csv');
+	// header('Content-Disposition:attachment;filename=Directory.csv');
 	// header('Cache-Control: no-cache, no-store, must-revalidate');
 	// header('Pragma: no-cache');
 	// header('Expires: 0');

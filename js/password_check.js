@@ -10,7 +10,7 @@ $(document).ready(function()
 
 
 
-// <editor-fold desc="Validate Password Strength - from tec_pass_renew.js">
+// <editor-fold desc="Validate Password Strength - from pass_renew.js">
 //Check for correct password strength
 //Password strength criteria is as follows
 //-- Length must be greater than 6 characters

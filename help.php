@@ -3,13 +3,13 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tec_welcome.php");
+	header("location:welcome.php");
 	exit();
 }
 $sessname = session_name();
 $sessid = session_id();
 $profileID = $_SESSION['idDirectory'];
-require_once('tec_dbconnect.php');
+require_once('dbconnect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@ require_once('tec_dbconnect.php');
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
     <!-- Test custom styles (Includes tec style details) -->
-    <link href="css/tec_css_style.css" rel="stylesheet">
+    <link href="css/css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
 
@@ -63,8 +63,8 @@ require_once('tec_dbconnect.php');
     <!--Navbar-->
     <?php
     $activeparam = '10'; // sets nav element highlight
-    require_once('tec_nav.php');
-    require_once('includes/tec_footer.php');
+    require_once('nav.php');
+    require_once('includes/footer.php');
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer" id="backsplash">
@@ -107,7 +107,7 @@ require_once('tec_dbconnect.php');
 				            <div class="faq">
 					            <div class="faq_question">Where do I go to download a printable directory?</div>
 						        <div class="faq_answer_container">
-							        <div class="faq_answer">Go to the <a href="tec_family.php">Directory</a> page and click on the blue button at the top-left of the page. You will find both a PDF version of the directory and a CSV version to copy into your favorite spreadsheet.</div>
+							        <div class="faq_answer">Go to the <a href="family.php">Directory</a> page and click on the blue button at the top-left of the page. You will find both a PDF version of the directory and a CSV version to copy into your favorite spreadsheet.</div>
                                 </div>
                                 <hr style="height:2px; color: DarkOrange">		
 				            </div>
@@ -316,7 +316,7 @@ jQuery(document).ready(function($)  {
     <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-    <!-- Tenant Configuration JavaScript Call in tec_nav -->
+    <!-- Tenant Configuration JavaScript Call in nav -->
     <!-- Datatables JavaScript plugins - Bootstrap-specific -->
     <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
@@ -328,7 +328,7 @@ jQuery(document).ready(function($)  {
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
     <!-- Tenant Configuration JavaScript Call -->
-    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
     <!-- Call Image Verify jQuery script -->
     <script src="js/image_verify.js"></script>
 </body>

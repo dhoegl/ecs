@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once('../tec_dbconnect.php');
+require_once('../dbconnect.php');
 require_once('../fpdf/fpdf.php');
 
 $output = "";
 
 // Not sure why header is here.
-// header('Content-Disposition:attachment;filename=TEC_Directory.pdf');
+// header('Content-Disposition:attachment;filename=Directory.pdf');
 	// header('Cache-Control: no-cache, no-store, must-revalidate');
 	// header('Pragma: no-cache');
 	// header('Expires: 0');
@@ -54,7 +54,7 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image('../_tenant/images/tec_logo_new.png',10,6,30);
+    $this->Image('../_tenant/images/logo_new.png',10,6,30);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right
@@ -147,7 +147,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage(L, Letter);
 $pdf->SetFont('Arial','',8);
 $pdf->BasicTable($headers,$dataset);
-$file_pdf = "TEC_Directory.pdf";    
+$file_pdf = "Directory.pdf";    
 $pdf->Output("I", $file_pdf);
 // $pdf->Output();
 

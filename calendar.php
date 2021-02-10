@@ -2,11 +2,11 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tec_welcome.php");
+	header("location:welcome.php");
 	exit();
 }
 
-   require_once('tec_dbconnect.php');
+   require_once('dbconnect.php');
 
 $profileaddr = $_GET['id'];
 $sqlquery = "SELECT * FROM $dir_tbl_name WHERE idDirectory = '$profileaddr'";
@@ -87,7 +87,7 @@ $count = $result->num_rows;
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
     <!-- Test custom styles (Includes TEC style details) -->
-    <link href="css/tec_css_style.css" rel="stylesheet">
+    <link href="css/css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
 
@@ -98,7 +98,7 @@ $count = $result->num_rows;
           initialView: 'dayGridMonth',
           height: 700,
           events: {
-            url: '/includes/tec_get_calendar_data.php',
+            url: '/includes/get_calendar_data.php',
             method: 'POST'
           }
         });
@@ -111,8 +111,8 @@ $count = $result->num_rows;
     <!--Navbar-->
     <?php
         $activeparam = '4';
-        require_once('tec_nav.php');
-        require_once('includes/tec_footer.php');
+        require_once('nav.php');
+        require_once('includes/footer.php');
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
@@ -192,6 +192,6 @@ $count = $result->num_rows;
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
     <!-- Tenant Configuration JavaScript Call -->
-    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
   </body>
 </html>

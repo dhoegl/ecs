@@ -7,7 +7,7 @@
 //	exit();
 //}
 
-require_once('../tec_dbconnect.php');
+require_once('../dbconnect.php');
 //include_once('/includes/event_logs_update.php');
 
 if(isset($_POST['password_reset']))
@@ -31,10 +31,10 @@ if(isset($_POST['password_reset']))
         {
             echo "<script language='javascript'>";
             echo "alert('You must select a valid username. Please re-enter your username.');";
-            echo "window.location(//tec.ourfamilyconnections.org/tec_recover.php";
+            echo "window.location(//tec.ourfamilyconnections.org/recover.php";
             echo "</script>";
             // exit('No rows');
-            header("location:../tec_recover.php");
+            header("location:../recover.php");
         } // exit('No rows');
         while($row = $result->fetch_assoc()) {
             $LoginID = $row['login_ID'];
@@ -62,15 +62,15 @@ if(isset($_POST['password_reset']))
    catch(Exception $e)
     {
         echo "<script language='javascript'>";
-        echo "alert('ERROR at tec_recover_submit.php');";
+        echo "alert('ERROR at recover_submit.php');";
         echo "</script>";
     }
 }
 elseif (isset($_POST['clear'])) { // Clear button clicked
-    header("location:../tec_recover.php");
+    header("location:../recover.php");
 }
 elseif (isset($_POST['login'])) { // Login button clicked
-    header("location:../tec_welcome.php");
+    header("location:../welcome.php");
 }
 ?>
 
@@ -104,7 +104,7 @@ elseif (isset($_POST['login'])) { // Login button clicked
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
   <!-- Test custom styles (Includes tec style details) -->
-  <link href="../css/tec_css_style.css" rel="stylesheet">
+  <link href="../css/css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="../_tenant/css/tenant.css" rel="stylesheet">
 
@@ -112,7 +112,7 @@ elseif (isset($_POST['login'])) { // Login button clicked
 <body>
 <nav class="navbar navbar-dark orange darken-4 fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="../tec_welcome.php">Trinity Evangel Church</a>
+        <a class="navbar-brand" href="../welcome.php">Trinity Evangel Church</a>
     </div>
 </nav>
 <div class="container-fluid profile_bg">

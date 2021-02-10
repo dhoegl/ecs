@@ -4,7 +4,7 @@ if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-require_once('tec_dbconnect.php');
+require_once('dbconnect.php');
 
 // 	if (isset($_GET['action']) )
 //	{

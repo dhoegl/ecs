@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once('../tec_dbconnect.php');
+require_once('../dbconnect.php');
 // Updated 20210130
 //Tenant Configuration JavaScript Call
-// echo "<script type='text/javascript' src='../js/tec_config_ajax_call.js'></script>";
+// echo "<script type='text/javascript' src='../js/config_ajax_call.js'></script>";
 
 $emailaddr3 = "";
 $username3 = "";
@@ -18,7 +18,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
 	$emailaddr3 = $_POST[email_address];
 	$username3 = $_POST[user_name];
 	$login3 = $_POST[login_id];
-    //Get COOKIE from tec_config_ajax_call.js
+    //Get COOKIE from config_ajax_call.js
     $cookie_name = "domain_value";
     if(!isset($_COOKIE[$cookie_name])) {
         echo "Cookie named '" . $cookie_name . "' is not set!";
@@ -49,7 +49,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     catch(Exception $e)
     {
         echo "<script language='javascript'>";
-        echo "alert('ERROR IN tec_password_reset_seed.php');";
+        echo "alert('ERROR IN password_reset_seed.php');";
         echo "</script>";
         $text[] = array('Status' => 'Password Seed Failed');
 	    header('Content-type: application/json');
@@ -66,7 +66,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $passwordmessage .= "<p>Hello <strong>" . $username3 . "</strong></p>";
     $passwordmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
     $passwordmessage .= "<p>If you did not submit this request, please notify your church admins immediately. Otherwise, <strong>within the next 3 days</strong> click on the link below to be taken to the Password Reset page.</p>";
-    $passwordLink = "https://tec.ourfamilyconnections.org/tec_pass_renew.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($username3));
+    $passwordLink = "https://tec.ourfamilyconnections.org/pass_renew.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($username3));
     $passwordmessage .= $passwordLink . "<br /><br />";
     $passwordmessage .= "<p><strong>NOTE: </strong>The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the <a href=" . $passwordmaillink . ">home page</a> and reset your password again.</p><br />";
     $passwordmessage .= "<p>Thank you!<br />The OurFamilyConnections team.</p></body></html>";
@@ -82,7 +82,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
 
 }
 else {
-    header('Location: //tec.ourfamilyconnections.org/tec_welcome.php');
+    header('Location: //tec.ourfamilyconnections.org/welcome.php');
 }
 
 ?>

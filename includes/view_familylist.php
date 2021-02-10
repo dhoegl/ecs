@@ -4,7 +4,7 @@ jQ8(document).ready(function() {
     jQ8('#familytable').DataTable({
 //			"processing": true,
 //			"serverSide": true,
-        "ajax": "tec_getfamily.php",
+        "ajax": "getfamily.php",
 //			"bJQueryUI": true,
 //			"sScrollY": "600px",
 //			"bPaginate": true,

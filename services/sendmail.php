@@ -4,13 +4,13 @@
 // Getting error when this script is 'include'd in ajax_update_new_registrant.php
 session_start();
 if(!$_SESSION['logged in']) {
-	header("location:../tec_welcome.php");
+	header("location:../welcome.php");
 	exit();
 }
 // This function will send email to alert users and admins
 // 12/27 Test Script to validate arrival into this code
 //include('../includes/event_logs_update.php');
-eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Email sent using tec_sendmail", "LoginID: " . "empty");
+eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Email sent using sendmail", "LoginID: " . "empty");
 
 function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail
     //$mailtype = type of email to send

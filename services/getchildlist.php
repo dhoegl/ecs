@@ -1,14 +1,14 @@
 <?php
-//tec_getchildlist captures children from selected profile. Called from tec_profile.php and tec_view_childlist.php
+//getchildlist captures children from selected profile. Called from profile.php and view_childlist.php
 // Last Update: 12/24/2020
     session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-   require_once('../tec_dbconnect.php');
+   require_once('../dbconnect.php');
 
-//ProfileID is captured when called from tec_profile.php to identify family's children 
+//ProfileID is captured when called from profile.php to identify family's children 
 
 if (isset($_GET['profile_id']) )
 {

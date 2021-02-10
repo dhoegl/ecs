@@ -1,5 +1,5 @@
 //validates profile image upload during profile edit
-//Called from tec_profile
+//Called from profile
 	var jQ200 = jQuery.noConflict();
 	jQ200(document).ready(function (e) {
 		jQ200("#uploadImage").on('submit',(function(e)

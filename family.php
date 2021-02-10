@@ -2,10 +2,10 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tec_welcome.php");
+	header("location:welcome.php");
 	exit();
 }
-    require_once('tec_dbconnect.php');
+    require_once('dbconnect.php');
     require_once('fpdf/fpdf.php');
     // Event Log  trap
     include('../includes/event_logs_update.php');
@@ -37,7 +37,7 @@ if(!$_SESSION['logged in']) {
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
   <!-- Test custom styles (Includes TEC style details) -->
-  <link href="css/tec_css_style.css" rel="stylesheet">
+  <link href="css/css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
   <!--CSS Scripts for Datatables Bootstrap 4 Responsive functions    -->
@@ -62,7 +62,7 @@ if(!$_SESSION['logged in']) {
     // echo "console.log('ARRIVED at script to include familylist2');";
     // echo "</script>";
     // Get Family Details List
-    include('includes/tec_view_familylist2.php');
+    include('includes/view_familylist2.php');
 ?>
     
 
@@ -72,8 +72,8 @@ if(!$_SESSION['logged in']) {
     <!--Navbar-->
     <?php
         $activeparam = '3'; // sets nav element highlight
-        require_once('tec_nav.php');
-        require_once('includes/tec_footer.php');
+        require_once('nav.php');
+        require_once('includes/footer.php');
     ?>
     
     <!-- Intro Section -->
@@ -182,7 +182,7 @@ if(!$_SESSION['logged in']) {
                             <tbody>
                             <?php
                                 // Get Active Family List
-                                // include('includes/tec_getfamilylist2.php');
+                                // include('includes/getfamilylist2.php');
                             ?>
                             </tbody>
                             <tfoot class="table-dark">
@@ -209,7 +209,7 @@ if(!$_SESSION['logged in']) {
   <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-  <!-- Tenant Configuration JavaScript Call in tec_nav -->
+  <!-- Tenant Configuration JavaScript Call in nav -->
     <!-- ***** THESE ARE BEING TESTED -->
     <!-- Jan31 Attempt -->
     <!-- Copied from https://www.datatables.net/download/index -->
@@ -226,7 +226,7 @@ if(!$_SESSION['logged in']) {
         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
     <!-- Tenant Configuration JavaScript Call -->
-    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
     <!-- Call Image Verify jQuery script -->
     <script src="/js/image_verify.js"></script>
     

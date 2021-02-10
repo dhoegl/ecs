@@ -1,11 +1,11 @@
 <?php
 //New Registrant Reject script
-//Called from tec_regadmin.php
+//Called from regadmin.php
 //Last Updated 2020/12/09
 if ( isset($_POST['Selected']) ) {
-    require('../tec_dbconnect.php');
+    require('../dbconnect.php');
     include('../includes/event_logs_update.php');
-    include('tec_sendmail.php');
+    include('sendmail.php');
     $Selected2 = $_POST['Selected'];
     $Directory2 = $_POST['Directory'];
     $Login2 = $_POST['Login'];
