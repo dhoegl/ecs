@@ -39,7 +39,8 @@
         url('/_tenant/images/raggantssbs_or.png')
       </logo>
       <nav_logo> <!--Navigation Bar image-->
-        /_tenant/images/raggantssbs_or.png
+        <!-- /_tenant/images/raggantssbs_or.png -->
+        /_tenant/images/RaggantLogo_Left.png
       </nav_logo>
       <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
         Risus est bellum.
