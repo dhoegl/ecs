@@ -48,6 +48,13 @@
       <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
         xxxxxxxxxxxxx
       </tagline>
+      <hometitle> <!-- Highlighted Title Text on home screen -->
+        ###########################
+      </hometitle>
+      <homesubtitle> <!-- Sub Title Text on home screen -->
+        ###########################
+      </homesubtitle>
+
       <special1> <!--Home Page Mission Statement Image-->
         url('/_tenant/images/xxxxxxxx')
       </special1>

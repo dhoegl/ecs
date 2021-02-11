@@ -45,6 +45,12 @@
       <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
         Risus est bellum.
       </tagline>
+      <hometitle> <!-- Highlighted Title Text on home screen -->
+        ECS Family Connections
+      </hometitle>
+      <homesubtitle> <!-- Sub Title Text on home screen -->
+        Access to your school family starts here!
+      </homesubtitle>
       <special1> <!--Home Page Mission Statement Image-->
         url('/_tenant/images/Mission.png')
       </special1>

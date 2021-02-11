@@ -133,6 +133,20 @@ function xmlParser(xml) {
         // document.getElementById("homesplash").style.backgroundImage = welcomesplash;
         document.getElementById("homesplash").src = welcomesplash;
     }
+    //Get Home screen Title text
+    var hometitletext;
+    hometitletext = (navJQ(xml).find('hometitle').text());
+    if (document.getElementById("hometitle_text")) {
+        // document.getElementById("homesplash").style.backgroundImage = welcomesplash;
+        document.getElementById("hometitle_text").innerHTML = hometitletext;
+    }
+    //Get Home screen Sub Title text
+    var homesubtitletext;
+    homesubtitletext = (navJQ(xml).find('homesubtitle').text());
+    if (document.getElementById("homesubtitle_text")) {
+        // document.getElementById("homesplash").style.backgroundImage = welcomesplash;
+        document.getElementById("homesubtitle_text").innerHTML = homesubtitletext;
+    }
 
     //Get backsplash_Welcome image (half-screen image on Master Splash screen) name from config.xml
     var backsplash_Welcome_text;
