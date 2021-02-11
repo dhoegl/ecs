@@ -55,7 +55,7 @@ else {
                     <!-- Divider -->
                     <hr class="hr-light">
                     <!-- Description -->
-                    <h4 class="white-text my-4" id="homesubtitle_text">!</h4>
+                    <h4 class="white-text my-4" id="homesubtitle_text"></h4>
                     <h6 class="white-text my-4">Click on the navigation bar above to go to your desired page.</h4>
                 </div>
             </div>
