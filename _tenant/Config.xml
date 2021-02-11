@@ -68,7 +68,7 @@
 <!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
       <services-calendar>YES</services-calendar>
 <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
-      <services-prayer>NO</services-prayer>
+      <services-prayer>YES</services-prayer>
 <!-- Use to services-events specify whether Events feature is enabled for customer-->
       <services-events>NO</services-events>
     </customer>
