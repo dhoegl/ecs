@@ -16,6 +16,9 @@
       <title> <!--Webpage Title – this is what’s shown on browser tab-->
         Evangel Classical School
       </title>
+      <favicon> <!-- Browser tab icon image -->
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+      </favicon>
       <reg_notify_from>
         <!--From email address when new registrant approved by RegAdmin-->
         admin@ourfamilyconnections.org
