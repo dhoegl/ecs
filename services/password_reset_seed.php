@@ -63,7 +63,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $_SESSION['themetitle'] = $xml->hometitle;
     $_SESSION['themecolor'] = $xml->banner_color;
     echo "<script language='javascript'>";
-    echo "console.log('theme domain = " . $_SESSION['themedomain'] . "');";
+    echo "console.log('theme domain = " . "<?php " . $_SESSION['themedomain'] . "?>');";
     echo "</script>";
 
 // Send password reset email
