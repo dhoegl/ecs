@@ -179,10 +179,10 @@ session_start();
         <!--</div>-->
 <div class="themebuilder">
     <div class="themename" id="themename">
-        <div class="themedomain" id="themedomain">
-            <div class="themetitle" id="themetitle">
-            </div>
-        </div>
+    </div>
+    <div class="themedomain" id="themedomain">
+    </div>
+    <div class="themetitle" id="themetitle">
     </div>
 </div>
     <!--</main>-->
