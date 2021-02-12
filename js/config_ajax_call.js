@@ -18,10 +18,6 @@ function xmlParser(xml) {
     document.title = titletext;
     var title_element = document.getElementById("navbar_brand");
     title_element.innerHTML = titletext;
-    if (document.getElementById("themetitle")) {
-        var theme_title_element = document.getElementById("themetitle");
-        theme_title_element.innerHTML = titletext;
-    }
 
     //Get notify return address for registrant notification - NOTE this address is not monitored, but used to fulfill outbound email metadata
     // Store as cookie
@@ -154,6 +150,10 @@ function xmlParser(xml) {
     if (document.getElementById("hometitle_text")) {
         // document.getElementById("homesplash").style.backgroundImage = welcomesplash;
         document.getElementById("hometitle_text").innerHTML = hometitletext;
+    }
+    if (document.getElementById("themetitle")) {
+        var theme_title_element = document.getElementById("themetitle");
+        theme_title_element.innerHTML = hometitletext;
     }
     //Get Home screen Sub Title text
     var homesubtitletext;
