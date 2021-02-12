@@ -54,6 +54,7 @@ function xmlParser(xml) {
     if (document.getElementById("themename")) {
         var theme_name_element = document.getElementById("themename");
         theme_name_element.innerHTML = nametext;
+        document.getElementById("themename").style.visibility = "hidden";
     }
     //Get nickname from config.xml
     var nicknametext;
@@ -83,6 +84,7 @@ function xmlParser(xml) {
     if (document.getElementById("themedomain")) {
         var theme_domain_element = document.getElementById("themedomain");
         theme_domain_element.innerHTML = domaintext;
+        document.getElementById("themedomain").style.visibility = "hidden";
     }
     //Add domain to Cookie
     var cookie_name = "domain_value";
@@ -154,6 +156,7 @@ function xmlParser(xml) {
     if (document.getElementById("themetitle")) {
         var theme_title_element = document.getElementById("themetitle");
         theme_title_element.innerHTML = hometitletext;
+        document.getElementById("themetitle").style.visibility = "hidden";
     }
     //Get Home screen Sub Title text
     var homesubtitletext;
