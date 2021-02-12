@@ -18,6 +18,10 @@ function xmlParser(xml) {
     document.title = titletext;
     var title_element = document.getElementById("navbar_brand");
     title_element.innerHTML = titletext;
+    if (document.getElementById("themetitle")) {
+        var theme_title_element = document.getElementById("themetitle");
+        theme_title_element.innerHTML = titletext;
+    }
 
     //Get notify return address for registrant notification - NOTE this address is not monitored, but used to fulfill outbound email metadata
     // Store as cookie
@@ -79,6 +83,10 @@ function xmlParser(xml) {
     if (document.getElementById("domainname")) {
         var domain_element = document.getElementById("domainname");
         domain_element.innerHTML = domaintext;
+    }
+    if (document.getElementById("themedomain")) {
+        var theme_domain_element = document.getElementById("themedomain");
+        theme_domain_element.innerHTML = domaintext;
     }
     //Add domain to Cookie
     var cookie_name = "domain_value";
