@@ -37,7 +37,7 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
             var teststat2 = jqXHR.responseText;
             console.log("ajax fail response data for password reset = " + teststat);
             console.log("ajax fail response text for password reset = " + teststat2);
-            alert("Password Reset Failure: " + teststat);
+            alert("Password Reset Failure: " + teststat + " at " + teststat2);
             // reportError(teststat);
             //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
             // location.reload();
