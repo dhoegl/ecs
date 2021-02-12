@@ -178,9 +178,6 @@ session_start();
             <!--</div>-->
         <!--</div>-->
 <div class="themebuilder">
-<?php // Test PHP display of js innerHTML  script
-echo "<div class='themename' id='themename'></div>";
-?>
     <div class="themename" id="themename">
     </div>
     <div class="themedomain" id="themedomain">

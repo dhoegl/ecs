@@ -56,6 +56,12 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
         echo json_encode($text);
     }
 
+// Extract email theme elements from config.xml
+    $xml=simplexml_load_file("../_tenant/Config.xml");
+    $_SESSION['themename'] = $xml->name;
+    $_SESSION['themedomain'] = $xml->domain;
+    $_SESSION['themetitle'] = $xml->hometitle;
+
 // Send password reset email
     $passwordmailto = $emailaddr3;
     $passwordmailtest = "";
