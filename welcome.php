@@ -180,7 +180,7 @@ session_start();
 <div class="themebuilder">
     <div class="themename" id="themename">
         <div class="themedomain" id="themedomain">
-            <div class="themeurl" id="themeurl">
+            <div class="themetitle" id="themetitle">
             </div>
         </div>
     </div>
