@@ -97,8 +97,9 @@ session_start();
                         </div>
                         <div class="card-body text-center">
                             <div class="text-center">
-                                <h3 class="white-text">
-                                    <i class="white-text"></i> ECS Family Connections
+                                <h3 class="white-text" id="hometitle_text">
+                                    <!-- <i class="white-text"></i> ECS Family Connections -->
+                                    <i class="white-text"></i>
                                 </h3>
                                 <h3 class="white-text">
                                     <i class="white-text"></i>Please sign in
