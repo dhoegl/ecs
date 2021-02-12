@@ -45,7 +45,7 @@ function xmlParser(xml) {
     //Get name from config.xml
     var nametext;
     nametext = (navJQ(xml).find('name').text());
-    $_SESSION['orgname'] = nametext;
+    // $_SESSION['orgname'] = nametext;
     //Add name to Pages
     if (document.getElementById("custname")) {
         var name_element = document.getElementById("custname");
@@ -70,7 +70,7 @@ function xmlParser(xml) {
     //Get domain name from config.xml
     var domaintext;
     domaintext = (navJQ(xml).find('domain').text());
-    $_SESSION['domainname'] = domaintext;
+    // $_SESSION['domainname'] = domaintext;
     //Add domain to Pages
     if (document.getElementById("domainname")) {
         var domain_element = document.getElementById("domainname");
@@ -103,7 +103,7 @@ function xmlParser(xml) {
     //Get banner header/footer background color from config.xml
     var bannercolor;
     bannercolor = (navJQ(xml).find('banner_color').text());
-    $_SESSION['emailtheme'] = bannercolor;
+    // $_SESSION['emailtheme'] = bannercolor;
     if (document.getElementById("headercolor")) {
         document.getElementById("headercolor").style.backgroundColor = bannercolor;
     }
