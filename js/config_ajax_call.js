@@ -51,6 +51,10 @@ function xmlParser(xml) {
         var name_element = document.getElementById("custname");
         name_element.innerHTML = nametext;
     }
+    if (document.getElementById("themename")) {
+        var theme_name_element = document.getElementById("themename");
+        theme_name_element.innerHTML = nametext;
+    }
     //Get nickname from config.xml
     var nicknametext;
     nicknametext = (navJQ(xml).find('nickname').text());
