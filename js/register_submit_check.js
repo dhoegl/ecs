@@ -3,8 +3,8 @@
 // Last updated 12/06/2020 - Updated to add Console_Log entries to figure out why unable to complete Registration submission.
 
 //Check that all Registration fields have been correctly filled in
-
-$(document).ready(function()
+var subJQ = jQuery.noConflict();
+subJQ(document).ready(function()
 {
     var required_fields = 'N';
     var all_req_fields = 'N';
