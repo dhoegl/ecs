@@ -58,26 +58,27 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
 
 // Extract email theme elements from config.xml
     $xml=simplexml_load_file("../_tenant/Config.xml");
-    $_SESSION['themename'] = $xml->name;
-    $_SESSION['themedomain'] = $xml->domain;
-    $_SESSION['themetitle'] = $xml->hometitle;
-    $_SESSION['themecolor'] = $xml->banner_color;
-    echo "<script language='javascript'>";
-    echo "alert('Arrived at new Sessions - themename = " . $_SESSION['themename'] . "');";
-    echo "</script>";
+    // $_SESSION['themename'] = $xml->name;
+    // $_SESSION['themedomain'] = $xml->domain;
+    // $_SESSION['themetitle'] = $xml->hometitle;
+    // $_SESSION['themecolor'] = $xml->banner_color;
+    $themename = $xml->name;
+    $themedomain = $xml->domain;
+    $themetitle = $xml->hometitle;
+    $themecolor = $xml->banner_color;
 
 // Send password reset email
     $passwordmailto = $emailaddr3;
     $passwordmailtest = "";
     $passwordmessage = "<html><body>";
-    $passwordmessage .= "<p style='background-color: " . $_SESSION['themecolor'] . "; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> " . $_SESSION['themename'] . "</p>";
+    $passwordmessage .= "<p style='background-color: " . $themecolor . "; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> " . $themename . "</p>";
     // $passwordmessage .= "<p style='background-color: #ffecb3; font-size: 30px; font-weight: bold; color: black; padding: 25px; width=100%;'>Evangel Classical School</p>";
     // $passwordmessage .= "<img src='../_tenant/images/email_banner.b64' alt='banner' />";
     $passwordmessage .= "<p>(this message has been sent from an unmonitored mailbox)</p>";
     $passwordmessage .= "<p>Hello <strong>" . $username3 . "</strong></p>";
     $passwordmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
     $passwordmessage .= "<p>If you did not submit this request, please notify your admins immediately. Otherwise, <strong>within the next 3 days</strong> click on the link below to be taken to the Password Reset page.</p>";
-    $domain_url = "https://" . $_SESSION['themedomain'] . "/pass_renew.php?a=recover@email=";
+    $domain_url = "https://" . $themedomain . "/pass_renew.php?a=recover@email=";
     $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($username3));
     // $passwordLink = "http://ecs.ourfamilyconnections.org/pass_renew.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($username3));
     $passwordmessage .= $passwordLink . "<br /><br />";
