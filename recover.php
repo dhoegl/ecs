@@ -81,7 +81,12 @@ require_once 'dbconnect.php';
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span> -->
 
-<nav class="navbar navbar-dark orange darken-4 fixed-top">
+<!-- <nav class="navbar navbar-dark orange darken-4 fixed-top"> -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor">
+<a class="navbar-brand" href="welcome.php">
+        <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
+        <span id="navbar_brand"></span>
+    </a>
     <div class="navbar-header">
         <a class="navbar-brand" href="welcome.php">Trinity Evangel Church</a>
     </div>
@@ -180,7 +185,7 @@ require_once 'dbconnect.php';
     }
 ?>
     <!-- Tenant Configuration JavaScript Call in nav -->
-    <!-- <script type="text/javascript" src="/js/config_ajax_call.js"></script> -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 
 </body>
 </html>
