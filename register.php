@@ -78,10 +78,11 @@
 ?>
 
 <!-- Navbar for Registration cycle only-->
-<nav class="navbar navbar-dark orange darken-4 fixed-top">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="welcome.php">Trinity Evangel Church</a>
-    </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor">
+<a class="navbar-brand" href="welcome.php">
+        <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
+        <span id="navbar_brand"></span>
+    </a>
 </nav>
 <div class="container-fluid profile_bg">
     <div class="row pt-2">
