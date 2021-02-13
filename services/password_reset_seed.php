@@ -96,7 +96,8 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
 
 }
 else {
-    header('Location: //' . $_SESSION['domainname'] . '/welcome.php');
+    // header('Location: //' . $_SESSION['domainname'] . '/welcome.php');
+    header('Location: ../welcome.php');
 }
 // echo "<script language='javascript'>";
 // echo "src='../js/config_ajax_call.js'>;";
