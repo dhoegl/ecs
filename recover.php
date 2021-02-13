@@ -87,9 +87,6 @@ require_once 'dbconnect.php';
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
     </a>
-    <div class="navbar-header">
-        <a class="navbar-brand" href="welcome.php">Trinity Evangel Church</a>
-    </div>
 </nav>
 <div class="container-fluid profile_bg">
     <div class="row">
