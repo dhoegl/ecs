@@ -18,7 +18,7 @@ subJQ(document).ready(function()
     var genderset = 'N';
     var emailset = 'N';
     var repeatemailset = 'N';
-    $('#register_submit').prop('disabled', true); 
+    subJQ('#register_submit').prop('disabled', true); 
 
 // <editor-fold desc="Check whether Church Code received from church admin">
     $('.churchcodecheck').click(function(){
