@@ -75,7 +75,7 @@ function xmlParser(xml) {
     //Get domain name from config.xml
     var domaintext;
     domaintext = (navJQ(xml).find('domain').text());
-    // $_SESSION['domainname'] = domaintext;
+    $_SESSION['domainname'] = domaintext;
     //Add domain to Pages
     if (document.getElementById("domainname")) {
         var domain_element = document.getElementById("domainname");
