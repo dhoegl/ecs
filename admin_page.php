@@ -57,28 +57,32 @@ include('/services/sendmail.php');
                         Sendmail Testing
                     </div>
                     <div class="card-text font-weight-bold my-2">
-                        <p>
-                        function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail
-                            $mailtype = type of email to send
-                                password_reset
-                                    $param1 = 'Selected' - which family the approved member is being added to
-                                    $param2 = 'Directory' - Registration Admin's idDirectory entry
-                                    $param3 = 'Login' - approved member's user login id
-                                    $param4 = 'FirstName' - approved member's first name
-                                    $param5 = 'LastName' - approved member's last name
-                                    $param6 = 'Email' - approved member's email address
-                                register_request
-                                approved_member
-                                    $param1 = 'Selected' - which family the approved member is being added to
-                                    $param2 = 'Directory' - Registration Admin's idDirectory entry
-                                    $param3 = 'Login' - approved member's user login id
-                                    $param4 = 'FirstName' - approved member's first name
-                                    $param5 = 'LastName' - approved member's last name
-                                    $param6 = 'Email' - approved member's email address
-                                registered_notify
-                                contact_us
-                        </p>
-
+                        <ul class="list-group">
+                            <li class="list-group-item active">function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
+                            <li class="list-group-item">$mailtype = type of email to send</li>
+                            <ul>
+                                <li class="list-group-item">password_reset</li>
+                                <ul>
+                                    <li class="list-group-item">$param1 = 'Selected' - which family the approved member is being added to</li>
+                                    <li class="list-group-item">$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
+                                    <li class="list-group-item">$param3 = 'Login' - approved member's user login id</li>
+                                    <li class="list-group-item">$param4 = 'FirstName' - approved member's first name</li>
+                                    <li class="list-group-item">$param5 = 'LastName' - approved member's last name</li>
+                                    <li class="list-group-item">$param6 = 'Email' - approved member's email address</li>
+                                </ul>
+                                <li class="list-group-item">register_request</li>
+                                <li class="list-group-item">approved_member</li>
+                                <ul>
+                                    <li class="list-group-item">$param1 = 'Selected' - which family the approved member is being added to</li>
+                                    <li class="list-group-item">$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
+                                    <li class="list-group-item">$param3 = 'Login' - approved member's user login id</li>
+                                    <li class="list-group-item">$param4 = 'FirstName' - approved member's first name</li>
+                                    <li class="list-group-item">$param5 = 'LastName' - approved member's last name</li>
+                                    <li class="list-group-item">$param6 = 'Email' - approved member's email address</li>
+                                </ul>
+                                <li class="list-group-item">registered_notify</li>
+                                <li class="list-group-item">contact_us</li>
+                        </ul>
                     </div>
                 </div>
             </div>
