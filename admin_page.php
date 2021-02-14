@@ -47,23 +47,51 @@ require_once 'dbconnect.php';
         require_once('includes/footer.php');
     ?>
 <div class="container-fluid profile_bg">
-    <div class="row">
+    <div class="row pt-2">
         <div class="col-4">
-            <div class="card card-body">
-                <div class="card-title">
-                    This is a Title
-                </div>
-                <div class="card-text">
-                    This is the body text
+            <div class="card bg-light border-primary p-3 mt-2 my-2">
+                <div class="card-body">
+                    <div class="card-title font-weight-bold">
+                        This is a Title
+                    </div>
+                    <div class="card-text font-weight-bold my-2">
+                        This is the body text
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed nisi lacus sed viverra tellus in hac habitasse platea. Est lorem ipsum dolor sit. Tincidunt augue interdum velit euismod in. Nunc eget lorem dolor sed viverra ipsum nunc aliquet. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Tellus pellentesque eu tincidunt tortor aliquam. Ut tortor pretium viverra suspendisse. Ut diam quam nulla porttitor massa id. Est placerat in egestas erat imperdiet sed euismod. Sit amet est placerat in egestas erat imperdiet sed. Ac tincidunt vitae semper quis. Feugiat sed lectus vestibulum mattis ullamcorper velit sed. Dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu. Lectus sit amet est placerat in egestas.
+                        </p>
+                    </div>
                 </div>
             </div>
-
         </div>
         <div class="col-4">
-
+        <div class="card bg-light border-primary p-3 mt-2 my-2">
+                <div class="card-body">
+                    <div class="card-title font-weight-bold">
+                        This is a Title
+                    </div>
+                    <div class="card-text font-weight-bold my-2">
+                        This is the body text
+                        <p>
+                            Mi eget mauris pharetra et ultrices neque ornare aenean. Vel elit scelerisque mauris pellentesque pulvinar. Faucibus a pellentesque sit amet porttitor eget. Convallis convallis tellus id interdum. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Amet consectetur adipiscing elit duis tristique. Sit amet volutpat consequat mauris nunc congue nisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. At lectus urna duis convallis convallis. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-4">
-
+        <div class="card bg-light border-primary p-3 mt-2 my-2">
+                <div class="card-body">
+                    <div class="card-title font-weight-bold">
+                        This is a Title
+                    </div>
+                    <div class="card-text font-weight-bold my-2">
+                        This is the body text
+                        <p>
+                            Urna nunc id cursus metus aliquam eleifend. In hendrerit gravida rutrum quisque non tellus orci ac. Faucibus turpis in eu mi. Netus et malesuada fames ac turpis egestas maecenas pharetra. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Lorem donec massa sapien faucibus et. Urna id volutpat lacus laoreet. Lacinia at quis risus sed vulputate odio. Nisl rhoncus mattis rhoncus urna. Aliquet lectus proin nibh nisl condimentum id. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Sit amet porttitor eget dolor morbi non arcu. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Neque vitae tempus quam pellentesque nec nam. Porttitor lacus luctus accumsan tortor posuere ac ut consequat. Integer vitae justo eget magna fermentum iaculis eu non diam. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
