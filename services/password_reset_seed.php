@@ -78,7 +78,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $passwordmessage .= "<p>Hello <strong>" . $username3 . "</strong></p>";
     $passwordmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
     $passwordmessage .= "<p>If you did not submit this request, please notify your admins immediately. Otherwise, <strong>within the next 3 days</strong> click on the link below to be taken to the Password Reset page.</p>";
-    $domain_url = "https://" . $themedomain . "/pass_renew.php?a=recover@email=";
+    $domain_url = "https://" . $_SERVER['HTTP_HOST'] . "/pass_renew.php?a=recover@email=";
     $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($username3));
     // $passwordLink = "http://ecs.ourfamilyconnections.org/pass_renew.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($username3));
     $passwordmessage .= $passwordLink . "<br /><br />";
