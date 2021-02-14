@@ -152,7 +152,7 @@ else {
     </nav> -->
     <!--/.Navbar for Registration cycle only-->
 
-    <div class="jumbotron card card-image" style="background-image: url('../images/master_welcome3.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="jumbotron card card-image" style="background-image: url('../images/master_welcome2.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
         <div class="mask rgba-gradient align-items-center">
             <div class="container">
                         <div class="row pt-2">
@@ -186,7 +186,7 @@ else {
                                             </h4>
                                             <h4></h4>
                                             <h4 class="font-weight-bolder">
-                                                Click <a href="//tec.ourfamilyconnections.org/welcome.php">HERE</a> to return to the Sign In page.
+                                                Click <a href="../welcome.php">HERE</a> to return to the Sign In page.
                                             </h4>
                                         </div><!--text-center-->
                                     </div>
