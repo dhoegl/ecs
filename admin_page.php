@@ -58,12 +58,12 @@ include('/services/sendmail.php');
                     </div>
                     <div class="card-text font-weight-bold my-2">
                         <ul class="list-group">
-                            <li class="list-group-item active">function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
-                            <li class="list-group-item">$mailtype = type of email to send</li>
+                            <li>function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
+                            <li>$mailtype = type of email to send</li>
                             <ul>
-                                <li class="list-group-item">password_reset</li>
+                                <li>password_reset</li>
                                 <ul>
-                                    <li class="list-group-item">$param1 = 'Selected' - which family the approved member is being added to</li>
+                                    <li>$param1 = 'Selected' - which family the approved member is being added to</li>
                                     <li class="list-group-item">$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
                                     <li class="list-group-item">$param3 = 'Login' - approved member's user login id</li>
                                     <li class="list-group-item">$param4 = 'FirstName' - approved member's first name</li>
