@@ -108,9 +108,9 @@ else {
   <link href="../css/MDBootstrap4191/style.css" rel="stylesheet">
 
     <!--CSS Scripts for Datatables Bootstrap 4 Responsive functions    -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css"> -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -135,14 +135,21 @@ else {
 </head>
 <body>
     <!-- Navbar for Registration cycle only-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark Orange Darken-4">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor">
+        <a class="navbar-brand" href="welcome.php">
+            <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
+            <span id="navbar_brand"></span>
+        </a>
+    </nav>
+    <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark Orange Darken-4">
         <a class="navbar-brand font-weight-bolder" href="../welcome.php">Trinity Evangel Church</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="basicExampleNav"></div>
-    </nav>
+    </nav> -->
     <!--/.Navbar for Registration cycle only-->
 
     <div class="jumbotron card card-image" style="background-image: url('../images/master_welcome3.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
