@@ -196,5 +196,7 @@ else {
             </div>
         </div>
     </div>
+    <!-- Tenant Configuration JavaScript Call in nav -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 </body>
 </html>
