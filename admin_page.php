@@ -116,13 +116,34 @@ include('/services/sendmail.php');
         <div class="card bg-light border-primary p-3 mt-2 my-2">
                 <div class="card-body">
                     <div class="card-title font-weight-bold">
-                        This is a Title
+                        Sendmail Execute
                     </div>
                     <div class="card-text font-weight-bold my-2">
-                        <p>
-                            Mi eget mauris pharetra et ultrices neque ornare aenean. Vel elit scelerisque mauris pellentesque pulvinar. Faucibus a pellentesque sit amet porttitor eget. Convallis convallis tellus id interdum. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Amet consectetur adipiscing elit duis tristique. Sit amet volutpat consequat mauris nunc congue nisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. At lectus urna duis convallis convallis. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et.
-                        </p>
-                    </div>
+                        <form name='registernew' id="register" action='services/register_submit.php' method="POST">
+                            <div class="form-group">
+                                <label for="confirmcode">I received a Confirmation Code:</label>
+                                <div class="form-check churchcodecheck">
+                                    <input class="form-check-input" type="radio" name="confirmcode" id="codeyes" value="YES">
+                                    <label class="form-check-label" for="codeyes">YES</label>
+                                </div>
+                                <div class="form-check churchcodecheck">
+                                    <input class="form-check-input" type="radio" name="confirmcode" id="codeno" value="NO" checked>
+                                    <label class="form-check-label" for="codeno">NO</label>
+                                </div>
+                                    <label id="churchcodelabel" for="churchcode">Enter your 5-digit Confirmation Code: <strong><font color="red">*</font></strong><span id="confirm_code_len"></span></label>
+                                    <input type="text" class="form-control" name="churchcodename" id="churchcode" aria-describedby="churchcode" placeholder="confirmation code">
+                                    </input>
+                                    <label for="username">Select a User Name: <strong><font color="red">*</font></strong><span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="usernamename" id="username" aria-describedby="emailHelp" placeholder="UserName">
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
+                                <input type="submit" class="btn btn-primary disabled" name="registersubmit" id="register_submit" value="Register" />
+                            </div>
+                        </form>
+                   </div>
                 </div>
             </div>
         </div>
