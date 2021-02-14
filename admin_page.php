@@ -58,30 +58,30 @@ include('/services/sendmail.php');
                     </div>
                     <div class="card-text font-weight-bold my-2">
                         <ul class="list-group">
-                            <li>function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
+                            <li class="list-group-item">function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
                             <li>$mailtype = type of email to send</li>
                             <ul>
                                 <li>password_reset</li>
                                 <ul>
                                     <li>$param1 = 'Selected' - which family the approved member is being added to</li>
-                                    <li class="list-group-item">$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
-                                    <li class="list-group-item">$param3 = 'Login' - approved member's user login id</li>
-                                    <li class="list-group-item">$param4 = 'FirstName' - approved member's first name</li>
-                                    <li class="list-group-item">$param5 = 'LastName' - approved member's last name</li>
-                                    <li class="list-group-item">$param6 = 'Email' - approved member's email address</li>
+                                    <li>$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
+                                    <li>$param3 = 'Login' - approved member's user login id</li>
+                                    <li>$param4 = 'FirstName' - approved member's first name</li>
+                                    <li>$param5 = 'LastName' - approved member's last name</li>
+                                    <li>$param6 = 'Email' - approved member's email address</li>
                                 </ul>
-                                <li class="list-group-item">register_request</li>
-                                <li class="list-group-item">approved_member</li>
+                                <li>register_request</li>
+                                <li>approved_member</li>
                                 <ul>
-                                    <li class="list-group-item">$param1 = 'Selected' - which family the approved member is being added to</li>
-                                    <li class="list-group-item">$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
-                                    <li class="list-group-item">$param3 = 'Login' - approved member's user login id</li>
-                                    <li class="list-group-item">$param4 = 'FirstName' - approved member's first name</li>
-                                    <li class="list-group-item">$param5 = 'LastName' - approved member's last name</li>
-                                    <li class="list-group-item">$param6 = 'Email' - approved member's email address</li>
+                                    <li>$param1 = 'Selected' - which family the approved member is being added to</li>
+                                    <li>$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
+                                    <li>$param3 = 'Login' - approved member's user login id</li>
+                                    <li>$param4 = 'FirstName' - approved member's first name</li>
+                                    <li>$param5 = 'LastName' - approved member's last name</li>
+                                    <li>$param6 = 'Email' - approved member's email address</li>
                                 </ul>
-                                <li class="list-group-item">registered_notify</li>
-                                <li class="list-group-item">contact_us</li>
+                                <li>registered_notify</li>
+                                <li>contact_us</li>
                         </ul>
                     </div>
                 </div>
