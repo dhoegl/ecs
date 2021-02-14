@@ -63,14 +63,22 @@ include('/services/sendmail.php');
                             <ul>
                                 <li>password_reset</li>
                                 <ul>
-                                    <li>$param1 = 'Selected' - which family the approved member is being added to</li>
-                                    <li>$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
-                                    <li>$param3 = 'Login' - approved member's user login id</li>
-                                    <li>$param4 = 'FirstName' - approved member's first name</li>
-                                    <li>$param5 = 'LastName' - approved member's last name</li>
-                                    <li>$param6 = 'Email' - approved member's email address</li>
+                                    <li>$param1 = 'mailto' - the email address of the recipient</li>
+                                    <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
+                                    <li>$param3 = 'Message' - the body text of the outbound email</li>
+                                    <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
+                                    <li>$param5 = 'NULL' - enter NULL into this field</li>
+                                    <li>$param6 = 'NULL' - enter NULL into this field</li>
                                 </ul>
                                 <li>register_request</li>
+                                <ul>
+                                    <li>$param1 = 'mailto' - the email address of the recipient</li>
+                                    <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
+                                    <li>$param3 = 'Message' - the body text of the outbound email</li>
+                                    <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
+                                    <li>$param5 = 'NULL' - enter NULL into this field</li>
+                                    <li>$param6 = 'NULL' - enter NULL into this field</li>
+                                </ul>
                                 <li>approved_member</li>
                                 <ul>
                                     <li>$param1 = 'Selected' - which family the approved member is being added to</li>
@@ -81,7 +89,24 @@ include('/services/sendmail.php');
                                     <li>$param6 = 'Email' - approved member's email address</li>
                                 </ul>
                                 <li>registered_notify</li>
+                                <ul>
+                                    <li>$param1 = 'mailto' - the email address of the recipient</li>
+                                    <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
+                                    <li>$param3 = 'Message' - the body text of the outbound email</li>
+                                    <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
+                                    <li>$param5 = 'NULL' - enter NULL into this field</li>
+                                    <li>$param6 = 'NULL' - enter NULL into this field</li>
+                                </ul>
                                 <li>contact_us</li>
+                                <ul>
+                                    <li>$param1 = 'mailto' - the email address of the recipient</li>
+                                    <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
+                                    <li>$param3 = 'Message' - the body text of the outbound email</li>
+                                    <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
+                                    <li>$param5 = 'NULL' - enter NULL into this field</li>
+                                    <li>$param6 = 'NULL' - enter NULL into this field</li>
+                                </ul>
+
                         </ul>
                     </div>
                 </div>
