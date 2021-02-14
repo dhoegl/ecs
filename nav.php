@@ -106,6 +106,17 @@
         //       echo '<li class="nav-item"><a class="nav-link" href="prayeradmin.php">Prayer Admin</a></li>';
         //   }
         // }
+        if($_SESSION['super_admin'] == '1')
+        {
+          if($activeparam == '11')
+          {
+              echo '<li class="nav-item active"><a class="nav-link" href="admin_page.php">Admin Page</a></li>';
+          }
+          else
+          {
+              echo '<li class="nav-item"><a class="nav-link" href="admin_page.php">Admin Page</a></li>';
+          }
+        }
         echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
         echo '</ul>';
   ?>
