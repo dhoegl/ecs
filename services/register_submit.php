@@ -186,7 +186,7 @@ else {
                                             </h4>
                                             <h4></h4>
                                             <h4 class="font-weight-bolder">
-                                                Click <a href="../welcome.php">HERE</a> to return to the Sign In page.
+                                                Click <a href="/welcome.php">HERE</a> to return to the Sign In page.
                                             </h4>
                                         </div><!--text-center-->
                                     </div>
