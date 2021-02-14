@@ -92,9 +92,9 @@ elseif (isset($_POST['login'])) { // Login button clicked
 
 
   <!--CSS Scripts for Datatables Bootstrap 4 Responsive functions    -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap4.min.css"> -->
 
 
 <!-- Custom styles for this template -->
@@ -110,10 +110,11 @@ elseif (isset($_POST['login'])) { // Login button clicked
 
 </head>
 <body>
-<nav class="navbar navbar-dark orange darken-4 fixed-top">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="../welcome.php">Trinity Evangel Church</a>
-    </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor">
+<a class="navbar-brand" href="welcome.php">
+        <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
+        <span id="navbar_brand"></span>
+    </a>
 </nav>
 <div class="container-fluid profile_bg">
     <?php
@@ -134,5 +135,7 @@ elseif (isset($_POST['login'])) { // Login button clicked
         </div> <!--col-sm-12-->
     </div> <!-- row -->
 </div> <!-- container-fluid -->
+    <!-- Tenant Configuration JavaScript Call in nav -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 </body>
 </html>
