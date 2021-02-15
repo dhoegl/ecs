@@ -41,6 +41,36 @@ include('/services/sendmail.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+
+<!-- **************************** Get the DOM text of hidden parameters ******************** -->
+<script type="text/javascript">
+var adminjQ = jQuery.noConflict();
+adminjQ(document).ready(function () {
+    adminjQ("#email_submit").click(function () {
+        // console.log("Session Name = " + sname);
+        // console.log("Session ID = " + sid);
+        // console.log("Logged in status = " + loggedin);
+        var paramcheck = "";
+        var customer = "";
+        var domain = "";
+        paramcheck = adminjQ(this).closest('.hidden_params');
+            // console.log("Child IS closest TR class");
+            customer = paramcheck.find("#custname").text();
+            console.log("Customer Name = " + customer);
+            domain = paramcheck.find("#domainname").text();
+            console.log("Domain Name = " + domain);
+        });
+    })
+</script>
+
+
+
+
+
+
+
+
+
 </head>
 <body>
     <!--Navbar-->
@@ -161,9 +191,11 @@ include('/services/sendmail.php');
                                     <label for="param1">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
-                                    <div id="custname" name="custnamename" aria-describedby="custname">
-                                    </div>
-                                    <div id="domainname" name="domainnamename" aria-describedby="domainname">
+                                    <div class="hidden_params">
+                                        <div id="custname" name="custnamename" aria-describedby="custname">
+                                        </div>
+                                        <div id="domainname" name="domainnamename" aria-describedby="domainname">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
