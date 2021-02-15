@@ -160,10 +160,10 @@ include('/services/sendmail.php');
                                     <label for="param1">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
-                                    <div id="custname" name="custname">
-                                    </div>
-                                    <div id="domainname" name="domainname">
-                                    </div>
+                                    <p id="custname" name="custname">
+                            </p>
+                                    <p id="domainname" name="domainname">
+                            </p>
                                 </div>
                             </div>
                             <div class="form-group">
