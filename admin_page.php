@@ -161,6 +161,7 @@ include('/services/sendmail.php');
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
                                     <input type="hidden" id="custname" name="custname">
+                                    <input type="hidden" id="domainname" name="domainname">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -191,12 +192,44 @@ include('/services/sendmail.php');
 	if ($submit) //		echo "Submit was clicked";
 	{
         $mailtype = $_POST['mailtype'];
-		$param1 = $_POST['param1'];
-		$param2 = $_POST['param2'];
-		$param3 = $_POST['param3'];
-		$param4 = $_POST['param4'];
-		$param5 = $_POST['param5'];
-		$param6 = $_POST['param6'];
+        Switch ($mailtype){
+            case 'approved_member':
+                $param1 = $_POST['custname'];
+                $param2 = $_POST['domainname'];
+                $param3 = $_POST['param3'];
+                $param4 = $_POST['param4'];
+                $param5 = $_POST['param5'];
+                $param6 = $_POST['param6'];
+            case 'password_reset':
+                $param1 = $_POST['param1'];
+                $param2 = $_POST['param2'];
+                $param3 = $_POST['param3'];
+                $param4 = $_POST['param4'];
+                $param5 = $_POST['param5'];
+                $param6 = $_POST['param6'];
+            case 'register_request':
+                $param1 = $_POST['param1'];
+                $param2 = $_POST['param2'];
+                $param3 = $_POST['param3'];
+                $param4 = $_POST['param4'];
+                $param5 = $_POST['param5'];
+                $param6 = $_POST['param6'];
+            case 'registered_notify':
+                $param1 = $_POST['param1'];
+                $param2 = $_POST['param2'];
+                $param3 = $_POST['param3'];
+                $param4 = $_POST['param4'];
+                $param5 = $_POST['param5'];
+                $param6 = $_POST['param6'];
+            case 'contact_us':
+                $param1 = $_POST['param1'];
+                $param2 = $_POST['param2'];
+                $param3 = $_POST['param3'];
+                $param4 = $_POST['param4'];
+                $param5 = $_POST['param5'];
+                $param6 = $_POST['param6'];
+                                                                    
+        }
 
         echo "<script language='javascript'>";
         echo "console.log('mailtype = " . $mailtype . "');";
