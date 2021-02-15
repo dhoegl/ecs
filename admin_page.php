@@ -141,8 +141,9 @@ include('/services/sendmail.php');
                                     <input class="form-check-input" type="radio" name="mailtype" id="type_cu" value="contact_us" checked>
                                     <label class="form-check-label" for="type_cu">contact_us</label>
                                 </div>
+                                <br />
                                     <label for="param1">param1:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param1" id="param1id" aria-describedby="param1" placeholder="paran1">
+                                    <input type="text" class="form-control" name="param1" id="param1id" aria-describedby="param1" placeholder="param1">
                                     </input>
                                 </div>
                             </div>
