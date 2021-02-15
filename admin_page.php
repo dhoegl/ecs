@@ -193,6 +193,7 @@ include('/services/sendmail.php');
 
 	if($clear) //		echo "Clear was clicked";
 	{
+        $mailtype = "";
 		$param1 = "";
 		$param2 = "";
 		$param3 = "";
@@ -202,6 +203,7 @@ include('/services/sendmail.php');
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
+        $mailtype = $_POST[',ailtype']
 		$param1 = $_POST['param1'];
 		$param2 = $_POST['param2'];
 		$param3 = $_POST['param3'];
@@ -210,6 +212,7 @@ include('/services/sendmail.php');
 		$param6 = $_POST['param6'];
 
         echo "<script language='javascript'>";
+        echo "console.log('mailtype = " . $mailtype . "');";
         echo "console.log('param1 = " . $param1 . "');";
         echo "console.log('param1 = " . $param2 . "');";
         echo "console.log('param1 = " . $param3 . "');";
