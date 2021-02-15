@@ -164,7 +164,7 @@ include('/services/sendmail.php');
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
-                                <input type="submit" class="btn btn-primary disabled" name="registersubmit" id="register_submit" value="Send Email" />
+                                <input type="submit" class="btn btn-primary" name="registersubmit" id="register_submit" value="Send Email" />
                             </div>
                         </form>
                    </div>
