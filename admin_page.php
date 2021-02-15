@@ -119,31 +119,46 @@ include('/services/sendmail.php');
                         Sendmail Execute
                     </div>
                     <div class="card-text font-weight-bold my-2">
-                        <form name='registernew' id="register" action='services/register_submit.php' method="POST">
+                        <form name='emailsend' id="email_send" action='' method="POST">
                             <div class="form-group">
                                 <div class="form-check mailtypecheck">
                                     <input class="form-check-input" type="radio" name="mailtype" id="type_pr" value="password_reset" checked>
                                     <label class="form-check-label" for="type_pr">password_reset</label>
                                 </div>
                                 <div class="form-check mailtypecheck">
-                                    <input class="form-check-input" type="radio" name="mailtype" id="type_rr" value="register_request" checked>
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_rr" value="register_request">
                                     <label class="form-check-label" for="type_rr">register_request</label>
                                 </div>
                                 <div class="form-check mailtypecheck">
-                                    <input class="form-check-input" type="radio" name="mailtype" id="type_am" value="approved_member" checked>
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_am" value="approved_member">
                                     <label class="form-check-label" for="type_am">approved_member</label>
                                 </div>
                                 <div class="form-check mailtypecheck">
-                                    <input class="form-check-input" type="radio" name="mailtype" id="type_rn" value="registered_notify" checked>
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_rn" value="registered_notify">
                                     <label class="form-check-label" for="type_rn">registered_notify</label>
                                 </div>
                                 <div class="form-check mailtypecheck">
-                                    <input class="form-check-input" type="radio" name="mailtype" id="type_cu" value="contact_us" checked>
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_cu" value="contact_us">
                                     <label class="form-check-label" for="type_cu">contact_us</label>
                                 </div>
                                 <br />
                                     <label for="param1">param1:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param1" id="param1id" aria-describedby="param1" placeholder="param1">
+                                    <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="param1">
+                                    </input>
+                                    <label for="param1">param2:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param2" id="param2_id" aria-describedby="param2" placeholder="param2">
+                                    </input>
+                                    <label for="param1">param3:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param3" id="param3_id" aria-describedby="param3" placeholder="param3">
+                                    </input>
+                                    <label for="param1">param4:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param4" id="param4_id" aria-describedby="param4" placeholder="param4">
+                                    </input>
+                                    <label for="param1">param5:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param5" id="param5_id" aria-describedby="param5" placeholder="param5">
+                                    </input>
+                                    <label for="param1">param6:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
                                 </div>
                             </div>
@@ -172,6 +187,39 @@ include('/services/sendmail.php');
         </div>
     </div>
 </div>
+<?php
+	$submit = $_POST['registersubmit'];
+	$clear = $_POST['clear'];
+
+	if($clear) //		echo "Clear was clicked";
+	{
+		$param1 = "";
+		$param2 = "";
+		$param3 = "";
+		$param4 = "";
+		$param5 = "";
+		$param6 = "";
+	}
+	if ($submit) //		echo "Submit was clicked";
+	{
+		$param1 = $_POST['param1'];
+		$param2 = $_POST['param2'];
+		$param3 = $_POST['param3'];
+		$param4 = $_POST['param4'];
+		$param5 = $_POST['param5'];
+		$param6 = $_POST['param6'];
+
+        echo "<script language='javascript'>";
+        echo "console.log('param1 = " . $param1 . "');";
+        echo "console.log('param1 = " . $param2 . "');";
+        echo "console.log('param1 = " . $param3 . "');";
+        echo "console.log('param1 = " . $param4 . "');";
+        echo "console.log('param1 = " . $param5 . "');";
+        echo "console.log('param1 = " . $param6 . "');";
+        echo "</script>";
+    
+	}
+?> 
 
 
 
