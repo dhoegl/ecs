@@ -14,8 +14,8 @@ eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Email 
 
 function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail
     //$mailtype = type of email to send
-    //$param1 = 'Selected' - which family the approved member is being added to
-    //$param2 = 'Directory' - Registration Admin's idDirectory entry
+    //$param1 = 'Customer Name' - Name of church/school (email banner)
+    //$param2 = 'Domain' - Site domain - used to insert domain information into login email
     //$param3 = 'Login' - approved member's user login id
     //$param4 = 'FirstName' - approved member's first name
     //$param5 = 'LastName' - approved member's last name

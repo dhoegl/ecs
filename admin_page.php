@@ -81,8 +81,8 @@ include('/services/sendmail.php');
                                 </ul>
                                 <li>approved_member</li>
                                 <ul>
-                                    <li>$param1 = 'Selected' - which family the approved member is being added to</li>
-                                    <li>$param2 = 'Directory' - Registration Admin's idDirectory entry</li>
+                                    <li>$param1 = 'Customer Name' - Name of church/school (email banner)</li>
+                                    <li>$param2 = 'Domain' - Site domain - used to insert domain information into login email</li>
                                     <li>$param3 = 'Login' - approved member's user login id</li>
                                     <li>$param4 = 'FirstName' - approved member's first name</li>
                                     <li>$param5 = 'LastName' - approved member's last name</li>
@@ -160,11 +160,12 @@ include('/services/sendmail.php');
                                     <label for="param1">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
+                                    <input type="hidden" id="custname" name="custname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
-                                <input type="submit" class="btn btn-primary" name="registersubmit" id="register_submit" value="Send Email" />
+                                <input type="submit" class="btn btn-primary" name="emailsubmit" id="email_submit" value="Send Email" />
                             </div>
                         </form>
                    </div>
@@ -174,7 +175,7 @@ include('/services/sendmail.php');
     </div>
 </div>
 <?php
-	$submit = $_POST['registersubmit'];
+	$submit = $_POST['emailsubmit'];
 	$clear = $_POST['clear'];
 
 	if($clear) //		echo "Clear was clicked";
