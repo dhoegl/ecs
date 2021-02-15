@@ -121,26 +121,34 @@ include('/services/sendmail.php');
                     <div class="card-text font-weight-bold my-2">
                         <form name='registernew' id="register" action='services/register_submit.php' method="POST">
                             <div class="form-group">
-                                <label for="confirmcode">I received a Confirmation Code:</label>
-                                <div class="form-check churchcodecheck">
-                                    <input class="form-check-input" type="radio" name="confirmcode" id="codeyes" value="YES">
-                                    <label class="form-check-label" for="codeyes">YES</label>
+                                <div class="form-check mailtypecheck">
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_pr" value="password_reset" checked>
+                                    <label class="form-check-label" for="type_pr">password_reset</label>
                                 </div>
-                                <div class="form-check churchcodecheck">
-                                    <input class="form-check-input" type="radio" name="confirmcode" id="codeno" value="NO" checked>
-                                    <label class="form-check-label" for="codeno">NO</label>
+                                <div class="form-check mailtypecheck">
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_rr" value="register_request" checked>
+                                    <label class="form-check-label" for="type_rr">register_request</label>
                                 </div>
-                                    <label id="churchcodelabel" for="churchcode">Enter your 5-digit Confirmation Code: <strong><font color="red">*</font></strong><span id="confirm_code_len"></span></label>
-                                    <input type="text" class="form-control" name="churchcodename" id="churchcode" aria-describedby="churchcode" placeholder="confirmation code">
-                                    </input>
-                                    <label for="username">Select a User Name: <strong><font color="red">*</font></strong><span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="usernamename" id="username" aria-describedby="emailHelp" placeholder="UserName">
+                                <div class="form-check mailtypecheck">
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_am" value="approved_member" checked>
+                                    <label class="form-check-label" for="type_am">approved_member</label>
+                                </div>
+                                <div class="form-check mailtypecheck">
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_rn" value="registered_notify" checked>
+                                    <label class="form-check-label" for="type_rn">registered_notify</label>
+                                </div>
+                                <div class="form-check mailtypecheck">
+                                    <input class="form-check-input" type="radio" name="mailtype" id="type_cu" value="contact_us" checked>
+                                    <label class="form-check-label" for="type_cu">contact_us</label>
+                                </div>
+                                    <label for="param1">param1:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param1" id="param1id" aria-describedby="param1" placeholder="paran1">
                                     </input>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
-                                <input type="submit" class="btn btn-primary disabled" name="registersubmit" id="register_submit" value="Register" />
+                                <input type="submit" class="btn btn-primary disabled" name="registersubmit" id="register_submit" value="Send Email" />
                             </div>
                         </form>
                    </div>
