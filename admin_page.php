@@ -50,7 +50,7 @@ include('/services/sendmail.php');
     ?>
 <div class="container-fluid profile_bg">
     <div class="row pt-2">
-        <div class="col-4">
+        <div class="col-12 col-lg-6">
             <div class="card bg-light border-primary p-3 mt-2 my-2">
                 <div class="card-body">
                     <div class="card-title font-weight-bold">
@@ -112,7 +112,7 @@ include('/services/sendmail.php');
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-lg-6">
         <div class="card bg-light border-primary p-3 mt-2 my-2">
                 <div class="card-body">
                     <div class="card-title font-weight-bold">
@@ -168,20 +168,6 @@ include('/services/sendmail.php');
                             </div>
                         </form>
                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-        <div class="card bg-light border-primary p-3 mt-2 my-2">
-                <div class="card-body">
-                    <div class="card-title font-weight-bold">
-                        This is a Title
-                    </div>
-                    <div class="card-text font-weight-bold my-2">
-                        <p>
-                            Urna nunc id cursus metus aliquam eleifend. In hendrerit gravida rutrum quisque non tellus orci ac. Faucibus turpis in eu mi. Netus et malesuada fames ac turpis egestas maecenas pharetra. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Lorem donec massa sapien faucibus et. Urna id volutpat lacus laoreet. Lacinia at quis risus sed vulputate odio. Nisl rhoncus mattis rhoncus urna. Aliquet lectus proin nibh nisl condimentum id. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Sit amet porttitor eget dolor morbi non arcu. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Neque vitae tempus quam pellentesque nec nam. Porttitor lacus luctus accumsan tortor posuere ac ut consequat. Integer vitae justo eget magna fermentum iaculis eu non diam. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
