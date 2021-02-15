@@ -203,7 +203,7 @@ include('/services/sendmail.php');
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
-        $mailtype = $_POST[',ailtype']
+        $mailtype = $_POST['mailtype'];
 		$param1 = $_POST['param1'];
 		$param2 = $_POST['param2'];
 		$param3 = $_POST['param3'];
