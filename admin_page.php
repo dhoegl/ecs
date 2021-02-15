@@ -161,9 +161,9 @@ include('/services/sendmail.php');
                                     <label for="param1">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
-                                    <div id="custname_id" name="custname">
+                                    <div id="custname" name="custnamename">
                                     </div>
-                                    <div id="domainname_id" name="domainname">
+                                    <div id="domainname" name="domainnamename">
                                     </div>
                                 </div>
                             </div>
@@ -197,8 +197,8 @@ include('/services/sendmail.php');
         $mailtype = $_POST['mailtype'];
         Switch ($mailtype){
             case 'approved_member':
-                $param1 = $_POST['custname'];
-                $param2 = $_POST['domainname'];
+                $param1 = $_POST['custnamename'];
+                $param2 = $_POST['domainnamename'];
                 $param3 = $_POST['param3'];
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
