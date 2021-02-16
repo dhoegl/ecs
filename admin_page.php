@@ -267,7 +267,7 @@ include('/services/sendmail.php');
 <script type="text/javascript">
 var adminjQ = jQuery.noConflict();
 adminjQ(document).ready(function () {
-    adminjQ("#email_submit").click(function () {
+    adminjQ("#email_submit").on("click", function () {
         var buttontitle = adminjQ(this).attr("value");
         console.log("Button Title = " + buttontitle);
         var paramcheck = "";
