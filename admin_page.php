@@ -194,9 +194,11 @@ adminjQ(document).ready(function () {
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
                                     <div class="hidden_params">
-                                        <div id="custname" name="custnamename" aria-describedby="custname">
+                                        <div>
+                                            <h6 id="custname" name="custnamename"></h6>
                                         </div>
-                                        <div id="domainname" name="domainnamename" aria-describedby="domainname">
+                                        <div>
+                                            <h6 id="domainname" name="domainnamename"></h6>
                                         </div>
                                     </div>
                                 </div>
