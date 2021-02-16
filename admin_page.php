@@ -57,7 +57,7 @@ adminjQ(document).ready(function () {
         var domain = "";
         paramcheck = adminjQ(this).find('.hidden_params');
             // console.log("Child IS closest TR class");
-            customer = paramcheck.next("h6")find("#custname").text();
+            customer = paramcheck.next("h6").find("#custname").text();
             console.log("Customer Name = " + customer);
             domain = paramcheck.find("#domainname").text();
             console.log("Domain Name = " + domain);
