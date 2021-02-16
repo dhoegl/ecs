@@ -13,7 +13,7 @@ include('/services/sendmail.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Recover Password</title>
+    <title>Admin Page</title>
 
     <!-- Bootstrap 4 BETA CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
@@ -55,7 +55,7 @@ adminjQ(document).ready(function () {
         var paramcheck = "";
         var customer = "";
         var domain = "";
-        paramcheck = adminjQ(this).find('.hidden_params');
+        paramcheck = adminjQ(this).find('.hidden_params2');
             // console.log("Child IS closest TR class");
             customer = paramcheck.next("h6").find("#custname").textContent;
             console.log("Customer Name = " + customer);
@@ -273,11 +273,11 @@ adminjQ(document).ready(function () {
         echo "<script language='javascript'>";
         echo "console.log('mailtype = " . $mailtype . "');";
         echo "console.log('param1 = " . $param1 . "');";
-        echo "console.log('param1 = " . $param2 . "');";
-        echo "console.log('param1 = " . $param3 . "');";
-        echo "console.log('param1 = " . $param4 . "');";
-        echo "console.log('param1 = " . $param5 . "');";
-        echo "console.log('param1 = " . $param6 . "');";
+        echo "console.log('param2 = " . $param2 . "');";
+        echo "console.log('param3 = " . $param3 . "');";
+        echo "console.log('param4 = " . $param4 . "');";
+        echo "console.log('param5 = " . $param5 . "');";
+        echo "console.log('param6 = " . $param6 . "');";
         echo "</script>";
     
 	}
