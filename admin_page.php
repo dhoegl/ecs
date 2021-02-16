@@ -271,11 +271,13 @@ adminjQ(document).ready(function () {
         var buttontitle = adminjQ(this).attr("value");
         console.log("Button Title = " + buttontitle);
         var paramcheck = "";
+        var paramcheck2 = "";
         var customer = "";
         var domain = "";
         paramcheck = adminjQ(this).closest("form");
             // console.log("Child IS closest TR class");
-            customer = paramcheck.find(".hidden_params #custname").text();
+            paramcheck2 = paramcheck.find(".hidden_params");
+            customer = paramcheck2.children("#custname").text();
             console.log("Customer Name = " + customer);
             domain = paramcheck.find("#domainname").text();
             console.log("Domain Name = " + domain);
