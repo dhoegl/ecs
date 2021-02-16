@@ -55,11 +55,11 @@ adminjQ(document).ready(function () {
         var paramcheck = "";
         var customer = "";
         var domain = "";
-        paramcheck = adminjQ(this).find('.hidden_params2');
+        paramcheck = adminjQ(this).closest('.hidden_params');
             // console.log("Child IS closest TR class");
-            customer = paramcheck.next("h6").find("#custname").textContent;
+            customer = paramcheck.next("h6").find("#custname").text();
             console.log("Customer Name = " + customer);
-            domain = paramcheck.find("#domainname").textContent;
+            domain = paramcheck.find("#domainname").text();
             console.log("Domain Name = " + domain);
         });
     })
