@@ -42,28 +42,6 @@ include('/services/sendmail.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 
-<!-- **************************** Get the DOM text of hidden parameters ******************** -->
-<script type="text/javascript">
-var adminjQ = jQuery.noConflict();
-adminjQ(document).ready(function () {
-    adminjQ("#email_submit").click(function () {
-        var buttontitle = adminjQ(this).attr("value");
-        console.log("Button Title = " + buttontitle);
-        // console.log("Session Name = " + sname);
-        // console.log("Session ID = " + sid);
-        // console.log("Logged in status = " + loggedin);
-        var paramcheck = "";
-        var customer = "";
-        var domain = "";
-        paramcheck = adminjQ(this).closest("form");
-            // console.log("Child IS closest TR class");
-            customer = paramcheck.find("#custname").text();
-            console.log("Customer Name = " + customer);
-            domain = paramcheck.find("#domainname").text();
-            console.log("Domain Name = " + domain);
-        });
-    })
-</script>
 
 
 
@@ -285,7 +263,31 @@ adminjQ(document).ready(function () {
 
 
 
-    <!-- Tenant Configuration JavaScript Call in nav -->
-    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
+<!-- Tenant Configuration JavaScript Call in nav -->
+<script type="text/javascript" src="/js/config_ajax_call.js"></script>
+
+
+<!-- **************************** Get the DOM text of hidden parameters ******************** -->
+<script type="text/javascript">
+var adminjQ = jQuery.noConflict();
+adminjQ(document).ready(function () {
+    adminjQ("#email_submit").click(function () {
+        var buttontitle = adminjQ(this).attr("value");
+        console.log("Button Title = " + buttontitle);
+        // console.log("Session Name = " + sname);
+        // console.log("Session ID = " + sid);
+        // console.log("Logged in status = " + loggedin);
+        var paramcheck = "";
+        var customer = "";
+        var domain = "";
+        paramcheck = adminjQ(this).closest("form");
+            // console.log("Child IS closest TR class");
+            customer = paramcheck.find("#custname").text();
+            console.log("Customer Name = " + customer);
+            domain = paramcheck.find("#domainname").text();
+            console.log("Domain Name = " + domain);
+        });
+    })
+</script>
 </body>
 </html>    
