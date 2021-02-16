@@ -47,6 +47,8 @@ include('/services/sendmail.php');
 var adminjQ = jQuery.noConflict();
 adminjQ(document).ready(function () {
     adminjQ("#email_submit").click(function () {
+        var buttontitle = this.text();
+        console.log("Button Title = " + buttontitle);
         // console.log("Session Name = " + sname);
         // console.log("Session ID = " + sid);
         // console.log("Logged in status = " + loggedin);
