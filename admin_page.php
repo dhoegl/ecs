@@ -202,20 +202,15 @@ include('/services/sendmail.php');
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
-        $mailtype = $_POST['mailtype'];
-        echo "<script language='javascript'>";
-        echo "console.log('mailtype before Switch = " . $mailtype . "');";
-        echo "</script>";
-
         Switch ($mailtype){
             case 'approved_member':
-                $param1 = "HELLO";
-                // $param1 = $_POST['custnamename'];
+                $param1 = $_POST['custnamename'];
                 $param2 = $_POST['domainnamename'];
                 $param3 = $_POST['param3'];
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
+                break;
             case 'password_reset':
                 $param1 = $_POST['param1'];
                 $param2 = $_POST['param2'];
@@ -223,6 +218,7 @@ include('/services/sendmail.php');
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
+                break;
             case 'register_request':
                 $param1 = $_POST['param1'];
                 $param2 = $_POST['param2'];
@@ -230,6 +226,7 @@ include('/services/sendmail.php');
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
+                break;
             case 'registered_notify':
                 $param1 = $_POST['param1'];
                 $param2 = $_POST['param2'];
@@ -237,6 +234,7 @@ include('/services/sendmail.php');
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
+                break;
             case 'contact_us':
                 $param1 = $_POST['param1'];
                 $param2 = $_POST['param2'];
@@ -244,7 +242,7 @@ include('/services/sendmail.php');
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
-                                                                    
+                break;
         }
 
         echo "<script language='javascript'>";
