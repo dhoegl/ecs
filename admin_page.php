@@ -171,9 +171,9 @@ include('/services/sendmail.php');
                                     <label for="param1">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
-                                    <div class="hidden_params" id="domainname"> 
-                                        <!-- <p id="custname" name="custnamename"></p>
-                                        <p id="domainname" name="domainnamename"></p> -->
+                                    <div class="hidden_params"> 
+                                        <p id="custname" name="custnamename"></p>
+                                        <p id="domainname" name="domainnamename"></p>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +274,8 @@ adminjQ(document).ready(function () {
         var paramcheck2 = "";
         var customer = "";
         var domain = "";
-        paramcheck = adminjQ(this).closest("div#domainname").text();
+        // paramcheck = adminjQ(this).closest("div#domainname").text();
+        paramcheck = adminjQ(".hidden_params").find("#domainname").text();
             alert("paramcheck = " + paramcheck);
             // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
             // customer = paramcheck.find("#custname").text();
