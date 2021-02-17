@@ -130,7 +130,7 @@ include('/services/sendmail.php');
                         Sendmail Execute
                     </div>
                     <div class="card-text font-weight-bold my-2">
-                        <form name='emailsend' id="email_send" action='' method="POST">
+                        <form name='emailsend' id="email_send" action='' method="POST" onsubmit="return false">
                             <div class="form-group">
                                 <div class="form-check mailtypecheck">
                                     <input class="form-check-input" type="radio" name="mailtype" id="type_pr" value="password_reset" checked>
