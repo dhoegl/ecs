@@ -275,7 +275,7 @@ adminjQ(document).ready(function () {
         var customer = "";
         var domain = "";
         paramcheck = adminjQ(this).closest("div.hidden_params").text();
-            alert("paramcheck = " . paramcheck);
+            alert("paramcheck = " + paramcheck);
             // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
             // customer = paramcheck.find("#custname").text();
             // console.log("Customer Name = " + customer);
