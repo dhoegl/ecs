@@ -276,9 +276,10 @@ adminjQ(document).ready(function () {
         var domain = "";
         paramcheck = adminjQ(this).closest(".hidden_params");
             // console.log("Child IS closest TR class");
-            customer = paramcheck.find("#custname").html();
+            paramcheck.find("#custname").css("background-color", "red");
+            // customer = paramcheck.find("#custname").text();
             console.log("Customer Name = " + customer);
-            domain = paramcheck.find("#domainname").attr(value);
+            domain = paramcheck.find("#domainname").text();
             console.log("Domain Name = " + domain);
         });
     })
