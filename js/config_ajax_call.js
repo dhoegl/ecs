@@ -79,7 +79,8 @@ function xmlParser(xml) {
     //Add domain to Pages
     if (document.getElementById("domainname")) {
         var domain_element = document.getElementById("domainname");
-        domain_element.innerHTML = domaintext;
+        // domain_element.innerHTML = domaintext;
+        domain_element.TextContent = domaintext;
     }
     if (document.getElementById("themedomain")) {
         var theme_domain_element = document.getElementById("themedomain");
