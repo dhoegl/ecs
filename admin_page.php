@@ -276,7 +276,7 @@ adminjQ(document).ready(function () {
         var domain = "";
         paramcheck = adminjQ(this).closest(".hidden_params");
             // console.log("Child IS closest TR class");
-            paramcheck.find("#custname").css("background-color", "red");
+            adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
             // customer = paramcheck.find("#custname").text();
             console.log("Customer Name = " + customer);
             domain = paramcheck.find("#domainname").text();
