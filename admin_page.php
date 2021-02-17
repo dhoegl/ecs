@@ -172,8 +172,8 @@ include('/services/sendmail.php');
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
                                     <div class="hidden_params">
-                                        <h6 id="custname" name="custnamename"></h6>
-                                        <h6 id="domainname" name="domainnamename"></h6>
+                                        <p id="custname" name="custnamename"></p>
+                                        <p id="domainname" name="domainnamename"></p>
                                     </div>
                                 </div>
                             </div>
