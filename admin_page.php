@@ -278,7 +278,7 @@ adminjQ(document).ready(function () {
             // console.log("Child IS closest TR class");
             customer = paramcheck.find("#custname").html();
             console.log("Customer Name = " + customer);
-            domain = paramcheck.find("#domainname").attr(text);
+            domain = paramcheck.find("#domainname").attr(value);
             console.log("Domain Name = " + domain);
         });
     })
