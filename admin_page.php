@@ -206,7 +206,7 @@ include('/services/sendmail.php');
         Switch ($mailtype){
             case 'approved_member':
                 $param1 = "HELLO";
-                $param1 = $_POST['custnamename'];
+                // $param1 = $_POST['custnamename'];
                 $param2 = $_POST['domainnamename'];
                 $param3 = $_POST['param3'];
                 $param4 = $_POST['param4'];
