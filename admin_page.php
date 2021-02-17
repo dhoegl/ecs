@@ -130,7 +130,8 @@ include('/services/sendmail.php');
                         Sendmail Execute
                     </div>
                     <div class="card-text font-weight-bold my-2">
-                        <form name='emailsend' id="email_send" action='' method="POST" onsubmit="return false">
+                        <!-- <form name='emailsend' id="email_send" action='' method="POST" onsubmit="return false"> -->
+                        <form name='emailsend' id="email_send" action='' method="POST">
                             <div class="form-group">
                                 <div class="form-check mailtypecheck">
                                     <input class="form-check-input" type="radio" name="mailtype" id="type_pr" value="password_reset" checked>
@@ -171,10 +172,8 @@ include('/services/sendmail.php');
                                     <label for="param1">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
                                     </input>
-                                    <div class="row">
-                                        <div col-6 class="hidden_params" id="custname" name="custnamename"></div> 
-                                        <div col-6 class="hidden_params" id="domainname" name="domainnamename"></div> 
-                                    </div>
+                                        <div class="hidden_params" id="custname" name="custnamename"></div> 
+                                        <div class="hidden_params" id="domainname" name="domainnamename"></div> 
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
