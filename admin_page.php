@@ -287,7 +287,8 @@ adminjQ(document).ready(function () {
 
         // paramcheck = adminjQ(this).closest("div#domainname").text();
         // paramcheck = adminjQ(".hidden_params").find("#domainname").text();
-        mailtype = adminjQ("#mailtype").val();
+        // mailtype = adminjQ("#mailtype").val();
+        mailtype = "<?php echo($mailtype);?>";
             console.log("mailtype = " + mailtype);
         domain = adminjQ("#domainname").text();
         console.log("Domain = " + domain);
