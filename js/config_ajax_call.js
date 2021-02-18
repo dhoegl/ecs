@@ -117,6 +117,9 @@ function xmlParser(xml) {
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         document.getElementById("headercolor").style.backgroundColor = bannercolor;
+// Banner color for outbound email
+        document.getElementById("headercolorvalue").innerHTML = bannercolor;
+
     }
     if (document.getElementById("footercolor")) {
         document.getElementById("footercolor").style.backgroundColor = bannercolor;
