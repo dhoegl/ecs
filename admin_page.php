@@ -166,7 +166,7 @@ include('/services/sendmail.php');
                                     <input type="text" class="form-control" name="param3" id="param3_id" aria-describedby="param3" placeholder="param3">
                                     </input>
                                     <label for="param1">param4:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param4" id="param4_id" aria-describedby="param4" placeholder="param4">
+                                    <input type="text" class="form-control" name="param_4" id="param4_id" aria-describedby="param4" placeholder="param4">
                                     </input>
                                     <label for="param1">param5:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param5" id="param5_id" aria-describedby="param5" placeholder="param5">
