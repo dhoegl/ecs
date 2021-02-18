@@ -288,10 +288,9 @@ adminjQ(document).ready(function () {
         var param5_entry = "";
         var param6_entry = "";
 
-        // paramcheck = adminjQ(this).closest("div#domainname").text();
-        // paramcheck = adminjQ(".hidden_params").find("#domainname").text();
+        mailtype = adminjQ("input[name='mailtype']:checked").val()
         // mailtype = adminjQ("#mailtype").val();
-        mailtype = "<?php echo($mailtype);?>";
+        // mailtype = "<?php echo($mailtype);?>";
             console.log("mailtype = " + mailtype);
         domain = adminjQ("#domainname").text();
         console.log("Domain = " + domain);
