@@ -205,6 +205,9 @@ include('/services/sendmail.php');
 	if ($submit) //		echo "Submit was clicked";
 	{
         $mailtype = $_POST['mailtype'];
+        echo "<script language='javascript'>";
+        echo "console.log('mailtype inside Switch = " . $mailtype . "');";
+        echo "</script>";
 
         Switch ($mailtype){
             case 'approved_member':
