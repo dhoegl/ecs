@@ -211,7 +211,10 @@ include('/services/sendmail.php');
             case 'approved_member':
                 $param1 = $_POST['custnamename'];
                 $param2 = $_POST['domainnamename'];
-                $param3 = $_POST['param3'];
+                echo "<script language='javascript'>";
+                echo "console.log('param1 inside Switch = " . $param1 . "');";
+                echo "</script>";
+                        $param3 = $_POST['param3'];
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
