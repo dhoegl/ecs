@@ -293,7 +293,7 @@ adminjQ(document).ready(function () {
         console.log("Domain = " + domain);
         customer = adminjQ("#custname").text();
         console.log("Customer = " + customer);
-        param1_entry = adminjQ("#param1_id").text();
+        param1_entry = adminjQ("#param1_id").html();
         console.log("param1 = " + param1_entry);
         param2_entry = adminjQ("#param2_id").text();
         console.log("param2 = " + param2_entry);
