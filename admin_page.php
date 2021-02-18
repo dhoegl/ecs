@@ -53,6 +53,8 @@ include('/services/sendmail.php');
 
 </head>
 <body>
+<!-- Tenant Configuration JavaScript Call in nav -->
+<script type="text/javascript" src="/js/config_ajax_call.js"></script>
     <!--Navbar-->
     <?php
         $activeparam = '11'; // sets nav element highlight
@@ -268,8 +270,7 @@ include('/services/sendmail.php');
 
 
 
-<!-- Tenant Configuration JavaScript Call in nav -->
-<script type="text/javascript" src="/js/config_ajax_call.js"></script>
+
 
 
 <!-- **************************** Get the DOM text of hidden parameters ******************** -->
