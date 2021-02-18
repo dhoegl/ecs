@@ -293,17 +293,17 @@ adminjQ(document).ready(function () {
         console.log("Domain = " + domain);
         customer = adminjQ("#custname").text();
         console.log("Customer = " + customer);
-        param1_entry = adminjQ("#param1_id").html();
+        param1_entry = adminjQ("#param1_id").val();
         console.log("param1 = " + param1_entry);
-        param2_entry = adminjQ("#param2_id").text();
+        param2_entry = adminjQ("#param2_id").val();
         console.log("param2 = " + param2_entry);
-        param3_entry = adminjQ("#param3_id").text();
+        param3_entry = adminjQ("#param3_id").val();
         console.log("param3 = " + param3_entry);
-        param4_entry = adminjQ("#param4_id").text();
+        param4_entry = adminjQ("#param4_id").val();
         console.log("param4 = " + param4_entry);
-        param5_entry = adminjQ("#param5_id").text();
+        param5_entry = adminjQ("#param5_id").val();
         console.log("param5 = " + param5_entry);
-        param6_entry = adminjQ("#param6_id").text();
+        param6_entry = adminjQ("#param6_id").val();
         console.log("param6 = " + param6_entry);
 
         // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
