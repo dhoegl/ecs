@@ -205,18 +205,12 @@ include('/services/sendmail.php');
 	if ($submit) //		echo "Submit was clicked";
 	{
         $mailtype = $_POST['mailtype'];
-        echo "<script language='javascript'>";
-        echo "console.log('mailtype before Switch = " . $mailtype . "');";
-        echo "</script>";
 
         Switch ($mailtype){
             case 'approved_member':
                 $param1 = $_POST['custnamename'];
                 $param2 = $_POST['domainnamename'];
-                echo "<script language='javascript'>";
-                echo "console.log('param1 inside Switch = " . $param1 . "');";
-                echo "</script>";
-                        $param3 = $_POST['param3'];
+                $param3 = $_POST['param3'];
                 $param4 = $_POST['param4'];
                 $param5 = $_POST['param5'];
                 $param6 = $_POST['param6'];
@@ -255,15 +249,15 @@ include('/services/sendmail.php');
                 break;
         }
 
-        echo "<script language='javascript'>";
-        echo "console.log('mailtype = " . $mailtype . "');";
-        echo "console.log('param1 = " . $param1 . "');";
-        echo "console.log('param2 = " . $param2 . "');";
-        echo "console.log('param3 = " . $param3 . "');";
-        echo "console.log('param4 = " . $param4 . "');";
-        echo "console.log('param5 = " . $param5 . "');";
-        echo "console.log('param6 = " . $param6 . "');";
-        echo "</script>";
+        // echo "<script language='javascript'>";
+        // echo "console.log('mailtype = " . $mailtype . "');";
+        // echo "console.log('param1 = " . $param1 . "');";
+        // echo "console.log('param2 = " . $param2 . "');";
+        // echo "console.log('param3 = " . $param3 . "');";
+        // echo "console.log('param4 = " . $param4 . "');";
+        // echo "console.log('param5 = " . $param5 . "');";
+        // echo "console.log('param6 = " . $param6 . "');";
+        // echo "</script>";
     
 	}
 ?> 
@@ -280,17 +274,39 @@ adminjQ(document).ready(function () {
     adminjQ("#email_submit").on("click", function () {
         var buttontitle = adminjQ(this).attr("value");
         console.log("Button Title = " + buttontitle);
-        var paramcheck = "";
+        var mailtype = "";
         var paramcheck2 = "";
         var customer = "";
         var domain = "";
+        var param1_entry = "";
+        var param2_entry = "";
+        var param3_entry = "";
+        var param4_entry = "";
+        var param5_entry = "";
+        var param6_entry = "";
+
         // paramcheck = adminjQ(this).closest("div#domainname").text();
         // paramcheck = adminjQ(".hidden_params").find("#domainname").text();
-        paramcheck = adminjQ("#domainname").text();
-            alert("Domain = " + paramcheck);
-        paramcheck2 = adminjQ("#custname").text();
-            alert("Customer = " + paramcheck2);
-            // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
+        mailtype = adminjQ("#mailtype").text();
+            console.log("mailtype = " + mailtype);
+        domain = adminjQ("#domainname").text();
+        console.log("Domain = " + domain);
+        customer = adminjQ("#custname").text();
+        console.log("Customer = " + customer);
+        param1_entry = adminjQ("#param1_id").text();
+        console.log("param1 = " + param1_entry);
+        param2_entry = adminjQ("#param2_id").text();
+        console.log("param2 = " + param2_entry);
+        param3_entry = adminjQ("#param3_id").text();
+        console.log("param3 = " + param3_entry);
+        param4_entry = adminjQ("#param4_id").text();
+        console.log("param4 = " + param4_entry);
+        param5_entry = adminjQ("#param5_id").text();
+        console.log("param5 = " + param5_entry);
+        param6_entry = adminjQ("#param6_id").text();
+        console.log("param6 = " + param6_entry);
+
+        // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
             // customer = paramcheck.find("#custname").text();
             // console.log("Customer Name = " + customer);
             // domain = paramcheck.find("#domainname").text();
