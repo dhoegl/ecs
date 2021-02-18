@@ -119,7 +119,8 @@ function xmlParser(xml) {
         document.getElementById("headercolor").style.backgroundColor = bannercolor;
 // Banner color for outbound email
     if(document.getElementById("headercolorvalue")) {
-        document.getElementById("headercolorvalue").innerHTML = bannercolor;
+        var headercolorvalue_element = document.getElementById("headercolorvalue");
+        headercolorvalue_element.innerHTML = bannercolor;
     }   
 
     }
