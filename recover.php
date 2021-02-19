@@ -83,7 +83,7 @@ require_once 'dbconnect.php';
         <span id="navbar_brand"></span> -->
 
 <!-- <nav class="navbar navbar-dark orange darken-4 fixed-top"> -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor headerforecolor">
 <a class="navbar-brand" href="welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>

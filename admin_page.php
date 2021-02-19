@@ -96,8 +96,8 @@ include('/services/sendmail.php');
                                 <ul>
                                     <li>$param1 = 'Customer Name' - Name of church/school (email banner)</li>
                                     <li>$param2 = 'Domain' - Site domain - used to insert domain information into login email</li>
-                                    <li>$param3 = 'HeaderColor' - brand banner color for email header</li>
-                                    <li>$param4 = 'TextColor' - brand text color for email header</li>
+                                    <li>$param3 = 'headercolor' - brand banner color for email header</li>
+                                    <li>$param4 = 'headerforecolor' - brand text color for email header</li>
                                     <li>$param5 = 'Login' - approved member's user login id</li>
                                     <li>$param6 = 'FirstName' - approved member's first name</li>
                                     <li>$param7 = 'LastName' - approved member's last name</li>
@@ -185,6 +185,7 @@ include('/services/sendmail.php');
                                         <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
                                         <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
                                         <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
+                                        <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
@@ -291,6 +292,7 @@ adminjQ(document).ready(function () {
         var customer = "";
         var domain = "";
         var headercolorvalue = "";
+        var headerforecolorvalue = "";
         var param1_entry = "";
         var param2_entry = "";
         var param3_entry = "";
@@ -310,6 +312,8 @@ adminjQ(document).ready(function () {
         console.log("Customer = " + customer);
         headercolorvalue = adminjQ("#headercolorvalue").text();
         console.log("headercolorvalue = " + headercolorvalue);
+        headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
+        console.log("headerforecolorvalue = " + headerforecolorvalue);
         param1_entry = adminjQ("#param1_id").val();
         console.log("param1 = " + param1_entry);
         param2_entry = adminjQ("#param2_id").val();

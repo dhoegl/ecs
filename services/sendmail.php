@@ -16,8 +16,8 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
     //$mailtype = type of email to send
     //$param1 = 'Customer Name' - Name of church/school (email banner)
     //$param2 = 'Domain' - Site domain - used to insert domain information into login email
-    //$param3 = 'HeaderColor' - brand banner color for email header
-    //$param4 = 'TextColor' - brand text color for email header
+    //$param3 = 'headercolor' - brand banner color for email header
+    //$param4 = 'headerforecolor' - brand text color for email header
     //$param5 = 'Login' - approved member's user login id
     //$param6 = 'FirstName' - approved member's first name
     //$param7 = 'LastName' - approved member's last name
