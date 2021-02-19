@@ -176,7 +176,7 @@ include('/services/sendmail.php');
                                     </input>
                                         <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
                                         <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
-                                        <p class="hidden_params" id="headercolorvalue" name="headercolor"></p> 
+                                        <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
@@ -282,6 +282,7 @@ adminjQ(document).ready(function () {
         var paramcheck2 = "";
         var customer = "";
         var domain = "";
+        var headercolorvalue = "";
         var param1_entry = "";
         var param2_entry = "";
         var param3_entry = "";
@@ -297,7 +298,7 @@ adminjQ(document).ready(function () {
         console.log("Domain = " + domain);
         customer = adminjQ("#custname").text();
         console.log("Customer = " + customer);
-        headercolorvalue = adminjQ("#headercolorvalue").val();
+        headercolorvalue = adminjQ("#headercolorvalue").text();
         console.log("headercolorvalue = " + headercolorvalue);
         param1_entry = adminjQ("#param1_id").val();
         console.log("param1 = " + param1_entry);
