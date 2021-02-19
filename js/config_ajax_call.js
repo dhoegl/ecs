@@ -133,7 +133,15 @@ function xmlParser(xml) {
     bannerforecolor = (navJQ(xml).find('banner_forecolor').text());
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
-        document.getElementById("headercolor").style.color = bannerforecolor;
+        // document.getElementById("headercolor").style.color = bannerforecolor;
+        if (bannerforecolor = 'Black')
+        {
+        document.getElementById("headercolor").classList.add("navbar-light");
+        }
+        else
+        {
+            document.getElementById("headercolor").classList.add("navbar-dark");
+        }
 // Banner foreground color for outbound email
     if(document.getElementById("headerforecolorvalue")) {
         var headerforecolorvalue_element = document.getElementById("headerforecolorvalue");
