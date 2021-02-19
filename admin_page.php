@@ -297,7 +297,7 @@ adminjQ(document).ready(function () {
         console.log("Domain = " + domain);
         customer = adminjQ("#custname").text();
         console.log("Customer = " + customer);
-        headercolorvalue = adminjQ("#headercolorvalue").text();
+        headercolorvalue = adminjQ("#headercolorvalue").val();
         console.log("headercolorvalue = " + headercolorvalue);
         param1_entry = adminjQ("#param1_id").val();
         console.log("param1 = " + param1_entry);
