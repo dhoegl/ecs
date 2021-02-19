@@ -176,7 +176,7 @@ include('/services/sendmail.php');
                                     </input>
                                         <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
                                         <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
-                                        <p class="form-control hidden_params" id="headercolorvalue" name="headercolor"></p> 
+                                        <p class="hidden_params" id="headercolorvalue" name="headercolor"></p> 
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
