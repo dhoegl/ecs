@@ -29,6 +29,9 @@
       <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
         #F05F2B
       </banner_color>
+      <banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
+        #ffffff
+      </banner_forecolor>
       <banner> <!--Webpage banner image-->
         url('/_tenant/images/x.jpg')
       </banner>

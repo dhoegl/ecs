@@ -127,6 +127,23 @@ function xmlParser(xml) {
     if (document.getElementById("footercolor")) {
         document.getElementById("footercolor").style.backgroundColor = bannercolor;
     }
+
+    //Get banner header/footer foreground color from config.xml
+    var bannerforecolor;
+    bannerforecolor = (navJQ(xml).find('banner_forecolor').text());
+    // $_SESSION['themecolor'] = bannercolor;
+    if (document.getElementById("headerforecolor")) {
+        document.getElementById("headerforecolor").style.color = bannerforecolor;
+// Banner foreground color for outbound email
+    if(document.getElementById("headerforecolorvalue")) {
+        var headerforecolorvalue_element = document.getElementById("headerforecolorvalue");
+        headerforecolorvalue_element.innerHTML = bannerforecolor;
+    }   
+
+    }
+    if (document.getElementById("footerforecolor")) {
+        document.getElementById("footerforecolor").style.color = bannerforecolor;
+    }
     
     //Get banner image name from config.xml
     var bannertext;

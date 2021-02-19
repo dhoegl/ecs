@@ -32,6 +32,9 @@
       <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
         #000000
       </banner_color>
+      <banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
+        #ffffff
+      </banner_forecolor>
       <backsplash> <!--Shown on homepage-->
         url('/_tenant/images/xxxxxxx')
       </backsplash>

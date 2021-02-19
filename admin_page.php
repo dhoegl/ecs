@@ -96,10 +96,12 @@ include('/services/sendmail.php');
                                 <ul>
                                     <li>$param1 = 'Customer Name' - Name of church/school (email banner)</li>
                                     <li>$param2 = 'Domain' - Site domain - used to insert domain information into login email</li>
-                                    <li>$param3 = 'Login' - approved member's user login id</li>
-                                    <li>$param4 = 'FirstName' - approved member's first name</li>
-                                    <li>$param5 = 'LastName' - approved member's last name</li>
-                                    <li>$param6 = 'Email' - approved member's email address</li>
+                                    <li>$param3 = 'HeaderColor' - brand banner color for email header</li>
+                                    <li>$param4 = 'TextColor' - brand text color for email header</li>
+                                    <li>$param5 = 'Login' - approved member's user login id</li>
+                                    <li>$param6 = 'FirstName' - approved member's first name</li>
+                                    <li>$param7 = 'LastName' - approved member's last name</li>
+                                    <li>$param8 = 'Email' - approved member's email address</li>
                                 </ul>
                                 <li>registered_notify</li>
                                 <ul>
@@ -159,20 +161,26 @@ include('/services/sendmail.php');
                                     <label for="param1">param1:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="param1">
                                     </input>
-                                    <label for="param1">param2:<span id="unique_user"></span></label>
+                                    <label for="param2">param2:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param2" id="param2_id" aria-describedby="param2" placeholder="param2">
                                     </input>
-                                    <label for="param1">param3:<span id="unique_user"></span></label>
+                                    <label for="param3">param3:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param3" id="param3_id" aria-describedby="param3" placeholder="param3">
                                     </input>
-                                    <label for="param1">param4:<span id="unique_user"></span></label>
+                                    <label for="param4">param4:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param4" id="param4_id" aria-describedby="param4" placeholder="param4">
                                     </input>
-                                    <label for="param1">param5:<span id="unique_user"></span></label>
+                                    <label for="param5">param5:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param5" id="param5_id" aria-describedby="param5" placeholder="param5">
                                     </input>
-                                    <label for="param1">param6:<span id="unique_user"></span></label>
+                                    <label for="param6">param6:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
+                                    </input>
+                                    <label for="param7">param7:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param7" id="param7_id" aria-describedby="param7" placeholder="param7">
+                                    </input>
+                                    <label for="param8">param8:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param8" id="param8_id" aria-describedby="param8" placeholder="param8">
                                     </input>
                                         <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
                                         <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
@@ -289,6 +297,8 @@ adminjQ(document).ready(function () {
         var param4_entry = "";
         var param5_entry = "";
         var param6_entry = "";
+        var param7_entry = "";
+        var param8_entry = "";
 
         mailtype = adminjQ("input[name='mailtype']:checked").val()
         // mailtype = adminjQ("#mailtype").val();
@@ -312,6 +322,10 @@ adminjQ(document).ready(function () {
         console.log("param5 = " + param5_entry);
         param6_entry = adminjQ("#param6_id").val();
         console.log("param6 = " + param6_entry);
+        param7_entry = adminjQ("#param7_id").val();
+        console.log("param7 = " + param7_entry);
+        param8_entry = adminjQ("#param8_id").val();
+        console.log("param8 = " + param8_entry);
 
         // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
             // customer = paramcheck.find("#custname").text();
