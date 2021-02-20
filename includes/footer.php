@@ -6,9 +6,7 @@
       <!-- Grid column -->
       <div class="col-12">
         <!--Copyright-->
-        <p class="text-center red-text">Copyright © 2021:
-          <a href="//ecs.ourfamilyconnections.org"><strong> OurFamilyConnections.org</strong></a>
-        </p>
+        <p class="text-center red-text">Copyright © 2021:<strong> OurFamilyConnections.org</strong></p>
       </div>
       <!-- Grid column -->
       <!-- <div class="col-md-5 col-lg-4 ml-lg-0">
