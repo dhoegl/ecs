@@ -134,7 +134,7 @@ function xmlParser(xml) {
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         // document.getElementById("headercolor").style.color = bannerforecolor;
-        console.log("bannerforecolor = " . bannerforecolor);
+        console.log("bannerforecolor = " + bannerforecolor);
         if (bannerforecolor = 'Black')
         {
         document.getElementById("headercolor").classList.add("navbar-light");
