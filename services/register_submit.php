@@ -196,6 +196,12 @@ else {
             </div>
         </div>
     </div>
+    <!-- Bug workaround due to service choice model -->
+<div id="directory_service"></div>
+<div id="calendar_service"></div>
+<div id="prayer_service"></div>
+<div id="events_service"></div>
+
     <!-- Tenant Configuration JavaScript Call in nav -->
     <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 </body>

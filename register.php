@@ -197,6 +197,11 @@
         </div> <!--col-sm-6-->
     </div> <!-- row -->
 </div> <!-- container -->
+<!-- Bug workaround due to service choice model -->
+<div id="directory_service"></div>
+<div id="calendar_service"></div>
+<div id="prayer_service"></div>
+<div id="events_service"></div>
 
 <?php
 		

@@ -135,6 +135,12 @@ elseif (isset($_POST['login'])) { // Login button clicked
         </div> <!--col-sm-12-->
     </div> <!-- row -->
 </div> <!-- container-fluid -->
+<!-- Bug workaround due to service choice model -->
+<div id="directory_service"></div>
+<div id="calendar_service"></div>
+<div id="prayer_service"></div>
+<div id="events_service"></div>
+
     <!-- Tenant Configuration JavaScript Call in nav -->
     <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 </body>
