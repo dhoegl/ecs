@@ -137,7 +137,7 @@ function xmlParser(xml) {
         console.log("bannerforecolor = " + bannerforecolor);
         if (bannerforecolor == "Black")
         {
-        document.getElementById("headercolor").classList.add("navbar-light");
+            document.getElementById("headercolor").classList.add("navbar-light");
         }
         else
         {
