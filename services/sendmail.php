@@ -39,14 +39,14 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
             //    $regmaillink = "http://" . $_COOKIE[$cookie_name];
             //}
             //$regmaillink = "http://" . $_COOKIE[$cookie_name];
-            $regmaillink = "https://tec.ourfamilyconnections.org";
+            // $regmaillink = "https://tec.ourfamilyconnections.org";
             $regmaillink = "//" . $param2;
             $regmailto = $param6;
-            $regmailsubject = "Approved access to the " . $param2 . " family directory" . "\n..";
+            $regmailsubject = "Approved access to the " . $param1 . " family directory" . "\n..";
             $regmailmessage = "<html><body>";
             $regmailmessage .= "<p style='background-color: " .  #ff6933; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> Trinity Evangel Church</p>";
-            $regmailmessage .= "<p>Hello <strong>" . $param4 . " " . $param5 . "</strong></p>";
-            $regmailmessage .= "<p>You have been approved to access Trinity Evangel Church's directory site!</p>";
+            $regmailmessage .= "<p>Hello <strong>" . $param6 . " " . $param7 . "</strong></p>";
+            $regmailmessage .= "<p>You have been approved to access the " . $param1 . "'s directory site!</p>";
             $regmailmessage .= "<p>Click on the link below to login<br /></p>";
             $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $regmaillink . "</a></p>";
             $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            

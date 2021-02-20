@@ -94,14 +94,10 @@ include('/services/sendmail.php');
                                 </ul>
                                 <li>approved_member</li>
                                 <ul>
-                                    <li>$param1 = 'Customer Name' - Name of church/school (email banner)</li>
-                                    <li>$param2 = 'Domain' - Site domain - used to insert domain information into login email</li>
-                                    <li>$param3 = 'headercolor' - brand banner color for email header</li>
-                                    <li>$param4 = 'headerforecolor' - brand text color for email header</li>
-                                    <li>$param5 = 'Login' - approved member's user login id</li>
-                                    <li>$param6 = 'FirstName' - approved member's first name</li>
-                                    <li>$param7 = 'LastName' - approved member's last name</li>
-                                    <li>$param8 = 'Email' - approved member's email address</li>
+                                    <li>$param1 = 'login' - approved member's user login id</li>
+                                    <li>$param2 = 'first' - approved member's first name</li>
+                                    <li>$param3 = 'last' - approved member's last name</li>
+                                    <li>$param4 = 'email' - approved member's email address</li>
                                 </ul>
                                 <li>registered_notify</li>
                                 <ul>
@@ -131,7 +127,7 @@ include('/services/sendmail.php');
         <div class="card bg-light border-primary p-3 mt-2 my-2">
                 <div class="card-body">
                     <div class="card-title font-weight-bold">
-                        Sendmail Execute
+                        Sendmail Execute Test
                     </div>
                     <div class="card-text font-weight-bold my-2">
                         <!-- <form name='emailsend' id="email_send" action='' method="POST" onsubmit="return false"> -->
@@ -158,29 +154,17 @@ include('/services/sendmail.php');
                                     <label class="form-check-label" for="type_cu">contact_us</label>
                                 </div>
                                 <br />
-                                    <label for="param1">param1:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="param1">
+                                    <label for="param1">LoginID:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="LoginID">
                                     </input>
-                                    <label for="param2">param2:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param2" id="param2_id" aria-describedby="param2" placeholder="param2">
+                                    <label for="param2">First Name:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param2" id="param2_id" aria-describedby="param2" placeholder="First Name">
                                     </input>
-                                    <label for="param3">param3:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param3" id="param3_id" aria-describedby="param3" placeholder="param3">
+                                    <label for="param3">Last Name:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param3" id="param3_id" aria-describedby="param3" placeholder="Last Name">
                                     </input>
-                                    <label for="param4">param4:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param4" id="param4_id" aria-describedby="param4" placeholder="param4">
-                                    </input>
-                                    <label for="param5">param5:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param5" id="param5_id" aria-describedby="param5" placeholder="param5">
-                                    </input>
-                                    <label for="param6">param6:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param6" id="param6_id" aria-describedby="param6" placeholder="param6">
-                                    </input>
-                                    <label for="param7">param7:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param7" id="param7_id" aria-describedby="param7" placeholder="param7">
-                                    </input>
-                                    <label for="param8">param8:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param8" id="param8_id" aria-describedby="param8" placeholder="param8">
+                                    <label for="param4">Email Address:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param4" id="param4_id" aria-describedby="param4" placeholder="Email Address">
                                     </input>
                                         <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
                                         <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
@@ -209,8 +193,6 @@ include('/services/sendmail.php');
 		$param2 = "";
 		$param3 = "";
 		$param4 = "";
-		$param5 = "";
-		$param6 = "";
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
@@ -219,46 +201,17 @@ include('/services/sendmail.php');
         echo "console.log('mailtype inside Switch = " . $mailtype . "');";
         echo "</script>";
 
+        
         Switch ($mailtype){
             case 'approved_member':
-                $param1 = $_POST['custnamename'];
-                $param2 = $_POST['domainnamename'];
-                $param3 = $_POST['param3'];
-                $param4 = $_POST['param4'];
-                $param5 = $_POST['param5'];
-                $param6 = $_POST['param6'];
                 break;
             case 'password_reset':
-                $param1 = $_POST['param1'];
-                $param2 = $_POST['param2'];
-                $param3 = $_POST['param3'];
-                $param4 = $_POST['param4'];
-                $param5 = $_POST['param5'];
-                $param6 = $_POST['param6'];
                 break;
             case 'register_request':
-                $param1 = $_POST['param1'];
-                $param2 = $_POST['param2'];
-                $param3 = $_POST['param3'];
-                $param4 = $_POST['param4'];
-                $param5 = $_POST['param5'];
-                $param6 = $_POST['param6'];
                 break;
             case 'registered_notify':
-                $param1 = $_POST['param1'];
-                $param2 = $_POST['param2'];
-                $param3 = $_POST['param3'];
-                $param4 = $_POST['param4'];
-                $param5 = $_POST['param5'];
-                $param6 = $_POST['param6'];
                 break;
             case 'contact_us':
-                $param1 = $_POST['param1'];
-                $param2 = $_POST['param2'];
-                $param3 = $_POST['param3'];
-                $param4 = $_POST['param4'];
-                $param5 = $_POST['param5'];
-                $param6 = $_POST['param6'];
                 break;
         }
 
@@ -297,10 +250,6 @@ adminjQ(document).ready(function () {
         var param2_entry = "";
         var param3_entry = "";
         var param4_entry = "";
-        var param5_entry = "";
-        var param6_entry = "";
-        var param7_entry = "";
-        var param8_entry = "";
 
         mailtype = adminjQ("input[name='mailtype']:checked").val()
         // mailtype = adminjQ("#mailtype").val();
@@ -315,21 +264,14 @@ adminjQ(document).ready(function () {
         headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
         console.log("headerforecolorvalue = " + headerforecolorvalue);
         param1_entry = adminjQ("#param1_id").val();
-        console.log("param1 = " + param1_entry);
+        console.log("login = " + param1_entry);
         param2_entry = adminjQ("#param2_id").val();
-        console.log("param2 = " + param2_entry);
+        console.log("first = " + param2_entry);
         param3_entry = adminjQ("#param3_id").val();
-        console.log("param3 = " + param3_entry);
+        console.log("last = " + param3_entry);
         param4_entry = adminjQ("#param4_id").val();
-        console.log("param4 = " + param4_entry);
-        param5_entry = adminjQ("#param5_id").val();
-        console.log("param5 = " + param5_entry);
-        param6_entry = adminjQ("#param6_id").val();
-        console.log("param6 = " + param6_entry);
-        param7_entry = adminjQ("#param7_id").val();
-        console.log("param7 = " + param7_entry);
-        param8_entry = adminjQ("#param8_id").val();
-        console.log("param8 = " + param8_entry);
+        console.log("email = " + param4_entry);
+        // sendmail(mailtype, customer, domain, headercolorvalue, headerforecolorvalue, login, first, last, email)
 
         // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
             // customer = paramcheck.find("#custname").text();
