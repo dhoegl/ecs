@@ -35,7 +35,7 @@
       <banner_color> <!--Webpage top & bottom banner (header/footer) color-->
         #ffecb3
       </banner_color>
-      <banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color NOTE: currently only BLACK font or WHITE font -->
+      <banner_forecolor> <!--Webpage top & bottom banner (header/footer) text color NOTE: currently only BLACK font or WHITE font -->
         Black
       </banner_forecolor>
       <backsplash> <!--Shown on homepage-->
