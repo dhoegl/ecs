@@ -44,7 +44,9 @@ function xmlParser(xml) {
     }
     //Get name from config.xml
     var nametext;
-    nametext = (navJQ(xml).find('name').text());
+    var pretrimnametext;
+    pretrimnametext = (navJQ(xml).find('name').text());
+    nametext = pretrimnametext.trim();
     // $_SESSION['themename'] = nametext;
     //Add name to Pages
     if (document.getElementById("custname")) {
@@ -74,7 +76,9 @@ function xmlParser(xml) {
     }
     //Get domain name from config.xml
     var domaintext;
-    domaintext = (navJQ(xml).find('domain').text());
+    var pretrimdomaintext;
+    pretrimdomaintext = (navJQ(xml).find('domain').text());
+    domaintext = pretrimdomaintext.trim();
     // $_SESSION['themedomain'] = domaintext;
     //Add domain to Pages
     if (document.getElementById("domainname")) {
@@ -113,7 +117,9 @@ function xmlParser(xml) {
 
     //Get banner header/footer background color from config.xml
     var bannercolor;
-    bannercolor = (navJQ(xml).find('banner_color').text());
+    var pretrimbannercolor;
+    pretrimbannercolor = (navJQ(xml).find('banner_color').text());
+    bannercolor = pretrimbannercolor.trim();
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         document.getElementById("headercolor").style.backgroundColor = bannercolor;
@@ -130,9 +136,9 @@ function xmlParser(xml) {
 
     //Get banner header/footer foreground color from config.xml
     var bannerforecolor;
-    var bannerforecolor2;
-    bannerforecolor2 = (navJQ(xml).find('banner_forecolor').text());
-    bannerforecolor = bannerforecolor2.trim();
+    var pretrimbannerforecolor;
+    pretrimbannerforecolor = (navJQ(xml).find('banner_forecolor').text());
+    bannerforecolor = pretrimbannerforecolor.trim();
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         // document.getElementById("headercolor").style.color = bannerforecolor;
