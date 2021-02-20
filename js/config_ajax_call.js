@@ -130,12 +130,14 @@ function xmlParser(xml) {
 
     //Get banner header/footer foreground color from config.xml
     var bannerforecolor;
-    bannerforecolor = (navJQ(xml).find('banner_forecolor').text());
+    var bannerforecolor2;
+    bannerforecolor2 = (navJQ(xml).find('banner_forecolor').text());
+    bannerforecolor = bannerforecolor2.trim();
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         // document.getElementById("headercolor").style.color = bannerforecolor;
         console.log("bannerforecolor = " + bannerforecolor);
-        if (bannerforecolor === "Black")
+        if (bannerforecolor == "Black")
         {
             document.getElementById("headercolor").classList.add("navbar-light");
         }
