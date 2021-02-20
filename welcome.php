@@ -84,6 +84,11 @@ session_start();
         }
     ?>
   </div>
+<!-- Bug workaround -->
+  <div id="directory_service"></div>
+  <div id="calendar_service"></div>
+  <div id="prayer_service"></div>
+  <div id="events_service"></div>
 </nav>  
 
         <div class="container-fluid">
