@@ -137,11 +137,11 @@ function xmlParser(xml) {
         console.log("bannerforecolor = " . bannerforecolor);
         if (bannerforecolor = 'Black')
         {
-        document.getElementById("headercolor").addClass("navbar-light");
+        document.getElementById("headercolor").classList.add("navbar-light");
         }
         else
         {
-            document.getElementById("headercolor").addClass("navbar-dark");
+            document.getElementById("headercolor").classList.add("navbar-dark");
         }
 // Banner foreground color for outbound email
     if(document.getElementById("headerforecolorvalue")) {
