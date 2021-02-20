@@ -84,11 +84,6 @@ session_start();
         }
     ?>
   </div>
-<!-- Bug workaround -->
-  <div id="directory_service"></div>
-  <div id="calendar_service"></div>
-  <div id="prayer_service"></div>
-  <div id="events_service"></div>
 </nav>  
 
         <div class="container-fluid">
@@ -190,6 +185,12 @@ session_start();
     <div class="themetitle" id="themetitle">
     </div>
 </div>
+<!-- Bug workaround due to service choice model -->
+<div id="directory_service"></div>
+<div id="calendar_service"></div>
+<div id="prayer_service"></div>
+<div id="events_service"></div>
+
     <!--</main>-->
     <!-- SCRIPTS -->
     <!-- JQuery -->
