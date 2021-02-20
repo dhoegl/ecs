@@ -107,7 +107,7 @@ function focus_on_start()
 				"
 					<script type='text/javascript'>
 						alert('Invalid Password Reset Key. Please check your email and try again');
-						window.open('//tec.ourfamilyconnections.org', '_self');
+						window.open('/welcome.php', '_self');
 					</script>
 				";
 			}
@@ -120,7 +120,7 @@ function focus_on_start()
 						var curdate1 = '$curDate';
 						alert('curdate = ');
 						alert(curdate1);
-						window.open('//tec.ourfamilyconnections.org', '_self');
+						window.open('/welcome.php', '_self');
 					</script>
 				";
 			}
@@ -132,7 +132,7 @@ function focus_on_start()
 			"
 				<script type='text/javascript'>
 					alert('Your username does not exist in our system. Return to the Home Page and request to reset your password');
-					// window.open('//tec.ourfamilyconnections.org', '_self');
+					// window.open('/welcome.php', '_self');
 				</script>
 			";
 		}
@@ -143,15 +143,21 @@ function focus_on_start()
 			"
 				<script type='text/javascript'>
 					alert('You have improperly accessed this page. Returning to the Home Page.');
-					window.open('//tec.ourfamilyconnections.org', '_self');
+					window.open('/welcome.php', '_self');
 				</script>
 			";
 	}	
 	?>
-<nav class="navbar navbar-dark orange darken-4 fixed-top">
+<!-- <nav class="navbar navbar-dark orange darken-4 fixed-top">
     <div class="navbar-header">
         <a class="navbar-brand" href="welcome.php">Trinity Evangel Church</a>
     </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg fixed-top" id="headercolor">
+<a class="navbar-brand" href="welcome.php">
+        <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
+        <span id="navbar_brand"></span>
+    </a>
 </nav>
 <div class="container-fluid profile_bg">
     <div class="row">
@@ -252,7 +258,7 @@ function focus_on_start()
 			"
 				<script type='text/javascript'>
 					alert('You have successfully reset your password. You will now be re-directed to the Home Page to login with your new password.');
-					window.open('//tec.ourfamilyconnections.org', '_self');
+					window.open('/welcome.php', '_self');
 				</script>
 			";
 		}
@@ -270,14 +276,22 @@ function focus_on_start()
 		}
 	}
 ?> 
+<!-- Bug workaround due to service choice model -->
+<div id="directory_service"></div>
+<div id="calendar_service"></div>
+<div id="prayer_service"></div>
+<div id="events_service"></div>
 
-  <!-- SCRIPTS -->
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
+  	<!-- SCRIPTS -->
+  	<!-- Bootstrap tooltips -->
+  	<script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
+  	<!-- Bootstrap core JavaScript -->
+  	<script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
+  	<!-- MDB core JavaScript -->
+  	<script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
+    <!-- Tenant Configuration JavaScript Call in nav -->
+	<script type="text/javascript" src="/js/config_ajax_call.js"></script>
+
 
 </body>
 </html>
