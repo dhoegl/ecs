@@ -134,13 +134,14 @@ function xmlParser(xml) {
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         // document.getElementById("headercolor").style.color = bannerforecolor;
+        console.log("bannerforecolor = " . bannerforecolor);
         if (bannerforecolor = 'Black')
         {
-        document.getElementById("headercolor").classList.add("navbar-light");
+        document.getElementById("headercolor").addClass("navbar-light");
         }
         else
         {
-            document.getElementById("headercolor").classList.add("navbar-dark");
+            document.getElementById("headercolor").addClass("navbar-dark");
         }
 // Banner foreground color for outbound email
     if(document.getElementById("headerforecolorvalue")) {
