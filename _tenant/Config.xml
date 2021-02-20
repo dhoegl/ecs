@@ -36,7 +36,7 @@
         #ffecb3
       </banner_color>
       <banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color NOTE: currently only BLACK font or WHITE font -->
-        White
+        Black
       </banner_forecolor>
       <backsplash> <!--Shown on homepage-->
         url('/_tenant/images/cropped-ECS-2016-52.jpg')
