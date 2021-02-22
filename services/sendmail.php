@@ -7,6 +7,7 @@ if(!$_SESSION['logged in']) {
 	header("location:../welcome.php");
 	exit();
 }
+$text = array();
 // This function will send email to alert users and admins
 $mailtype = $_POST['Mailtype'];
 // header('Content-Type: application/json');
@@ -28,7 +29,10 @@ if( !isset($aResult['error']) ) {
 
 };
 
-echo json_encode($aResult);
+$text[] = array('Status' => 'Accept Success');
+header('Content-type: application/json');
+echo json_encode($text);
+// echo json_encode($aResult);
 
 
 
