@@ -286,12 +286,12 @@ adminjQ(document).ready(function () {
             },
         });
             // The ajax call succeeded. 
-            email_send.done(function (e) {
-                alert( "Send Email ajax call Success: " + e);
+            email_send.done(function (data, textStatus, jqXHR) {
+                alert( "Send Email ajax call Success: " + textStatus);
             });
             // The ajax call failed. 
-            email_send.fail(function (e) {
-            alert( "Send Email ajax call Fail: " + e);
+            email_send.fail(function (jqXHR, textStatus, errorThrown) {
+            alert( "Send Email ajax call Fail: " + errorThrown);
             });
 
     });
