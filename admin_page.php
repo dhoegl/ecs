@@ -286,7 +286,7 @@ adminjQ(document).ready(function () {
             },
         });
             // The ajax call succeeded. 
-            request.done(function () {
+            email_send.done(function () {
                 alert( "Send Email ajax call Success" );
             });
     });
