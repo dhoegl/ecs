@@ -9,7 +9,7 @@ if(!$_SESSION['logged in']) {
 }
 // This function will send email to alert users and admins
 
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
 $aResult = array();
 
