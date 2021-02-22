@@ -197,9 +197,6 @@ include('/services/sendmail.php');
 	if ($submit) //		echo "Submit was clicked";
 	{
         $mailtype = $_POST['mailtype'];
-        echo "<script language='javascript'>";
-        echo "console.log('mailtype inside Switch = " . $mailtype . "');";
-        echo "</script>";
 
         
         Switch ($mailtype){
@@ -238,8 +235,8 @@ include('/services/sendmail.php');
 var adminjQ = jQuery.noConflict();
 adminjQ(document).ready(function () {
     adminjQ("#email_submit").on("click", function () {
-        var buttontitle = adminjQ(this).attr("value");
-        console.log("Button Title = " + buttontitle);
+        // var buttontitle = adminjQ(this).attr("value");
+        // console.log("Button Title = " + buttontitle);
         var mailtype = "";
         var paramcheck2 = "";
         var customer = "";
@@ -271,6 +268,29 @@ adminjQ(document).ready(function () {
         console.log("last = " + param3_entry);
         param4_entry = adminjQ("#param4_id").val();
         console.log("email = " + param4_entry);
+
+        var email_send = adminjQ.ajax({
+            url: 'services/sendmail.php',
+            type: "POST",
+            dataType: 'json',
+            data: {
+                "Mailtype": mailtype,
+                "Domain": domain,
+                "Customer": customer,
+                "HeaderColor": headercolorvalue,
+                "Headerforecolorvalue": headerforecolorvalue,
+                "LoginID": param1_entry,
+                "First": param2_entry,
+                "Last": param3_entry,
+                "Email": param4_entry
+            },
+        });
+            // The ajax call succeeded. 
+            request.done(function () {
+                alert( "Send Email ajax call Success" );
+            });
+    });
+
         // sendmail(mailtype, customer, domain, headercolorvalue, headerforecolorvalue, login, first, last, email)
 
         // adminjQ(this).closest(".hidden_params").find("#custname").css("background-color", "red");
@@ -278,8 +298,7 @@ adminjQ(document).ready(function () {
             // console.log("Customer Name = " + customer);
             // domain = paramcheck.find("#domainname").text();
             // console.log("Domain Name = " + domain);
-        });
-    })
+})
 </script>
 </body>
 </html>    
