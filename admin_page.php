@@ -289,6 +289,11 @@ adminjQ(document).ready(function () {
             email_send.done(function () {
                 alert( "Send Email ajax call Success" );
             });
+            // The ajax call failed. 
+            email_send.fail(function () {
+            alert( "Send Email ajax call Fail" );
+            });
+
     });
 
         // sendmail(mailtype, customer, domain, headercolorvalue, headerforecolorvalue, login, first, last, email)
