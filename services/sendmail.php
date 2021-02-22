@@ -10,9 +10,6 @@ if(!$_SESSION['logged in']) {
 // This function will send email to alert users and admins
 $mailtype = $_POST['Mailtype'];
 // header('Content-Type: application/json');
-echo "<script language='javascript'>";
-echo "console.log('Made it to sendmail for " + $mailtype . "');";
-echo "</script>";
 
 $aResult = array();
 
@@ -22,9 +19,6 @@ if( !isset($aResult['error']) ) {
 
     switch($_POST['Mailtype']) {
         case 'approved_member':
-        echo "<script language='javascript'>";
-        echo "alert('Made it into sendmail for " . $mailtype . "');";
-        echo "</script>";
         break;
 
         default:
