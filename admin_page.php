@@ -287,11 +287,11 @@ adminjQ(document).ready(function () {
         });
             // The ajax call succeeded. 
             email_send.done(function (e) {
-                alert( "Send Email ajax call Success: " . e);
+                alert( "Send Email ajax call Success: " + e);
             });
             // The ajax call failed. 
             email_send.fail(function (e) {
-            alert( "Send Email ajax call Fail: " . e);
+            alert( "Send Email ajax call Fail: " + e);
             });
 
     });
