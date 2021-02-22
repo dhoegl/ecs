@@ -8,8 +8,11 @@ if(!$_SESSION['logged in']) {
 	exit();
 }
 // This function will send email to alert users and admins
-
+$mailtype = $_POST['Mailtype'];
 // header('Content-Type: application/json');
+echo "<script language='javascript'>";
+echo "alert('Made it to sendmail for " . $mailtype . "');";
+echo "</script>";
 
 $aResult = array();
 
