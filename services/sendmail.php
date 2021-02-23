@@ -14,25 +14,15 @@ $mailtype = $_POST['Mailtype'];
 
 $aResult = array();
 
-if( !isset($_POST['Mailtype']) ) { $aResult['error'] = 'No mailtype!'; }
-
-if( !isset($aResult['error']) ) {
-
-    switch($_POST['Mailtype']) {
-        case 'approved_member':
-        break;
-
-        default:
-           $aResult['error'] = 'Not found function '.$_POST['Mailtype'].'!';
-           break;
-    }
-
+if($mailtype){
+    $response = "Mailtype received";
 };
+
 
 // $text[] = array('Status' => 'Accept Success');
 // header('Content-type: application/json');
 // echo json_encode($text);
-echo "Successful Accepted";
+echo $response;
 // echo json_encode($aResult);
 
 
