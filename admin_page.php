@@ -273,6 +273,7 @@ adminjQ(document).ready(function () {
             url: 'services/sendmail.php',
             type: "POST",
             // dataType: 'json',
+            cache: false;
             data: {
                 "Mailtype": mailtype,
                 "Domain": domain,
