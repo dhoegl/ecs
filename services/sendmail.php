@@ -29,8 +29,8 @@ if( !isset($aResult['error']) ) {
 
 };
 
-$text[] = array('Status' => 'Accept Success');
-header('Content-type: application/json');
+// $text[] = array('Status' => 'Accept Success');
+// header('Content-type: application/json');
 // echo json_encode($text);
 echo "Successful Accepted";
 // echo json_encode($aResult);
