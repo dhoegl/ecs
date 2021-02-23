@@ -22,7 +22,7 @@ $email = $_POST['Email'];
 if($mailtype){
     Switch ($mailtype){
         case 'approved_member':
-            $regmaillink = "//" . $domain;
+            $regmaillink = $domain;
             $regmailto = $email;
             $regmailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
             $regmailmessage = "<html><body>";
@@ -32,7 +32,7 @@ if($mailtype){
             $regmailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
             $regmailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
             $regmailmessage .= "<p>Click on the link below to login<br /></p>";
-            $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $regmaillink . "</a></p>";
+            $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $customer . "</a></p>";
             $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
             $regmailmessage .= "</body></html>";
             $regmailfrom = "noreply@ourfamilyconnections.org";
