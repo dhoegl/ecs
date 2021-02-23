@@ -27,7 +27,7 @@ if($mailtype){
             $regmailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
             $regmailmessage = "<html><body>";
             $regmailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
-            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . "'; font-size: 30px; font-weight: bold; color: '" . $headerforecolorvalue . "'; padding: 25px; width=100%;>";
+            $regmailmessage .= "<p style=background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;>";
             $regmailmessage .= $customer . "</p>";
             $regmailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
             $regmailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
@@ -41,9 +41,9 @@ if($mailtype){
             $regmailheaders .= "MIME-Version: 1.0\r\n";
             $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+            $response = "Mailtype received" . " = " . $mailtype;
             break;
-    $response = "Mailtype received" . " = " . $mailtype;
-    };
+};
 }
 else {
     $response = "ERROR on Mailtype at sendmail.php";
