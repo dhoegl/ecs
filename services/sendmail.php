@@ -8,14 +8,45 @@ if(!$_SESSION['logged in']) {
 	exit();
 }
 $text = array();
-// This function will send email to alert users and admins
+// This function will send email to users and admins
 $mailtype = $_POST['Mailtype'];
-// header('Content-Type: application/json');
-
-$aResult = array();
+$domain = $_POST['Domain'];
+$customer = $_POST['Customer'];
+$headercolorvalue = $_POST['HeaderColor'];
+$headerforecolorvalue = $_POST['Headerforecolorvalue'];
+$loginID = $_POST['LoginID'];
+$firstname = $_POST['First'];
+$lastname = $_POST['Last'];
+$email = $_POST['Email'];
 
 if($mailtype){
+    Switch ($mailtype){
+        case 'approved_member':
+            $regmaillink = "//" . $domain;
+            $regmailto = $email;
+            $regmailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
+            $regmailmessage = "<html><body>";
+            $regmailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . " color: " . $headerforecolorvalue . ">";
+            $regmailmessage .= $customer . "</p>";
+            $regmailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
+            $regmailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
+            $regmailmessage .= "<p>Click on the link below to login<br /></p>";
+            $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $regmaillink . "</a></p>";
+            $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+            $regmailmessage .= "</body></html>";
+            $regmailfrom = "noreply@ourfamilyconnections.org";
+            $regmailheaders = "From:" . $regmailfrom . "\r\n";
+            $regmailheaders .= "Reply-To:" . $regmailfrom . "\r\n";
+            $regmailheaders .= "MIME-Version: 1.0\r\n";
+            $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+            break;
     $response = "Mailtype received" . " = " . $mailtype;
+    };
+}
+else {
+    $response = "ERROR on Mailtype at sendmail.php";
 };
 
 
