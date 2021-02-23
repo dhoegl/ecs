@@ -270,7 +270,7 @@ adminjQ(document).ready(function () {
         console.log("email = " + param4_entry);
 
         var email_send = adminjQ.ajax({
-            url: 'services/sendmail.php',
+            url: 'services/sendmail1.php',
             type: "POST",
             dataType: 'json',
             data: {
