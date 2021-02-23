@@ -270,7 +270,7 @@ adminjQ(document).ready(function () {
         console.log("email = " + param4_entry);
 
         var email_send = adminjQ.ajax({
-            url: 'services/sendmail1.php',
+            url: 'services/sendmail.php',
             type: "POST",
             dataType: 'json',
             data: {
@@ -287,7 +287,7 @@ adminjQ(document).ready(function () {
         });
             // The ajax call succeeded. 
             email_send.done(function (data, textStatus, jqXHR) {
-                alert( "Send Email ajax call Success: " + textStatus);
+                alert( "Send Email ajax call Success: " + data);
             });
             // The ajax call failed. 
             email_send.fail(function (jqXHR, textStatus, errorThrown) {
