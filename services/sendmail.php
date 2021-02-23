@@ -43,7 +43,30 @@ if($mailtype){
             mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
-};
+        case 'register_request':
+            $regmaillink = $domain;
+            $regmailto = $email;
+            $regmailsubject = "Registration Request to the " . $customer . " family directory" . "\n..";
+            $regmailmessage = "<html><body>";
+            $regmailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
+            $regmailmessage .= $customer . "</p>";
+            $regmailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators";
+            $regmailmessage .= $firstname . " " . $lastname . " has reqeuested to be added to the <strong>" . $customer . "'s</strong> family directory.</p>";
+            $regmailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request.</p>";
+            $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $customer . "</a></p>";
+            $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+            $regmailmessage .= "</body></html>";
+            $regmailfrom = "newfamilyrequest@ourfamilyconnections.org";
+            $regmailheaders = "From:" . $regmailfrom . "\r\n";
+            $regmailheaders .= "Reply-To:" . $regmailfrom . "\r\n";
+            $regmailheaders .= "MIME-Version: 1.0\r\n";
+            $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+            $response = "Mailtype received" . " = " . $mailtype;
+            break;
+    
+            };
 }
 else {
     $response = "ERROR on Mailtype at sendmail.php";
