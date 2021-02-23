@@ -27,7 +27,7 @@ if($mailtype){
             $regmailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
             $regmailmessage = "<html><body>";
             $regmailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
-            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . "' color: '" . $headerforecolorvalue . "'>";
+            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . "'; font-size: 30px; font-weight: bold; color: '" . $headerforecolorvalue . "'; padding: 25px; width=100%;>";
             $regmailmessage .= $customer . "</p>";
             $regmailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
             $regmailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
