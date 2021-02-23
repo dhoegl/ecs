@@ -15,7 +15,7 @@ $mailtype = $_POST['Mailtype'];
 $aResult = array();
 
 if($mailtype){
-    $response = "Mailtype received";
+    $response = "Mailtype received" + " = " + $mailtype;
 };
 
 
