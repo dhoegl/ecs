@@ -3,6 +3,7 @@ session_start();
 require_once('../dbconnect.php');
 // Updated 20210130
 //Tenant Configuration JavaScript Call
+// Called from forgot_password_submit.js
 // echo "<script type='text/javascript' src='../js/config_ajax_call.js'></script>";
 
 $emailaddr3 = "";

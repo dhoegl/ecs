@@ -1,14 +1,13 @@
 <?php
 // Send Mail scripts
-// Updated 2020/12/09
-// Getting error when this script is 'include'd in ajax_update_new_registrant.php
+// Updated 2021/02/23
+// This function will send email to users and admins
 session_start();
 if(!$_SESSION['logged in']) {
 	header("location:../welcome.php");
 	exit();
 }
 $text = array();
-// This function will send email to users and admins
 $mailtype = $_POST['Mailtype'];
 $domain = $_POST['Domain'];
 $customer = $_POST['Customer'];

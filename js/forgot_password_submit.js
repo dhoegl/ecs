@@ -1,5 +1,7 @@
 // Perform AJAX forget password on password reset submit
 //JQuery
+//Called from recover_submit.php
+// Last Updated 20210223
 
 function resetrequest(reset_submit, first_submit, last_submit, user_submit, login_ID) {
     console.log("Made it to forgot_password_submit script ");

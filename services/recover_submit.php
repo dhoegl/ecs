@@ -1,11 +1,5 @@
 <?php
-// Last Updated: 01/07/2021:
-
-//session_start();
-//if(!$_SESSION['logged in']) {
-//	header("location:../ofc_welcome.php");
-//	exit();
-//}
+// Last Updated: 20210223:
 
 require_once('../dbconnect.php');
 //include_once('/includes/event_logs_update.php');
@@ -31,7 +25,7 @@ if(isset($_POST['password_reset']))
         {
             echo "<script language='javascript'>";
             echo "alert('You must select a valid username. Please re-enter your username.');";
-            echo "window.location(//tec.ourfamilyconnections.org/recover.php";
+            echo "window.location(../recover.php";
             echo "</script>";
             // exit('No rows');
             header("location:../recover.php");
@@ -51,7 +45,8 @@ if(isset($_POST['password_reset']))
         echo "console.log('Last = " . $lastname . "');";
         echo "</script>";
         $stmt->close();
-//        echo "<center><strong><font color='Blue'>An email has been sent to " . $emailaddr . ".</font><br />Please check this email mailbox for further instructions</strong></center>";
+
+        // Send Reset Request to handler at forgot_password_submit.js
         echo "
 		    <script type='text/javascript'>
 			    resetrequest('$emailaddr', '$firstname', '$lastname', '$username', '$LoginID');
