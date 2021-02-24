@@ -18,7 +18,7 @@ $login = $_POST['Login']; //UserName
 $firstname = $_POST['First'];
 $lastname = $_POST['Last'];
 $email = $_POST['Email'];
-$key = $_POST['ResetKey']
+$key = $_POST['ResetKey'];
 
 if($mailtype){
     Switch ($mailtype){
