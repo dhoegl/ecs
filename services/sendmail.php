@@ -14,129 +14,90 @@ $domain = $_POST['Domain'];
 $customer = $_POST['Customer'];
 $headercolorvalue = $_POST['HeaderColor'];
 $headerforecolorvalue = $_POST['Headerforecolorvalue'];
-$loginID = $_POST['LoginID'];
+$login = $_POST['Login']; //UserName
 $firstname = $_POST['First'];
 $lastname = $_POST['Last'];
 $email = $_POST['Email'];
+$key = $_POST['ResetKey']
 
 if($mailtype){
     Switch ($mailtype){
-        case 'approved_member':
-            $regmaillink = $domain;
-            $regmailto = $email;
-            $regmailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
-            $regmailmessage = "<html><body>";
-            $regmailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
-            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
-            $regmailmessage .= $customer . "</p>";
-            $regmailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
-            $regmailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
-            $regmailmessage .= "<p>Click on the link below to login<br /></p>";
-            $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $customer . "</a></p>";
-            $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
-            $regmailmessage .= "</body></html>";
-            $regmailfrom = "noreply@ourfamilyconnections.org";
-            $regmailheaders = "From:" . $regmailfrom . "\r\n";
-            $regmailheaders .= "Reply-To:" . $regmailfrom . "\r\n";
-            $regmailheaders .= "MIME-Version: 1.0\r\n";
-            $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+        case 'password_reset':
+            $maillink = $domain;
+            $mailto = $email;
+            $mailsubject = "Password Reset Request for " . $login . "." . "\n..";
+            $mailmessage = "<html><body>";
+            $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+            $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
+            $mailmessage .= $customer . "</p>";
+            $mailmessage .= "<p>Hello <strong>" . $login . "</strong></p>";
+            $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
+            $mailmessage .= "<p>If you did not submit this request, please notify your " . $customer . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
+            $domain_url = "<p>" . $maillink . "/pass_renew.php?a=recover@email=";
+            $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($login));
+            $mailmessage .= $passwordLink . "</p><br /><br />";
+            $mailmessage .= "<p>NOTE: The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the home page and reset your password again.</p>";
+            $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+            $mailmessage .= "</body></html>";
+            $mailfrom = "passwordreset@ourfamilyconnections.org";
+            $mailheaders = "From:" . $mailfrom . "\r\n";
+            $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
+            $mailheaders .= "MIME-Version: 1.0\r\n";
+            $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
         case 'register_request':
-            $regmaillink = $domain;
-            $regmailto = $email;
-            $regmailsubject = "Registration Request to " . $customer . " family directory" . "\n..";
-            $regmailmessage = "<html><body>";
-            $regmailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
-            $regmailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
-            $regmailmessage .= $customer . "</p>";
-            $regmailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators</p>";
-            $regmailmessage .= "<p>" . $firstname . " " . $lastname . " has reqeuested to be added to <strong>" . $customer . "'s</strong> family directory.</p>";
-            $regmailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request.</p>";
-            $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $customer . "</a></p>";
-            $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
-            $regmailmessage .= "</body></html>";
-            $regmailfrom = "newfamilyrequest@ourfamilyconnections.org";
-            $regmailheaders = "From:" . $regmailfrom . "\r\n";
-            $regmailheaders .= "Reply-To:" . $regmailfrom . "\r\n";
-            $regmailheaders .= "MIME-Version: 1.0\r\n";
-            $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+            $maillink = $domain;
+            $mailto = $email;
+            $mailsubject = "Registration Request to " . $customer . " family directory" . "\n..";
+            $mailmessage = "<html><body>";
+            $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+            $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
+            $mailmessage .= $customer . "</p>";
+            $mailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators</p>";
+            $mailmessage .= "<p>" . $firstname . " " . $lastname . " has reqeuested to be added to <strong>" . $customer . "'s</strong> family directory.</p>";
+            $mailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request.</p>";
+            $mailmessage .= "<p><a href='" . $maillink . "'>" . $customer . "</a></p>";
+            $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+            $mailmessage .= "</body></html>";
+            $mailfrom = "newfamilyrequest@ourfamilyconnections.org";
+            $mailheaders = "From:" . $mailfrom . "\r\n";
+            $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
+            $mailheaders .= "MIME-Version: 1.0\r\n";
+            $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
-    
+        case 'approved_member':
+            $maillink = $domain;
+            $mailto = $email;
+            $mailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
+            $mailmessage = "<html><body>";
+            $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+            $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
+            $mailmessage .= $customer . "</p>";
+            $mailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
+            $mailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
+            $mailmessage .= "<p>Click on the link below to login<br /></p>";
+            $mailmessage .= "<p><a href='" . $maillink . "'>" . $customer . "</a></p>";
+            $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+            $mailmessage .= "</body></html>";
+            $mailfrom = "noreply@ourfamilyconnections.org";
+            $mailheaders = "From:" . $mailfrom . "\r\n";
+            $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
+            $mailheaders .= "MIME-Version: 1.0\r\n";
+            $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+            $response = "Mailtype received" . " = " . $mailtype;
+            break;
+        
             };
 }
 else {
     $response = "ERROR on Mailtype at sendmail.php";
 };
 
-
-// $text[] = array('Status' => 'Accept Success');
-// header('Content-type: application/json');
-// echo json_encode($text);
 echo $response;
-// echo json_encode($aResult);
-
-
-
-
-
-// 12/27 Test Script to validate arrival into this code
-//include('../includes/event_logs_update.php');
-// eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Email sent using sendmail", "LoginID: " . "empty");
-
-// function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6, $param7, $param8) { // params based on each call to sendmail
-    //$mailtype = type of email to send
-    //$param1 = 'Customer Name' - Name of church/school (email banner)
-    //$param2 = 'Domain' - Site domain - used to insert domain information into login email
-    //$param3 = 'headercolor' - brand banner color for email header
-    //$param4 = 'headerforecolor' - brand text color for email header
-    //$param5 = 'Login' - approved member's user login id
-    //$param6 = 'FirstName' - approved member's first name
-    //$param7 = 'LastName' - approved member's last name
-    //$param8 = 'Email' - approved member's email address
-    // Switch ($mailtype){
-        // case 'approved_member':
-            //$cookie_name = "reg_notify_from";
-            //if(!isset($_COOKIE[$cookie_name])) {
-                //echo "Cookie named '" . $cookie_name . "' is not set!";
-            //} else {
-                //echo "Cookie '" . $cookie_name . "' is set!<br>";
-                //$regmailfrom = $_COOKIE[$cookie_name];
-            //}
-            //$cookie_name = "reg_notify_link";
-            //if(!isset($_COOKIE[$cookie_name])) {
-                //echo "Cookie named '" . $cookie_name . "' is not set!";
-            //} else {
-                //echo "Cookie '" . $cookie_name . "' is set!<br>";
-            //    $regmaillink = "http://" . $_COOKIE[$cookie_name];
-            //}
-            //$regmaillink = "http://" . $_COOKIE[$cookie_name];
-            // $regmaillink = "https://tec.ourfamilyconnections.org";
-            // $regmaillink = "//" . $param2;
-            // $regmailto = $param6;
-            // $regmailsubject = "Approved access to the " . $param1 . " family directory" . "\n..";
-            // $regmailmessage = "<html><body>";
-            // $regmailmessage .= "<p style='background-color: " .  #ff6933; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> Trinity Evangel Church</p>";
-            // $regmailmessage .= "<p>Hello <strong>" . $param6 . " " . $param7 . "</strong></p>";
-            // $regmailmessage .= "<p>You have been approved to access the " . $param1 . "'s directory site!</p>";
-            // $regmailmessage .= "<p>Click on the link below to login<br /></p>";
-            // $regmailmessage .= "<p><a href='" . $regmaillink . "'>" . $regmaillink . "</a></p>";
-            // $regmailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
-            // $regmailmessage .= "</body></html>";
-            // $regmailfrom = "noreply@ourfamilyconnections.org";
-            // $regmailheaders = "From:" . $regmailfrom . "\r\n";
-            // $regmailheaders .= "Reply-To:" . $regmailfrom . "\r\n";
-            // $regmailheaders .= "MIME-Version: 1.0\r\n";
-            // $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            // mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
-
-        //     break;
-        // default:
-    // }
-// };
-
 
 ?>

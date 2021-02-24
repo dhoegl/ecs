@@ -154,8 +154,8 @@ include('/services/sendmail.php');
                                     <label class="form-check-label" for="type_cu">contact_us</label>
                                 </div>
                                 <br />
-                                    <label for="param1">LoginID:<span id="unique_user"></span></label>
-                                    <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="LoginID">
+                                    <label for="param1">Login:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="UserName">
                                     </input>
                                     <label for="param2">First Name:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param2" id="param2_id" aria-describedby="param2" placeholder="First Name">
@@ -165,6 +165,9 @@ include('/services/sendmail.php');
                                     </input>
                                     <label for="param4">Email Address:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param4" id="param4_id" aria-describedby="param4" placeholder="Email Address">
+                                    </input>
+                                    <label for="param5">Reset Key:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="param5" id="param5_id" aria-describedby="param5" placeholder="Password Reset Key">
                                     </input>
                                         <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
                                         <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
@@ -193,6 +196,7 @@ include('/services/sendmail.php');
 		$param2 = "";
 		$param3 = "";
 		$param4 = "";
+		$param5 = "";
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
@@ -247,6 +251,7 @@ adminjQ(document).ready(function () {
         var param2_entry = "";
         var param3_entry = "";
         var param4_entry = "";
+        var param5_entry = "";
 
         mailtype = adminjQ("input[name='mailtype']:checked").val()
         // mailtype = adminjQ("#mailtype").val();
@@ -268,6 +273,8 @@ adminjQ(document).ready(function () {
         console.log("last = " + param3_entry);
         param4_entry = adminjQ("#param4_id").val();
         console.log("email = " + param4_entry);
+        param5_entry = adminjQ("#param5_id").val();
+        console.log("resetkey = " + param5_entry);
 
         var email_send = adminjQ.ajax({
             url: 'services/sendmail.php',
@@ -279,10 +286,11 @@ adminjQ(document).ready(function () {
                 "Customer": customer,
                 "HeaderColor": headercolorvalue,
                 "Headerforecolorvalue": headerforecolorvalue,
-                "LoginID": param1_entry,
+                "Login": param1_entry,
                 "First": param2_entry,
                 "Last": param3_entry,
-                "Email": param4_entry
+                "Email": param4_entry,
+                "ResetKey": param5_entry
             },
         });
             // The ajax call succeeded. 
