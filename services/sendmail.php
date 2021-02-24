@@ -7,6 +7,7 @@ if(!$_SESSION['logged in']) {
 	header("location:../welcome.php");
 	exit();
 }
+require_once('../dbconnect.php');
 $text = array();
 $mailtype = $_POST['Mailtype'];
 $domain = $_POST['Domain'];
@@ -47,8 +48,15 @@ if($mailtype){
             $response = "Mailtype received" . " = " . $mailtype;
             break;
         case 'register_request':
+            // Send notification email to All registration admins (admin_regnotify = 1) for them to ACCEPT/REJECT the request
+            $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
+            $mailquery = $mysql->query($mailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            while ($mailrow = $mailquery->fetch_assoc())
+            {
+                $mailtest = $mailrow['email_addr'];
+                $mailto = $mailtest . " , " . $mailto;
+            }
             $maillink = $domain;
-            $mailto = $email;
             $mailsubject = "Registration Request to " . $customer . " family directory" . "\n..";
             $mailmessage = "<html><body>";
             $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
