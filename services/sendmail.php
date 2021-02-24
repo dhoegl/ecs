@@ -63,7 +63,7 @@ if($mailtype){
             $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
             $mailmessage .= $customer . "</p>";
             $mailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators</p>";
-            $mailmessage .= "<p>" . $firstname . " " . $lastname . " has reqeuested to be added to <strong>" . $customer . "'s</strong> family directory.</p>";
+            $mailmessage .= "<p><strong>" . $firstname . " " . $lastname . "</strong> has reqeuested to be added to <strong>" . $customer . "'s</strong> family directory.</p>";
             $mailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request.</p>";
             $mailmessage .= "<p><a href='" . $maillink . "'>" . $customer . "</a></p>";
             $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
