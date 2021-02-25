@@ -71,45 +71,46 @@ include('/services/sendmail.php');
                     </div>
                     <div class="card-text font-weight-bold my-2">
                         <ul class="list-group">
-                            <li class="list-group-item">function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
+                            <li class="list-group-item">function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
                             <li>$mailtype = type of email to send</li>
                             <ul>
-                                <!-- <li>password_reset</li>
-                                <ul>
+                                <li>password_reset</li>
+                                <!-- <ul>
                                     <li>$param1 = 'mailto' - the email address of the recipient</li>
                                     <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
                                     <li>$param3 = 'Message' - the body text of the outbound email</li>
                                     <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
                                     <li>$param5 = 'NULL' - enter NULL into this field</li>
                                     <li>$param6 = 'NULL' - enter NULL into this field</li>
-                                </ul>
+                                </ul> -->
                                 <li>register_request</li>
-                                <ul>
+                                <!-- <ul>
                                     <li>$param1 = 'mailto' - the email address of the recipient</li>
                                     <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
                                     <li>$param3 = 'Message' - the body text of the outbound email</li>
                                     <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
                                     <li>$param5 = 'NULL' - enter NULL into this field</li>
                                     <li>$param6 = 'NULL' - enter NULL into this field</li>
-                                </ul>
+                                </ul> -->
                                 <li>approved_member</li>
-                                <ul>
+                                <!-- <ul>
                                     <li>$param1 = 'login' - approved member's user login id</li>
                                     <li>$param2 = 'first' - approved member's first name</li>
                                     <li>$param3 = 'last' - approved member's last name</li>
                                     <li>$param4 = 'email' - approved member's email address</li>
-                                </ul>
+                                </ul> -->
                                 <li>registered_notify</li>
-                                <ul>
+                                <!-- <ul>
                                     <li>$param1 = 'mailto' - the email address of the recipient</li>
                                     <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
                                     <li>$param3 = 'Message' - the body text of the outbound email</li>
                                     <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
                                     <li>$param5 = 'NULL' - enter NULL into this field</li>
                                     <li>$param6 = 'NULL' - enter NULL into this field</li>
-                                </ul>
+                                </ul> -->
                                 <li>contact_us</li>
-                                <ul>
+                                <!-- <ul>
                                     <li>$param1 = 'mailto' - the email address of the recipient</li>
                                     <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
                                     <li>$param3 = 'Message' - the body text of the outbound email</li>
