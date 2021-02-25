@@ -155,6 +155,12 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
                                     <label class="form-check-label" for="type_cu">contact_us</label>
                                 </div>
                                 <br />
+                                    <label for="family_select">Family Select:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="family_select" id="family_select_id" aria-describedby="family_select" placeholder="family_select">
+                                    </input>
+                                    <label for="admin_dir">Admin DirID:<span id="unique_user"></span></label>
+                                    <input type="text" class="form-control" name="admin_dir" id="admin_dir_id" aria-describedby="admin_dir" placeholder="admin_dir">
+                                    </input>
                                     <label for="param1">Login:<span id="unique_user"></span></label>
                                     <input type="text" class="form-control" name="param1" id="param1_id" aria-describedby="param1" placeholder="UserName">
                                     </input>
@@ -266,6 +272,10 @@ adminjQ(document).ready(function () {
         console.log("headercolorvalue = " + headercolorvalue);
         headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
         console.log("headerforecolorvalue = " + headerforecolorvalue);
+        family_select_entry = adminjQ("#family_select_id").val();
+        console.log("family_select = " + family_select_entry);
+        admin_dir_entry = adminjQ("#admin_dir_id").val();
+        console.log("admin_dir = " + admin_dir_entry);
         param1_entry = adminjQ("#param1_id").val();
         console.log("login = " + param1_entry);
         param2_entry = adminjQ("#param2_id").val();
@@ -287,6 +297,8 @@ adminjQ(document).ready(function () {
                 "Customer": customer,
                 "HeaderColor": headercolorvalue,
                 "Headerforecolorvalue": headerforecolorvalue,
+                "Family": family_select_entry,
+                "Admin": admin_dir_entry,
                 "Login": param1_entry,
                 "First": param2_entry,
                 "Last": param3_entry,
@@ -294,6 +306,8 @@ adminjQ(document).ready(function () {
                 "ResetKey": param5_entry
             },
         });
+    //$family_select = 'Selected' - which family the approved member is being added to
+    //$admin_dir = 'Directory' - Registration Admin's idDirectory entry
             // The ajax call succeeded. 
             email_send.done(function (data, textStatus, jqXHR) {
                 alert( "Send Email ajax call Success: " + data);
