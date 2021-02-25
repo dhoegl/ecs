@@ -42,6 +42,8 @@ $domain = $_POST['Domain'];
 $customer = $_POST['Customer'];
 $headercolorvalue = $_POST['HeaderColor'];
 $headerforecolorvalue = $_POST['Headerforecolorvalue'];
+$family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
+$admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
 $login = $_POST['Login']; //UserName
 $firstname = $_POST['First'];
 $lastname = $_POST['Last'];
@@ -75,7 +77,7 @@ if($mailtype){
             $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
             $mailheaders .= "MIME-Version: 1.0\r\n";
             $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+            // mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
         case 'register_request':
@@ -104,7 +106,7 @@ if($mailtype){
             $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
             $mailheaders .= "MIME-Version: 1.0\r\n";
             $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+            // mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
         case 'approved_member':
@@ -126,7 +128,7 @@ if($mailtype){
             $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
             $mailheaders .= "MIME-Version: 1.0\r\n";
             $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+            // mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
         

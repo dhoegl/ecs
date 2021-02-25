@@ -92,6 +92,8 @@ adminjQ(document).ready(function () {
                             "Customer": customer,
                             "HeaderColor": headercolorvalue,
                             "Headerforecolorvalue": headerforecolorvalue,
+                            "Family": $family_select,
+                            "Admin": $admin_dir,
                             "Login": $login,
                             "First": $first,
                             "Last": $last,
