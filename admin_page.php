@@ -74,7 +74,7 @@ include('/services/sendmail.php');
                             <li class="list-group-item">function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail</li>
                             <li>$mailtype = type of email to send</li>
                             <ul>
-                                <li>password_reset</li>
+                                <!-- <li>password_reset</li>
                                 <ul>
                                     <li>$param1 = 'mailto' - the email address of the recipient</li>
                                     <li>$param2 = 'Subject' - the Subject line text of the outbound email</li>
@@ -116,7 +116,7 @@ include('/services/sendmail.php');
                                     <li>$param4 = 'Headers' - items containing header information for the outbound email</li>
                                     <li>$param5 = 'NULL' - enter NULL into this field</li>
                                     <li>$param6 = 'NULL' - enter NULL into this field</li>
-                                </ul>
+                                </ul> -->
 
                         </ul>
                     </div>

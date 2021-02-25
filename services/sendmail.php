@@ -9,6 +9,34 @@ if(!$_SESSION['logged in']) {
 }
 require_once('../dbconnect.php');
 $text = array();
+
+// function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+    //$mailtype = type of email to send
+    //$customer = 'Customer Name' - Name of church/school (email banner)
+    //$domain = 'Domain' - Site domain - used to insert domain information into login email
+    //$headercolor = 'headercolor' - brand banner color for email header
+    //$headerforecolor = 'headerforecolor' - brand text color for email header
+    //$family_select = 'Selected' - which family the approved member is being added to
+    //$admin_dir = 'Directory' - Registration Admin's idDirectory entry
+    //$login/$Login2 = 'Login' - approved member's user login id
+    //$first/$FirstNane2 = 'FirstName' - approved member's first name
+    //$last/$LastName2 = 'LastName' - approved member's last name
+    //$email/$Email2 = 'Email' - approved member's email address
+    //$reset = 'ResetKey' - key credential for password reset
+// AJAX data
+    // data: {
+    //     "Mailtype": $mailtype,
+    //     "Domain": domain,
+    //     "Customer": customer,
+    //     "HeaderColor": headercolorvalue,
+    //     "Headerforecolorvalue": headerforecolorvalue,
+    //     "Login": $login,
+    //     "First": $first,
+    //     "Last": $last,
+    //     "Email": $email,
+    //     "ResetKey": $reset
+
+
 $mailtype = $_POST['Mailtype'];
 $domain = $_POST['Domain'];
 $customer = $_POST['Customer'];
@@ -19,6 +47,9 @@ $firstname = $_POST['First'];
 $lastname = $_POST['Last'];
 $email = $_POST['Email'];
 $key = $_POST['ResetKey'];
+
+
+
 
 if($mailtype){
     Switch ($mailtype){

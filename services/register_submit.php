@@ -5,7 +5,8 @@
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
     // Add Footer to page
-    // require_once('includes/footer.php');
+    // Enable sendmail script to notify Admins re: register request
+    include('sendmail.php');
 
 
 if(isset($_POST['registersubmit']))
@@ -56,6 +57,7 @@ if(isset($_POST['registersubmit']))
     // $reglogintableupdate->close();
 
     // Send notification email to Admins for ACCEPT/REJECT
+
     $regmailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
     $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
     $regmaillink = "https://tec.ourfamilyconnections.org";
