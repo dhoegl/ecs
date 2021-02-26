@@ -2,6 +2,10 @@
 //New Registrant Accept script
 //Called from regadmin.php
 //Last Updated 2020/12/09
+echo "<script language='javascript'>";
+echo "alert('Arrived at ajax_update_new_registrant);";
+echo "</script>";
+
     if ( isset($_POST['Selected']) ) {
         require('../dbconnect.php');
         include('../includes/event_logs_update.php');
