@@ -1,9 +1,9 @@
 <?php
 // Transform sendmail function call from pages that require outbound email. Convert php sendmail function into AJAX calls to sendmail script
 // Last Modified: 2021/02/24
-session_start();
-require_once 'dbconnect.php';
-include('services/sendmail.php');
+// session_start();
+// require_once 'dbconnect.php';
+// include('services/sendmail.php');
 
 ?>
 
