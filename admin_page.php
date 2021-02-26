@@ -4,6 +4,8 @@
 session_start();
 require_once 'dbconnect.php';
 include('/services/sendmail.php');
+include('/services/sendmail_stage.php');
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -184,6 +186,7 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
                                 <input type="submit" class="btn btn-primary" name="emailsubmit" id="email_submit" value="Send Email" />
+                                <input type="submit" class="btn btn-warning" name="sendmail_stage" id="sendmail_stage" value="sendmail_stage" />
                             </div>
                         </form>
                    </div>
@@ -195,6 +198,7 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
 <?php
 	$submit = $_POST['emailsubmit'];
 	$clear = $_POST['clear'];
+    $sendmail_stage = $_POST['sendmail_stage'];
 
 	if($clear) //		echo "Clear was clicked";
 	{
@@ -234,6 +238,22 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
         // echo "</script>";
     
 	}
+// Test call sendmail_stage script
+    if($sendmail_stage)
+    {
+        $customer = "";
+        $domain = "";
+        $headercolor = "";
+        $headerforecolor = "";
+        $family_select = "";
+        $admin_dir = "";
+        $Login2 = "";
+        $FirstName2 = "";
+        $LastName2 = "";
+        $Email2 = "";
+        $reset = "";
+    sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
+    }
 ?> 
 
 

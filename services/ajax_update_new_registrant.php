@@ -19,6 +19,7 @@
         $FirstName2 = $_POST['FirstName'];
         $LastName2 = $_POST['LastName'];
         $Email2 = $_POST['Email'];
+        $reset = "";
         $text = array();
         if($Selected2 == '0'){ // New family
             $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1' WHERE idDirectory = '". $Directory2 . "'";
