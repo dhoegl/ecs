@@ -255,9 +255,11 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
         $LastName2 = "1";
         $Email2 = "1";
         $reset = "1";
-        echo "<script language='javascript'>";
-        echo "sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset)";
-        echo "</script>";
+?>
+<script language='javascript'>
+        sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset)
+</script>
+<?php
     }
 ?> 
 
