@@ -92,9 +92,9 @@ $count = $result->num_rows;
 
         //var $result = data.responseText;
         var $result = data,
-            $status = $result.Status,
-            $script = $result.script,
-            $line = $result.line;
+            $status = data.Status,
+            $script = data.script,
+            $line = data.line;
 
         alert("A problem has occurred with your registrant approval/rejection. Please notify your administrator with the following error: 'regadmin: Error = " + $result + "'");
         console.log("data = " + $result);
