@@ -244,6 +244,7 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
     echo "<script language='javascript'>";
     echo "console.log('Arrived at sendmail_stage call = " . $sendmail_stage . "');";
     echo "</script>";
+    }
 ?>
 <!-- <script language='javascript'>
         $customer = "1";
