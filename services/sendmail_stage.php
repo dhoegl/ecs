@@ -27,26 +27,26 @@
 <script type="text/javascript">
 // var adminjQ = jQuery.noConflict();
 // adminjQ(document).ready(function () {
-//     var mailtype = "";
-//     var paramcheck2 = "";
-//     var customer = "";
-//     var domain = "";
-//     var headercolorvalue = "";
-//     var headerforecolorvalue = "";
-//     var $mailtype = "";
-//     var $customer = "";
-//     var $domain = "";
-//     var $headercolor  = "";
-//     var $headerforecolor = "";
-//     var $family_select = "";
-//     var $admin_dir = "";
-//     var $login = "";
-//     var $first = "";
-//     var $last = "";
-//     var $email = "";
-//     var $reset = "";
+    var mailtype = "";
+    var paramcheck2 = "";
+    var customer = "";
+    var domain = "";
+    var headercolorvalue = "";
+    var headerforecolorvalue = "";
+    var $mailtype = "";
+    var $customer = "";
+    var $domain = "";
+    var $headercolor  = "";
+    var $headerforecolor = "";
+    var $family_select = "";
+    var $admin_dir = "";
+    var $login = "";
+    var $first = "";
+    var $last = "";
+    var $email = "";
+    var $reset = "";
 //     function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
-// function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
     //$mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
     //$domain = 'Domain' - Site domain - used to insert domain information into login email
@@ -106,6 +106,7 @@
                         // domain = paramcheck.find("#domainname").text();
                         // console.log("Domain Name = " + domain);
             // })
+    }
 </script>
 
 </body>
