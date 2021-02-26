@@ -241,6 +241,9 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
 // Test call sendmail_stage script
     if($sendmail_stage)
     {
+    echo "<script language='javascript'>";
+    echo "console.log('Arrived at sendmail_stage call = " . $sendmail_stage . "');";
+    echo "</script>";
         $customer = "";
         $domain = "";
         $headercolor = "";
