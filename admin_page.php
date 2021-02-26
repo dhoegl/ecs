@@ -3,8 +3,8 @@
 // Last Modified: 2021/02/13
 session_start();
 require_once 'dbconnect.php';
-include('services/sendmail.php');
-include('services/sendmail_stage.php');
+include('/services/sendmail.php');
+include('/services/sendmail_stage.php');
 
 
 ?>
