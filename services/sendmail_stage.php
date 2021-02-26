@@ -48,8 +48,8 @@ echo "</script>";
     var $last = "";
     var $email = "";
     var $reset = "";
-//     function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
-function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+// function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
     //$mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
     //$domain = 'Domain' - Site domain - used to insert domain information into login email
