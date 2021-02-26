@@ -3,7 +3,7 @@
 // Last Modified: 2021/02/24
 session_start();
 require_once 'dbconnect.php';
-include('sendmail.php');
+include('services/sendmail.php');
 
 ?>
 
