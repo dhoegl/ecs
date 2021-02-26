@@ -27,6 +27,7 @@
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to New Family - Directory entry: " . $Directory2);
             // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
+            $response = "success entry to new family";
         }
 // function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
     //$mailtype = type of email to send
@@ -58,14 +59,17 @@
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " . $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to Directory entry: " . $Selected2);
             // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
-        }
-        $text[] = array('Status' => 'Accept Success');
-	    header('Content-type: application/json');
-        echo json_encode($text);
+        $response = "success entry to existing family";
+        // $text[] = array('Status' => 'Accept Success');
+	    // header('Content-type: application/json');
+        // echo json_encode($text);
+        echo $response;
     }
+}
     else{
-        $text[] = array('Status' => 'Accept Failed');
-	    header('Content-type: application/json');
-        echo json_encode($text);
+        // $text[] = array('Status' => 'Accept Failed');
+	    // header('Content-type: application/json');
+        // echo json_encode($text);
+        echo $response;
     }
 ?>
