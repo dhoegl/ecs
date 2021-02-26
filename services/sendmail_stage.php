@@ -9,56 +9,43 @@ include('sendmail.php');
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Admin Page</title>
+    <head>
+        <!-- Initialize jquery js script -->
+        <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
 
-    <!-- Bootstrap 4 BETA CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
-    
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap453/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="css/MDBootstrap4191/mdb.min.css" rel="stylesheet">
-<!-- Your custom styles (optional) -->
-<link href="css/MDBootstrap4191/style.css" rel="stylesheet">
-
-<!-- Test custom styles (Includes tec style details) -->
-<link href="css/css_style.css" rel="stylesheet">
-<!-- Tenant-specific stylesheet -->
-<link href="_tenant/css/tenant.css" rel="stylesheet">
-<!-- Initialize jquery js script -->
-<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
-
-<!-- jQuery (necessary for Bootstrap's (BOOTSTRAP 4 BETA) JavaScript plugins) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-
-
-</head>
+    </head>
 <body>
-<!-- Tenant Configuration JavaScript Call in nav -->
-<script type="text/javascript" src="/js/config_ajax_call.js"></script>
+    <!-- Tenant Configuration JavaScript Call in nav -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 
-<input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
-<input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
-<input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
-<input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
+    <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
+    <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
+    <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
+    <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
 
 
 <!-- **************************** Get the DOM text of hidden parameters ******************** -->
 <script type="text/javascript">
 var adminjQ = jQuery.noConflict();
 adminjQ(document).ready(function () {
+    var mailtype = "";
+    var paramcheck2 = "";
+    var customer = "";
+    var domain = "";
+    var headercolorvalue = "";
+    var headerforecolorvalue = "";
+    var $mailtype = "";
+    var $customer = "";
+    var $domain = "";
+    var $headercolor  = "";
+    var $headerforecolor = "";
+    var $family_select = "";
+    var $admin_dir = "";
+    var $login = "";
+    var $first = "";
+    var $last = "";
+    var $email = "";
+    var $reset = "";
     function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
 // function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
     //$mailtype = type of email to send
