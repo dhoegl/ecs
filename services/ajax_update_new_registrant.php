@@ -85,7 +85,7 @@ echo "</script>";
         // echo json_encode($text);
         echo $response;
     }
-    // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
+    sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
     ?>
 </body>
 </html>
