@@ -5,7 +5,7 @@
 // require_once 'dbconnect.php';
 // include('services/sendmail.php');
 echo "<script language='javascript'>";
-echo "console.log('Arrived at sendmail_stage script = " . $sendmail_stage . "');";
+echo "console.log('Arrived at sendmail_stage');";
 echo "</script>";
 
 ?>
