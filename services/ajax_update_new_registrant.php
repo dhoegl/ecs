@@ -15,9 +15,9 @@ echo "console.log('Arrived at ajax_update_new_registrant');";
 echo "</script>";
 
     if ( isset($_POST['Selected']) ) {
-        require(dirname(__FILE__) . '/dbconnect.php');
-        include(dirname(__FILE__) . '/includes/event_logs_update.php');
-        include(dirname(__FILE__) . '/services/sendmail_stage.php');
+        require('../dbconnect.php');
+        include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
+        include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
         $customer = "";
         $domain = "";
         $headercolor = "";
