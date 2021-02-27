@@ -17,7 +17,7 @@ echo "</script>";
     if ( isset($_POST['Selected']) ) {
         require('../dbconnect.php');
         include('../includes/event_logs_update.php');
-        include('/services/sendmail_stage.php');
+        include('services/sendmail_stage.php');
         $customer = "";
         $domain = "";
         $headercolor = "";
