@@ -24,5 +24,8 @@ include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
         $reset = "";
         $text = array();
     // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
-
+    echo "<script language='javascript'>";
+    echo "alert('Reached the end of test_sendmail_stage - Errors?');";
+    echo "</script>";
+    
 ?>
