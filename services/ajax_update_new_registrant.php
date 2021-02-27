@@ -15,7 +15,7 @@ echo "console.log('Arrived at ajax_update_new_registrant');";
 echo "</script>";
 
     if ( isset($_POST['Selected']) ) {
-        require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
+        // require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
         // include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
         // include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
         $customer = "";
