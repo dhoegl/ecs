@@ -15,9 +15,9 @@ echo "console.log('Arrived at ajax_update_new_registrant');";
 echo "</script>";
 
     if ( isset($_POST['Selected']) ) {
-        // require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
-        // include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
-        // include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
+        require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
+        include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
+        include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
         $customer = "";
         $domain = "";
         $headercolor = "";
@@ -85,7 +85,7 @@ echo "</script>";
         // echo json_encode($text);
         echo $response;
     }
-    sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
+    // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
     ?>
 </body>
 </html>
