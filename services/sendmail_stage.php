@@ -50,11 +50,9 @@ echo "</script>";
     var $reset = "";
 function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
 // function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
-echo "<script language='javascript'>";
-echo "alert('Arrived at sendmail_stage');";
-echo "console.log('Arrived at sendmail_stage');";
-echo "</script>";
-    //$mailtype = type of email to send
+alert("Arrived at sendmail_stage";
+console.log("Arrived at sendmail_stage";
+    // $mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
     //$domain = 'Domain' - Site domain - used to insert domain information into login email
     //$headercolor = 'headercolor' - brand banner color for email header
