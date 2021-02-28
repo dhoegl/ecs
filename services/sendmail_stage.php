@@ -67,13 +67,13 @@ echo "</script>";
     //$reset = 'ResetKey' - key credential for password reset
     var adminjQ = jQuery.noConflict();
     adminjQ(document).ready(function () {
-    domain = adminjQ("#domainname").val();
+    domain = adminjQ("#domainname").text();
     console.log("Domain = " + domain);
-    customer = adminjQ("#custname").val();
+    customer = adminjQ("#custname").text();
     console.log("Customer = " + customer);
-    headercolorvalue = adminjQ("#headercolorvalue").val();
+    headercolorvalue = adminjQ("#headercolorvalue").text();
     console.log("headercolorvalue = " + headercolorvalue);
-    headerforecolorvalue = adminjQ("#headerforecolorvalue").val();
+    headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
     console.log("headerforecolorvalue = " + headerforecolorvalue);
     alert('I am her inside the script of sendmail_stage.php after adminJQ');
            
