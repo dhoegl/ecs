@@ -18,8 +18,6 @@
 <title></title>
     </head>
 <body>
-    <!-- Tenant Configuration JavaScript Call in nav -->
-    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 
     <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
     <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
@@ -124,6 +122,8 @@ echo "</script>";
 <div id="calendar_service"></div>
 <div id="prayer_service"></div>
 <div id="events_service"></div>
+    <!-- Tenant Configuration JavaScript Call in nav -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 
 </body>
 </html>
