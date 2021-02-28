@@ -19,10 +19,10 @@
     </head>
 <body>
 
-    <input type="text" class="form-control hidden_params" id="custname" name="custnamename"></input>
-    <input type="text" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
-    <input type="text" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
-    <input type="text" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
+    <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
+    <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
+    <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
+    <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
 
 <?php
 function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
@@ -67,13 +67,13 @@ echo "</script>";
     //$reset = 'ResetKey' - key credential for password reset
     var adminjQ = jQuery.noConflict();
     adminjQ(document).ready(function () {
-    domain = adminjQ("#domainname").text();
+    domain = adminjQ("#domainname").val();
     console.log("Domain = " + domain);
-    customer = adminjQ("#custname").text();
+    customer = adminjQ("#custname").val();
     console.log("Customer = " + customer);
-    headercolorvalue = adminjQ("#headercolorvalue").text();
+    headercolorvalue = adminjQ("#headercolorvalue").val();
     console.log("headercolorvalue = " + headercolorvalue);
-    headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
+    headerforecolorvalue = adminjQ("#headerforecolorvalue").val();
     console.log("headerforecolorvalue = " + headerforecolorvalue);
     alert('I am her inside the script of sendmail_stage.php after adminJQ');
            
