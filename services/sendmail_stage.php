@@ -113,6 +113,11 @@ console.log("Arrived at sendmail_stage");
             // })
     }
 </script>
+<!-- Bug workaround due to service choice model -->
+<div id="directory_service"></div>
+<div id="calendar_service"></div>
+<div id="prayer_service"></div>
+<div id="events_service"></div>
 
 </body>
 </html>
