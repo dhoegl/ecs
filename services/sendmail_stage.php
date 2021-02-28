@@ -111,7 +111,7 @@ console.log("Arrived at sendmail_stage");
                         // domain = paramcheck.find("#domainname").text();
                         // console.log("Domain Name = " + domain);
             // })
-    }
+    })
 </script>
 <!-- Bug workaround due to service choice model -->
 <div id="directory_service"></div>
