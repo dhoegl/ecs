@@ -15,7 +15,7 @@ echo "</script>";
     <head>
         <!-- Initialize jquery js script -->
         <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
-
+<title></title>
     </head>
 <body>
     <!-- Tenant Configuration JavaScript Call in nav -->
