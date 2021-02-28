@@ -28,8 +28,6 @@
 
 <!-- **************************** Get the DOM text of hidden parameters ******************** -->
 <script type="text/javascript">
-var adminjQ = jQuery.noConflict();
-adminjQ(document).ready(function () {
     var mailtype = "";
     var paramcheck2 = "";
     var customer = "";
@@ -64,6 +62,8 @@ console.log("Arrived at sendmail_stage");
     //$last/$LastName2 = 'LastName' - approved member's last name
     //$email/$Email2 = 'Email' - approved member's email address
     //$reset = 'ResetKey' - key credential for password reset
+    var adminjQ = jQuery.noConflict();
+    adminjQ(document).ready(function () {
     domain = adminjQ("#domainname").text();
     console.log("Domain = " + domain);
     customer = adminjQ("#custname").text();
@@ -111,8 +111,9 @@ console.log("Arrived at sendmail_stage");
                         // domain = paramcheck.find("#domainname").text();
                         // console.log("Domain Name = " + domain);
             // })
-        }
-    })
+
+    });
+}
 </script>
 <!-- Bug workaround due to service choice model -->
 <div id="directory_service"></div>
