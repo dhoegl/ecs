@@ -41,7 +41,6 @@ echo "</script>";
     var domain = "";
     var headercolorvalue = "";
     var headerforecolorvalue = "";
-alert('I am her inside the script of sendmail_stage.php');
     // var $mailtype = "";
     // var $customer = "";
     // var $domain = "";
@@ -76,6 +75,7 @@ alert('I am her inside the script of sendmail_stage.php');
     console.log("headercolorvalue = " + headercolorvalue);
     headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
     console.log("headerforecolorvalue = " + headerforecolorvalue);
+    alert('I am her inside the script of sendmail_stage.php after adminJQ');
            
                     // var email_send = adminjQ.ajax({
                     //     url: 'services/sendmail.php',
