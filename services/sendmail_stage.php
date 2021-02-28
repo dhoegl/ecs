@@ -26,30 +26,34 @@
     <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
     <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
 
+<?php
+function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+echo "<script language='javascript'>";
+echo "alert('Arrived at sendmail_stage');";
+echo "console.log('Arrived at sendmail_stage');";
+echo "</script>";
+?>
+
 <!-- **************************** Get the DOM text of hidden parameters ******************** -->
 <script type="text/javascript">
-    var mailtype = "";
-    var paramcheck2 = "";
-    var customer = "";
-    var domain = "";
-    var headercolorvalue = "";
-    var headerforecolorvalue = "";
-    var $mailtype = "";
-    var $customer = "";
-    var $domain = "";
-    var $headercolor  = "";
-    var $headerforecolor = "";
-    var $family_select = "";
-    var $admin_dir = "";
-    var $login = "";
-    var $first = "";
-    var $last = "";
-    var $email = "";
-    var $reset = "";
-function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
-// function sendmail_setup($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
-alert("Arrived at sendmail_stage");
-console.log("Arrived at sendmail_stage");
+    // var mailtype = "";
+    // var paramcheck2 = "";
+    // var customer = "";
+    // var domain = "";
+    // var headercolorvalue = "";
+    // var headerforecolorvalue = "";
+    // var $mailtype = "";
+    // var $customer = "";
+    // var $domain = "";
+    // var $headercolor  = "";
+    // var $headerforecolor = "";
+    // var $family_select = "";
+    // var $admin_dir = "";
+    // var $login = "";
+    // var $first = "";
+    // var $last = "";
+    // var $email = "";
+    // var $reset = "";
     // $mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
     //$domain = 'Domain' - Site domain - used to insert domain information into login email
