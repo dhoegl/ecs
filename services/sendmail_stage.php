@@ -19,10 +19,10 @@
     </head>
 <body>
 
-    <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
-    <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
-    <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
-    <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
+    <input type="text" class="form-control hidden_params" id="custname" name="custnamename"></input>
+    <input type="text" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
+    <input type="text" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
+    <input type="text" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
 
 <?php
 function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
@@ -37,10 +37,10 @@ echo "</script>";
 <script type="text/javascript">
     // var mailtype = "";
     // var paramcheck2 = "";
-    var customer = "";
-    var domain = "";
-    var headercolorvalue = "";
-    var headerforecolorvalue = "";
+    // var customer = "";
+    // var domain = "";
+    // var headercolorvalue = "";
+    // var headerforecolorvalue = "";
     // var $mailtype = "";
     // var $customer = "";
     // var $domain = "";
