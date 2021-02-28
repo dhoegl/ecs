@@ -41,6 +41,7 @@ echo "</script>";
     var domain = "";
     var headercolorvalue = "";
     var headerforecolorvalue = "";
+alert('I am her inside the script of sendmail_stage.php');
     // var $mailtype = "";
     // var $customer = "";
     // var $domain = "";
