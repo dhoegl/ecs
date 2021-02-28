@@ -28,8 +28,8 @@ echo "</script>";
 
 <!-- **************************** Get the DOM text of hidden parameters ******************** -->
 <script type="text/javascript">
-// var adminjQ = jQuery.noConflict();
-// adminjQ(document).ready(function () {
+var adminjQ = jQuery.noConflict();
+adminjQ(document).ready(function () {
     var mailtype = "";
     var paramcheck2 = "";
     var customer = "";
@@ -64,14 +64,14 @@ console.log("Arrived at sendmail_stage");
     //$last/$LastName2 = 'LastName' - approved member's last name
     //$email/$Email2 = 'Email' - approved member's email address
     //$reset = 'ResetKey' - key credential for password reset
-    // domain = adminjQ("#domainname").text();
-    // console.log("Domain = " + domain);
-    // customer = adminjQ("#custname").text();
-    // console.log("Customer = " + customer);
-    // headercolorvalue = adminjQ("#headercolorvalue").text();
-    // console.log("headercolorvalue = " + headercolorvalue);
-    // headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
-    // console.log("headerforecolorvalue = " + headerforecolorvalue);
+    domain = adminjQ("#domainname").text();
+    console.log("Domain = " + domain);
+    customer = adminjQ("#custname").text();
+    console.log("Customer = " + customer);
+    headercolorvalue = adminjQ("#headercolorvalue").text();
+    console.log("headercolorvalue = " + headercolorvalue);
+    headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
+    console.log("headerforecolorvalue = " + headerforecolorvalue);
            
                     // var email_send = adminjQ.ajax({
                     //     url: 'services/sendmail.php',
