@@ -37,10 +37,10 @@ echo "</script>";
 <script type="text/javascript">
     // var mailtype = "";
     // var paramcheck2 = "";
-    // var customer = "";
-    // var domain = "";
-    // var headercolorvalue = "";
-    // var headerforecolorvalue = "";
+    var customer = "";
+    var domain = "";
+    var headercolorvalue = "";
+    var headerforecolorvalue = "";
     // var $mailtype = "";
     // var $customer = "";
     // var $domain = "";
