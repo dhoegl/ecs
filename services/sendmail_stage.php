@@ -32,6 +32,7 @@ echo "<script language='javascript'>";
 echo "alert('Arrived at sendmail_stage');";
 echo "console.log('Arrived at sendmail_stage');";
 echo "</script>";
+}
 ?>
 
 <!-- **************************** Get the DOM text of hidden parameters ******************** -->
@@ -117,7 +118,6 @@ echo "</script>";
             // })
 
     });
-}
 </script>
 <!-- Bug workaround due to service choice model -->
 <div id="directory_service"></div>
