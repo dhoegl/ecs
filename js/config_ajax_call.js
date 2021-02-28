@@ -16,9 +16,10 @@ function xmlParser(xml) {
     var titletext;
     titletext = (navJQ(xml).find('title').text());
     document.title = titletext;
-    var title_element = document.getElementById("navbar_brand");
+    if (document.getElementById("navbar_brand")) {
+        var title_element = document.getElementById("navbar_brand");
     title_element.innerHTML = titletext;
-
+    }
     //Get notify return address for registrant notification - NOTE this address is not monitored, but used to fulfill outbound email metadata
     // Store as cookie
     var cookie_name = "reg_notify_from";
