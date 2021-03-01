@@ -20,9 +20,13 @@
 <body>
 
     <p class="form-control hidden_params" id="custname" name="custnamename"></p>
-    <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
-    <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
-    <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
+    <!-- <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input> -->
+    <p class="form-control hidden_params" id="domainname" name="domainnamename"></p> 
+    <!-- <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input>  -->
+    <p class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></p> 
+    <!-- <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input>  -->
+    <p class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></p> 
+    <!-- <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input>  -->
 
 <?php
 function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
