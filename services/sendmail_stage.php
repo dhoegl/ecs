@@ -27,7 +27,7 @@
     <!-- <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input>  -->
     <p class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></p> 
     <!-- <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input>  -->
-
+    <button type="button" id="clickbutton" class="btn btn-primary">Click me</button>
 <?php
 function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
 echo "<script language='javascript'>";
@@ -71,15 +71,17 @@ echo "</script>";
     //$reset = 'ResetKey' - key credential for password reset
     var adminjQ = jQuery.noConflict();
     adminjQ(document).ready(function () {
-    domain = adminjQ("#domainname").text();
-    console.log("Domain = " + domain);
-    customer = adminjQ("#custname").text();
-    console.log("Customer = " + customer);
-    headercolorvalue = adminjQ("#headercolorvalue").text();
-    console.log("headercolorvalue = " + headercolorvalue);
-    headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
-    console.log("headerforecolorvalue = " + headerforecolorvalue);
-    alert('I am her inside the script of sendmail_stage.php after adminJQ');
+        adminjQ("#clickbutton").on("click", function () {
+            domain = adminjQ("#domainname").text();
+            console.log("Domain = " + domain);
+            customer = adminjQ("#custname").text();
+            console.log("Customer = " + customer);
+            headercolorvalue = adminjQ("#headercolorvalue").text();
+            console.log("headercolorvalue = " + headercolorvalue);
+            headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
+            console.log("headerforecolorvalue = " + headerforecolorvalue);
+            alert('I am her inside the script of sendmail_stage.php after adminJQ');
+        });
            
                     // var email_send = adminjQ.ajax({
                     //     url: 'services/sendmail.php',
