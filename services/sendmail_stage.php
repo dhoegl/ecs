@@ -27,7 +27,9 @@
     <!-- <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input>  -->
     <p class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></p> 
     <!-- <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input>  -->
-    <button type="button" id="clickbutton" class="btn btn-primary">Click me</button>
+    <!-- <button type="button" id="clickbutton" class="btn btn-primary">Click me</button> -->
+    <!-- Tenant Configuration JavaScript Call in nav -->
+    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 <?php
 function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
 echo "<script language='javascript'>";
@@ -71,7 +73,7 @@ echo "</script>";
     //$reset = 'ResetKey' - key credential for password reset
     var adminjQ = jQuery.noConflict();
     adminjQ(document).ready(function () {
-        adminjQ("#clickbutton").on("click", function () {
+        // adminjQ("#clickbutton").on("click", function () {
             domain = adminjQ("#domainname").text();
             console.log("Domain = " + domain);
             customer = adminjQ("#custname").text();
@@ -81,7 +83,7 @@ echo "</script>";
             headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
             console.log("headerforecolorvalue = " + headerforecolorvalue);
             alert('I am her inside the script of sendmail_stage.php after adminJQ');
-        });
+        // });
            
                     // var email_send = adminjQ.ajax({
                     //     url: 'services/sendmail.php',
@@ -129,8 +131,6 @@ echo "</script>";
 <div id="calendar_service"></div>
 <div id="prayer_service"></div>
 <div id="events_service"></div>
-    <!-- Tenant Configuration JavaScript Call in nav -->
-    <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 
 </body>
 </html>
