@@ -19,7 +19,7 @@
     </head>
 <body>
 
-    <input type="hidden" class="form-control hidden_params" id="custname" name="custnamename"></input>
+    <p class="form-control hidden_params" id="custname" name="custnamename"></p>
     <input type="hidden" class="form-control hidden_params" id="domainname" name="domainnamename"></input> 
     <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input> 
     <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input> 
