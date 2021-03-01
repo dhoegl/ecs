@@ -124,13 +124,13 @@ function xmlParser(xml) {
     // $_SESSION['themecolor'] = bannercolor;
     if (document.getElementById("headercolor")) {
         document.getElementById("headercolor").style.backgroundColor = bannercolor;
+    }
 // Banner color for outbound email
     if(document.getElementById("headercolorvalue")) {
         var headercolorvalue_element = document.getElementById("headercolorvalue");
         headercolorvalue_element.innerHTML = bannercolor;
     }   
 
-    }
     if (document.getElementById("footercolor")) {
         document.getElementById("footercolor").style.backgroundColor = bannercolor;
     }
@@ -152,13 +152,13 @@ function xmlParser(xml) {
         {
             document.getElementById("headercolor").classList.add("navbar-dark");
         }
+    }
 // Banner foreground color for outbound email
     if(document.getElementById("headerforecolorvalue")) {
         var headerforecolorvalue_element = document.getElementById("headerforecolorvalue");
         headerforecolorvalue_element.innerHTML = bannerforecolor;
     }   
 
-    }
     if (document.getElementById("footercolor")) {
         document.getElementById("footercolor").style.color = bannerforecolor;
     }
