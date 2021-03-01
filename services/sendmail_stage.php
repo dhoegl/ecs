@@ -82,7 +82,7 @@ echo "</script>";
             console.log("headercolorvalue = " + headercolorvalue);
             headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
             console.log("headerforecolorvalue = " + headerforecolorvalue);
-            alert('I am her inside the script of sendmail_stage.php after adminJQ');
+            // alert('I am her inside the script of sendmail_stage.php after adminJQ');
         // });
            
                     // var email_send = adminjQ.ajax({
