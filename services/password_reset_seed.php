@@ -18,7 +18,8 @@ $key = "";
   <head>
   </head>
   <body>
-  
+  </body>
+</html>  
 
 <?php
 if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[last_name]) && isset($_POST[login_id]))
@@ -117,5 +118,3 @@ echo "src='../js/config_ajax_call.js'>;";
 echo "</script>";
 
 ?>
-  </body>
-</html>
