@@ -18,14 +18,14 @@ if(isset($_POST['password_reset']))
 
 // Extract email theme elements from config.xml
     $xml=simplexml_load_file("../_tenant/Config.xml");
-    $_SESSION['themename'] = $xml->name;
-    $_SESSION['themedomain'] = $xml->domain;
-    $_SESSION['themetitle'] = $xml->hometitle;
-    $_SESSION['themecolor'] = $xml->banner_color;
-    // $themename = $xml->name;
-    // $themedomain = $xml->domain;
-    // $themetitle = $xml->hometitle;
-    // $themecolor = $xml->banner_color;
+    // $_SESSION['themename'] = $xml->name;
+    // $_SESSION['themedomain'] = $xml->domain;
+    // $_SESSION['themetitle'] = $xml->hometitle;
+    // $_SESSION['themecolor'] = $xml->banner_color;
+    $themename = $xml->name;
+    $themedomain = $xml->domain;
+    $themetitle = $xml->hometitle;
+    $themecolor = $xml->banner_color;
 
 
 
@@ -56,10 +56,10 @@ if(isset($_POST['password_reset']))
         echo "console.log('User Name = " . $username . "');";
         echo "console.log('First = " . $firstname . "');";
         echo "console.log('Last = " . $lastname . "');";
-        echo "console.log('Theme Name = " . $_SESSION['themename'] . "');";
-        echo "console.log('Theme Domain = " . $_SESSION['themedomain'] . "');";
-        echo "console.log('Theme Title = " . $_SESSION['themetitle'] . "');";
-        echo "console.log('Theme Color = " . $_SESSION['themecolor'] . "');";
+        echo "console.log('Theme Name = " . $themename . "');";
+        echo "console.log('Theme Domain = " . $themedomain . "');";
+        echo "console.log('Theme Title = " . $themetitle . "');";
+        echo "console.log('Theme Color = " . $themecolor . "');";
         echo "</script>";
         $stmt->close();
 
