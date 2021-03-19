@@ -12,7 +12,15 @@ $login3 = "";
 $dateFormat = "";
 $dateSeed = "";
 $key = "";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+  <head>
+  </head>
+  <body>
+  
 
+<?php
 if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[last_name]) && isset($_POST[login_id]))
 {
 	define(password_SALT,'(+3%_');
@@ -58,15 +66,15 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     }
 
 // Extract email theme elements from config.xml
-    $xml=simplexml_load_file("../_tenant/Config.xml");
+    // $xml=simplexml_load_file("../_tenant/Config.xml");
     // $_SESSION['themename'] = $xml->name;
     // $_SESSION['themedomain'] = $xml->domain;
     // $_SESSION['themetitle'] = $xml->hometitle;
     // $_SESSION['themecolor'] = $xml->banner_color;
-    $themename = $xml->name;
-    $themedomain = $xml->domain;
-    $themetitle = $xml->hometitle;
-    $themecolor = $xml->banner_color;
+    // $themename = $xml->name;
+    // $themedomain = $xml->domain;
+    // $themetitle = $xml->hometitle;
+    // $themecolor = $xml->banner_color;
 
 // Send password reset email
     $passwordmailto = $emailaddr3;
@@ -104,8 +112,10 @@ else {
     // header('Location: //' . $_SESSION['domainname'] . '/welcome.php');
     header('Location: ../welcome.php');
 }
-// echo "<script language='javascript'>";
-// echo "src='../js/config_ajax_call.js'>;";
-// echo "</script>";
+echo "<script language='javascript'>";
+echo "src='../js/config_ajax_call.js'>;";
+echo "</script>";
 
 ?>
+  </body>
+</html>
