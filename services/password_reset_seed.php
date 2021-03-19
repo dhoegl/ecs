@@ -93,10 +93,10 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $passwordheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     // mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
 
-    echo "<script language='javascript'>";
-    echo "console.log('Password Reset Seed');";
-    echo "alert('Passwordmessage = '' . $passwordmessage);";
-    echo "</script>";
+    // echo "<script language='javascript'>";
+    // echo "console.log('Password Reset Seed');";
+    // echo "alert('Passwordmessage = '' . $passwordmessage);";
+    // echo "</script>";
 
 
 }
