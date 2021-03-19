@@ -19,7 +19,7 @@ if(isset($_POST['password_reset']))
 // Extract email theme elements from config.xml
 if (file_exists("../_tenant/Config.xml")) {
     $xml = simplexml_load_file("../_tenant/Config.xml");
-    $themename = $xml->name;
+    $themename = $xml->settings->customer->name;
     $themedomain = $xml->domain;
     $themetitle = $xml->hometitle;
     $themecolor = $xml->banner_color;
