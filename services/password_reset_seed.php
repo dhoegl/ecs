@@ -95,7 +95,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
 
     echo "<script language='javascript'>";
     echo "console.log('Password Reset Seed');";
-    echo "console.log('Passwordmessage = ' . $passwordmessage);";
+    echo "alert('Passwordmessage = '' . $passwordmessage);";
     echo "</script>";
 
 
