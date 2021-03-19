@@ -16,6 +16,19 @@ if(isset($_POST['password_reset']))
     // echo "<script type='text/javascript'>src='../js/forgot_password_submit.js'</script>";
     //////////////////////////////////////////////////////
 
+// Extract email theme elements from config.xml
+    $xml=simplexml_load_file("../_tenant/Config.xml");
+    $_SESSION['themename'] = $xml->name;
+    $_SESSION['themedomain'] = $xml->domain;
+    $_SESSION['themetitle'] = $xml->hometitle;
+    $_SESSION['themecolor'] = $xml->banner_color;
+    // $themename = $xml->name;
+    // $themedomain = $xml->domain;
+    // $themetitle = $xml->hometitle;
+    // $themecolor = $xml->banner_color;
+
+
+
     try {
         $stmt = $mysql->prepare("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE username = ?");
         $stmt->bind_param("s", $user_name);
@@ -43,6 +56,10 @@ if(isset($_POST['password_reset']))
         echo "console.log('User Name = " . $username . "');";
         echo "console.log('First = " . $firstname . "');";
         echo "console.log('Last = " . $lastname . "');";
+        echo "console.log('Theme Name = " . $_SESSION['themename'] . "');";
+        echo "console.log('Theme Domain = " . $_SESSION['themedomain'] . "');";
+        echo "console.log('Theme Title = " . $_SESSION['themetitle'] . "');";
+        echo "console.log('Theme Color = " . $_SESSION['themecolor'] . "');";
         echo "</script>";
         $stmt->close();
 
