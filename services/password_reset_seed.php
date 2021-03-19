@@ -13,13 +13,6 @@ $dateFormat = "";
 $dateSeed = "";
 $key = "";
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en">
-  <head>
-  </head>
-  <body>
-  </body>
-</html>  
 
 <?php
 if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[last_name]) && isset($_POST[login_id]))
@@ -113,8 +106,8 @@ else {
     // header('Location: //' . $_SESSION['domainname'] . '/welcome.php');
     header('Location: ../welcome.php');
 }
-echo "<script language='javascript'>";
-echo "src='../js/config_ajax_call.js'>;";
-echo "</script>";
+// echo "<script language='javascript'>";
+// echo "src='../js/config_ajax_call.js'>;";
+// echo "</script>";
 
 ?>
