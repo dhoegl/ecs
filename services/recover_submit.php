@@ -17,15 +17,23 @@ if(isset($_POST['password_reset']))
     //////////////////////////////////////////////////////
 
 // Extract email theme elements from config.xml
-    $xml=simplexml_load_file("../_tenant/Config.xml");
-    // $_SESSION['themename'] = $xml->name;
-    // $_SESSION['themedomain'] = $xml->domain;
-    // $_SESSION['themetitle'] = $xml->hometitle;
-    // $_SESSION['themecolor'] = $xml->banner_color;
+if (file_exists("../_tenant/Config.xml")) {
+    $xml = simplexml_load_file("../_tenant/Config.xml");
     $themename = $xml->name;
     $themedomain = $xml->domain;
     $themetitle = $xml->hometitle;
     $themecolor = $xml->banner_color;
+} else {
+    echo "<script language='javascript'>";
+    echo "console.log('Failed to open ../_tenant/Config.xml');";
+    echo "</script>";
+    // exit("Failed to open ../_tenant/Config.xml.");
+}    
+// $xml=simplexml_load_file("../_tenant/Config.xml");
+    // $_SESSION['themename'] = $xml->name;
+    // $_SESSION['themedomain'] = $xml->domain;
+    // $_SESSION['themetitle'] = $xml->hometitle;
+    // $_SESSION['themecolor'] = $xml->banner_color;
 
 
 
