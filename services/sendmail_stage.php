@@ -27,7 +27,7 @@
     <!-- <input type="hidden" class="form-control hidden_params" id="headercolorvalue" name="headercolorname"></input>  -->
     <p class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></p> 
     <!-- <input type="hidden" class="form-control hidden_params" id="headerforecolorvalue" name="headerforecolorname"></input>  -->
-    <!-- <button type="button" id="clickbutton" class="btn btn-primary">Click me</button> -->
+    <button type="button" id="clickbutton" class="btn btn-primary">Click me</button>
     <!-- Tenant Configuration JavaScript Call in nav -->
     <script type="text/javascript" src="/js/config_ajax_call.js"></script>
 <?php
@@ -73,7 +73,7 @@ echo "</script>";
     //$reset = 'ResetKey' - key credential for password reset
     var adminjQ = jQuery.noConflict();
     adminjQ(document).ready(function () {
-        // adminjQ("#clickbutton").on("click", function () {
+        adminjQ("#clickbutton").on("click", function () {
             domain = adminjQ("#domainname").text();
             console.log("Domain = " + domain);
             customer = adminjQ("#custname").text();
@@ -83,7 +83,7 @@ echo "</script>";
             headerforecolorvalue = adminjQ("#headerforecolorvalue").text();
             console.log("headerforecolorvalue = " + headerforecolorvalue);
             // alert('I am her inside the script of sendmail_stage.php after adminJQ');
-        // });
+        });
            
                     // var email_send = adminjQ.ajax({
                     //     url: 'services/sendmail.php',
