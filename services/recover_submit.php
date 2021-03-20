@@ -26,7 +26,7 @@ if (file_exists("../_tenant/Config_simpletest.xml")) {
     $themecolor = $xml->banner_color;
     echo "<script language='javascript'>";
     echo "console.log('../_tenant/Config_simpletest.xml exists for simplexml_load_file');";
-    echo "console.log('Theme Name inside simplexml_load_file = " . $themename . "');";
+    echo "console.log('Theme Name inside simplexml_load_file = " . $xml->name . "');";
     echo "console.log('Theme Domain inside simplexml_load_file = " . $themedomain . "');";
     echo "console.log('Theme Title inside simplexml_load_file = " . $themetitle . "');";
     echo "console.log('Theme Color inside simplexml_load_file = " . $themecolor . "');";
