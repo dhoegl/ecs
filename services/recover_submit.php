@@ -19,14 +19,14 @@ if(isset($_POST['password_reset']))
 // Extract email theme elements from config.xml
 if (file_exists("../_tenant/Config_simpletest.xml")) {
     $xml = simplexml_load_file("../_tenant/Config_simpletest.xml");
-    $themename = $xml->name;
+    $themename = str($xml->name);
     // $themename = "Weird that xml doesn't work";
     $themedomain = $xml->domain;
     $themetitle = $xml->hometitle;
     $themecolor = $xml->banner_color;
     echo "<script language='javascript'>";
     echo "console.log('../_tenant/Config_simpletest.xml exists for simplexml_load_file');";
-    echo "console.log('Theme Name inside simplexml_load_file = " . $xml->name . "');";
+    echo "console.log('Theme Name inside simplexml_load_file = " . $themename . "');";
     echo "console.log('Theme Domain inside simplexml_load_file = " . $themedomain . "');";
     echo "console.log('Theme Title inside simplexml_load_file = " . $themetitle . "');";
     echo "console.log('Theme Color inside simplexml_load_file = " . $themecolor . "');";
