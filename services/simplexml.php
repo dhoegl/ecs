@@ -1,6 +1,6 @@
 <?php
-if (file_exists("../_tenant/Config_simpletest.xml")) {
-    $xml = simplexml_load_file("../_tenant/Config_simpletest.xml");
+if (file_exists("Config_simpletest.xml")) {
+    $xml = simplexml_load_file("Config_simpletest.xml");
     $themename = $xml->settings->customer->name;
     // $themename = "Weird that xml doesn't work";
     $themedomain = $xml->settings->customer->domain;
