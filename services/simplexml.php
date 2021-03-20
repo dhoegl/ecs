@@ -6,9 +6,9 @@ if (file_exists("../_tenant/Config_simpletest.xml")) {
     $themetitle = $xml->hometitle;
     $themecolor = $xml->banner_color;
 
-echo "Theme Name = " . $themename;
-echo "Theme Domain = " . $themedomain;
-echo "Theme Title = " . $themetitle;
+echo "Theme Name = " . $themename . "</br>";
+echo "Theme Domain = " . $themedomain . "</br>";
+echo "Theme Title = " . $themetitle . "</br>";
 echo "Theme Color = " . $themecolor;
 // echo '<pre>';
 // print_r($xml);
