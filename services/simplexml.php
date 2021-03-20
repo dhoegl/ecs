@@ -1,7 +1,7 @@
 <?php
 if (file_exists("../_tenant/Config_simpletest.xml")) {
     $xml = simplexml_load_file("../_tenant/Config_simpletest.xml");
-    $themename = $xml->name;
+    $themename = $xml->settings->customer->name;
     $themedomain = $xml->domain;
     $themetitle = $xml->hometitle;
     $themecolor = $xml->banner_color;
