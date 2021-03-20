@@ -1,27 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <settings>
     <customer>
-      <ID>
-        002
-      </ID>
-      <name>
-        Evangel Classical School
-      </name>
-      <nickname>
-        ECS
-      </nickname>
-      <domain>
-        ecs.ourfamilyconnections.org
-      </domain>
-      <title>
-        Evangel Classical School
-      </title>
-      <banner_color>
-        #ffecb3
-      </banner_color>
-      <hometitle>
-        ECS Family Connections
-      </hometitle>
-
+      <ID>002</ID>
+      <name>Evangel Classical School</name>
+      <nickname>ECS</nickname>
+      <domain>ecs.ourfamilyconnections.org</domain>
+      <title>Evangel Classical School</title>
+      <banner_color>#ffecb3</banner_color>
+      <hometitle>ECS Family Connections</hometitle>
     </customer>
   </settings>
