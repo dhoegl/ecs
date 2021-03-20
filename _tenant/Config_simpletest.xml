@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <settings>
     <customer>
-      <ID>002</ID>
-      <name>Evangel Classical School</name>
-      <nickname>ECS</nickname>
-      <domain>ecs.ourfamilyconnections.org</domain>
-      <title>Evangel Classical School</title>
-      <banner_color>#ffecb3</banner_color>
-      <hometitle>ECS Family Connections</hometitle>
+      <ID>002</ID> 
+      <name>Evangel Classical School</name> <!--Formal customer name-->
+      <nickname>ECS</nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
+      <domain>ecs.ourfamilyconnections.org</domain> <!--Actual URL to access the Site-->
+      <title>Evangel Classical School</title> <!--Webpage Title – this is what’s shown on browser tab-->
+      <banner_color>#ffecb3</banner_color> <!--Webpage top & bottom banner (header/footer) color-->
+      <hometitle>ECS Family Connections</hometitle> <!-- Highlighted Title Text on home screen -->
     </customer>
   </settings>
