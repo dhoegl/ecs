@@ -1,5 +1,5 @@
 <?php
-if (file_exists("Config_simpletest.xml")) {
+if (file_exists("Config_simpletest.xml2")) {
     $xml = simplexml_load_file("Config_simpletest.xml");
     $themename = $xml->settings->customer->name;
     // $themename = "Weird that xml doesn't work";
