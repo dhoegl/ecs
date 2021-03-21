@@ -60,15 +60,15 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     }
 
 // Extract email theme elements from config.xml
-    // $xml=simplexml_load_file("../_tenant/Config.xml");
+    $xml=simplexml_load_file("../_tenant/Config.xml");
     // $_SESSION['themename'] = $xml->name;
     // $_SESSION['themedomain'] = $xml->domain;
     // $_SESSION['themetitle'] = $xml->hometitle;
     // $_SESSION['themecolor'] = $xml->banner_color;
-    // $themename = $xml->name;
-    // $themedomain = $xml->domain;
-    // $themetitle = $xml->hometitle;
-    // $themecolor = $xml->banner_color;
+    $themename = $xml->customer->name;
+    $themedomain = $xml->customer->domain;
+    $themetitle = $xml->customer->hometitle;
+    $themecolor = $xml->customer->banner_color;
 
 // Send password reset email
     $passwordmailto = $emailaddr3;
