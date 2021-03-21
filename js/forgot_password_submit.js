@@ -16,6 +16,8 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
     console.log("Theme Color = " + themecolor);
     console.log("Theme ForeColor = " + themeforecolor);
 
+    console.log("Made it to forgot_password, just prior to ajax call to sendmail");
+
     //Updated
     var jQpwr = jQuery.noConflict();
     var request = jQpwr.ajax({
