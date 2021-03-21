@@ -20,30 +20,16 @@ if(isset($_POST['password_reset']))
 if (file_exists("../_tenant/Config.xml")) {
     $xml = simplexml_load_file("../_tenant/Config.xml");
     $themename = $xml->customer->name;
-    // $themename = "Weird that xml doesn't work";
     $themedomain = $xml->customer->domain;
     $themetitle = $xml->customer->hometitle;
     $themecolor = $xml->customer->banner_color;
-    echo "<script language='javascript'>";
-    echo "console.log('../_tenant/Config_simpletest.xml exists for simplexml_load_file');";
-    echo "console.log('Theme Name inside simplexml_load_file = " . $themename . "');";
-    echo "console.log('Theme Domain inside simplexml_load_file = " . $themedomain . "');";
-    echo "console.log('Theme Title inside simplexml_load_file = " . $themetitle . "');";
-    echo "console.log('Theme Color inside simplexml_load_file = " . $themecolor . "');";
-    echo "</script>";
+    $themeforecolor = $xml->customer->banner_forecolor;
 } else {
     echo "<script language='javascript'>";
     echo "console.log('Failed to open ../_tenant/Config.xml');";
     echo "</script>";
     // exit("Failed to open ../_tenant/Config.xml.");
 }    
-// $xml=simplexml_load_file("../_tenant/Config.xml");
-    // $_SESSION['themename'] = $xml->name;
-    // $_SESSION['themedomain'] = $xml->domain;
-    // $_SESSION['themetitle'] = $xml->hometitle;
-    // $_SESSION['themecolor'] = $xml->banner_color;
-
-
 
     try {
         $stmt = $mysql->prepare("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE username = ?");
@@ -76,13 +62,14 @@ if (file_exists("../_tenant/Config.xml")) {
         echo "console.log('Theme Domain = " . $themedomain . "');";
         echo "console.log('Theme Title = " . $themetitle . "');";
         echo "console.log('Theme Color = " . $themecolor . "');";
+        echo "console.log('Theme ForeColor = " . $themeforecolor . "');";
         echo "</script>";
         $stmt->close();
 
         // Send Reset Request to handler at forgot_password_submit.js
         echo "
 		    <script type='text/javascript'>
-			    resetrequest('$emailaddr', '$firstname', '$lastname', '$username', '$LoginID');
+			    resetrequest('$emailaddr', '$firstname', '$lastname', '$username', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
 		    </script>
 		    ";
 

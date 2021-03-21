@@ -3,20 +3,26 @@
 //Called from recover_submit.php
 // Last Updated 20210223
 
-function resetrequest(reset_submit, first_submit, last_submit, user_submit, login_ID) {
+function resetrequest(reset_submit, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
     console.log("Made it to forgot_password_submit script ");
     console.log("email address = " + reset_submit);
     console.log("first name = " + first_submit);
     console.log("last name = " + last_submit);
     console.log("user name = " + user_submit);
     console.log("login ID = " + login_ID);
+    console.log("Theme Name = " + themename);
+    console.log("Theme Domain = " + themedomain);
+    console.log("Theme Title = " + themetitle);
+    console.log("Theme Color = " + themecolor);
+    console.log("Theme ForeColor = " + themeforecolor);
+
     //Updated
     var jQpwr = jQuery.noConflict();
     var request = jQpwr.ajax({
-        url: '../services/password_reset_seed.php',
+        url: '../services/sendmail.php',
         type: 'POST',
         dataType: 'json',
-        data: { email_address: reset_submit, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID }
+        data: { mailtype: 'password_reset', email_address: reset_submit, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
     });
     request.done(function (data, textStatus, jqXHR) {
         //  Get the result

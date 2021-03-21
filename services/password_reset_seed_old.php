@@ -69,7 +69,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $themedomain = $xml->customer->domain;
     $themetitle = $xml->customer->hometitle;
     $themecolor = $xml->customer->banner_color;
-    $themeforecolor = $xml->customer->banner_forecolorr;
+    $themeforecolor = $xml->customer->banner_forecolor;
     
 //    sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset);
     //$mailtype = type of email to send

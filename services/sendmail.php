@@ -1,6 +1,6 @@
 <?php
 // Send Mail scripts
-// Updated 2021/02/23
+// Updated 2021/03/21
 // This function will send email to users and admins
 session_start();
 if(!$_SESSION['logged in']) {
@@ -10,7 +10,7 @@ if(!$_SESSION['logged in']) {
 require_once('../dbconnect.php');
 $text = array();
 
-function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) 
+// function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) 
 { // params based on each call to sendmail
     //$mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
@@ -37,19 +37,22 @@ function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor,
     //     "Email": $email,
     //     "ResetKey": $reset
 
+    // data: { mailtype: 'password_reset', email_address: reset_submit, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
 
-// $mailtype = $_POST['Mailtype'];
-// $domain = $_POST['Domain'];
-// $customer = $_POST['Customer'];
-// $headercolorvalue = $_POST['HeaderColor'];
-// $headerforecolorvalue = $_POST['Headerforecolorvalue'];
-// $family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
-// $admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
-// $login = $_POST['Login']; //UserName
-// $firstname = $_POST['First'];
-// $lastname = $_POST['Last'];
-// $email = $_POST['Email'];
-// $key = $_POST['ResetKey'];
+
+$mailtype = $_POST['mailtype'];
+$domain = $_POST['theme_domain'];
+$customer = $_POST['theme_name'];
+$headercolorvalue = $_POST['theme_color'];
+$headerforecolorvalue = $_POST['theme_forecolor'];
+$family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
+$admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
+$login = $_POST['login_id']; //UserName
+$firstname = $_POST['first_name'];
+$lastname = $_POST['last_name'];
+$username = $_POST['user_name'];
+$email = $_POST['email_address'];
+$key = $_POST['ResetKey'];
 
 
 
@@ -58,6 +61,33 @@ function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor,
         Switch ($mailtype){
             case 'password_reset':
                 // sendmail('password_reset', $themename, $themedomain, $themecolor, $themeforecolor, '', '', $login3, $firstname, $lastname, $username3, $emailaddr3, $key);
+                // Generate Password Reset Key
+                $dateFormat = mktime(date("H"),date("i"),date("s"),date("m"),date("d")+3,date("Y"));
+                $dateSeed = date("Y-m-d H:i:s",$dateFormat); //get date 3 days from now (max allowed time to reset password after request)
+                $key = md5($username . '_' . $email . rand(0,10000) .$dateSeed . password_SALT);
+
+                try 
+                {
+                    $stmt = $mysql->prepare("UPDATE " . $_SESSION['logintablename'] . " SET temp_pass_key = '" . $key . "', temp_pass_expire = '" . $dateSeed . "' WHERE login_ID = ?");
+                    $stmt->bind_param("s", $login);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $text[] = array('Status' => 'Password Seed Success');
+                    header('Content-type: application/json');
+                    echo json_encode($text);
+                    $stmt->close();
+
+                }
+                catch(Exception $e)
+                {
+                    echo "<script language='javascript'>";
+                    echo "alert('ERROR IN sendmail.php for password reset');";
+                    echo "</script>";
+                    $text[] = array('Status' => 'Password Seed Failed');
+                    header('Content-type: application/json');
+                    echo json_encode($text);
+                }
+
                 $maillink = $domain;
                 $mailto = $email;
                 $mailsubject = "Password Reset Request for " . $login . "." . "\n..";
@@ -79,9 +109,12 @@ function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor,
                 $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                // mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 $response = "Mailtype received" . " = " . $mailtype;
-                break;
+                echo "<script language='javascript'>";
+                echo "console.log('mailmessage = " . $mailmessage . "');";
+                echo "</script>";
+            break;
             case 'register_request':
                 // Send notification email to All registration admins (admin_regnotify = 1) for them to ACCEPT/REJECT the request
                 $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
@@ -139,6 +172,6 @@ function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor,
     {
         $response = "ERROR on Mailtype at sendmail.php";
     };
-// echo $response;
+echo $response;
 }
 ?>
