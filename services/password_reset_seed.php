@@ -69,12 +69,13 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $themedomain = $xml->customer->domain;
     $themetitle = $xml->customer->hometitle;
     $themecolor = $xml->customer->banner_color;
+    $themeforecolor = $xml->customer->banner_forecolorr;
 
 // Send password reset email
     $passwordmailto = $emailaddr3;
     $passwordmailtest = "";
     $passwordmessage = "<html><body>";
-    $passwordmessage .= "<p style='background-color: " . $themecolor . "; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> " . $themename . "</p>";
+    $passwordmessage .= "<p style='background-color: " . $themecolor . "; font-size: 30px; font-weight: bold; color: " . $themeforecolor . "; padding: 25px; width=100%;'> " . $themename . "</p>";
     // $passwordmessage .= "<p style='background-color: #ffecb3; font-size: 30px; font-weight: bold; color: black; padding: 25px; width=100%;'>Evangel Classical School</p>";
     // $passwordmessage .= "<img src='../_tenant/images/email_banner.b64' alt='banner' />";
     $passwordmessage .= "<p>(this message has been sent from an unmonitored mailbox)</p>";
