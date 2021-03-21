@@ -139,6 +139,6 @@ function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor,
     {
         $response = "ERROR on Mailtype at sendmail.php";
     };
-echo $response;
+// echo $response;
 }
 ?>
