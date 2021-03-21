@@ -104,7 +104,7 @@ require_once 'dbconnect.php';
                     <div class="card card-body">
                         <h4 class="card-title">Password Reset</h4>
                         <ul class="card-text">
-                            <li>In the box below, enter your username, and click the 'Reset Password' button. An email will be sent to the address provided with your username and a link to reset your password.</li>
+                            <li>In the box below, enter your username, and click the 'Reset Password' button. An email will be sent to the address associated with your username and a link to reset your password.</li>
                             <li>Check your mailbox for the email requesting you to reset your password (don't forget to check your Junk or Spam folder).</li>
                             <li>Click on the hyperlink in the email and enter a new password at the Password Reset page.</li>
                             <li>If you don't receive an email notification within a few minutes, please contact one of your administrators for assistance.</li>
@@ -144,7 +144,7 @@ require_once 'dbconnect.php';
             <div class="card bg-light border-primary text-center p-3">
                 <div class="card-body">
                     <h3 class="card-title">What happens next</h3>
-                    <p>After entering your username, you will receive a notification in the mailbox setup in your account.</p>
+                    <p>After entering your username, you will receive a notification in the email mailbox of the address associated with your username.</p>
                     <p>If you don't receive an email notification within a few minutes <strong>(don't forget to check your Junk or Spam folder)</strong>, please contact one of your administrators for assistance.</p>
                 </div> <!-- card-body -->
             </div> <!-- card -->
