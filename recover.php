@@ -48,8 +48,9 @@ require_once 'dbconnect.php';
   <!-- Test custom styles (Includes tec style details) -->
 <link href="css/css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
-<!-- <link href="_tenant/css/tenant.css" rel="stylesheet"> -->
-<link href="css/welcome_style.css" rel="stylesheet" />
+    <!-- Tenant-specific stylesheet -->
+<link href="_tenant/css/tenant.css" rel="stylesheet">
+<!-- <link href="css/welcome_style.css" rel="stylesheet" /> -->
 
 
 <!-- Initialize jquery js script -->
