@@ -10,7 +10,7 @@ if(!$_SESSION['logged in']) {
 require_once('../dbconnect.php');
 $text = array();
 
-// function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
+function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) { // params based on each call to sendmail
     //$mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
     //$domain = 'Domain' - Site domain - used to insert domain information into login email
@@ -37,18 +37,18 @@ $text = array();
     //     "ResetKey": $reset
 
 
-$mailtype = $_POST['Mailtype'];
-$domain = $_POST['Domain'];
-$customer = $_POST['Customer'];
-$headercolorvalue = $_POST['HeaderColor'];
-$headerforecolorvalue = $_POST['Headerforecolorvalue'];
-$family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
-$admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
-$login = $_POST['Login']; //UserName
-$firstname = $_POST['First'];
-$lastname = $_POST['Last'];
-$email = $_POST['Email'];
-$key = $_POST['ResetKey'];
+// $mailtype = $_POST['Mailtype'];
+// $domain = $_POST['Domain'];
+// $customer = $_POST['Customer'];
+// $headercolorvalue = $_POST['HeaderColor'];
+// $headerforecolorvalue = $_POST['Headerforecolorvalue'];
+// $family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
+// $admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
+// $login = $_POST['Login']; //UserName
+// $firstname = $_POST['First'];
+// $lastname = $_POST['Last'];
+// $email = $_POST['Email'];
+// $key = $_POST['ResetKey'];
 
 
 
@@ -56,6 +56,7 @@ $key = $_POST['ResetKey'];
 if($mailtype){
     Switch ($mailtype){
         case 'password_reset':
+            // sendmail('password_reset', $themename, $themedomain, $themecolor, $themeforecolor, '', '', $login3, $firstname, $lastname, $username3, $emailaddr3, $key);
             $maillink = $domain;
             $mailto = $email;
             $mailsubject = "Password Reset Request for " . $login . "." . "\n..";
@@ -66,7 +67,7 @@ if($mailtype){
             $mailmessage .= "<p>Hello <strong>" . $login . "</strong></p>";
             $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
             $mailmessage .= "<p>If you did not submit this request, please notify your " . $customer . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
-            $domain_url = "<p>" . $maillink . "/pass_renew.php?a=recover@email=";
+            $domain_url = "<p>http://" . $maillink . "/pass_renew.php?a=recover&email=";
             $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($login));
             $mailmessage .= $passwordLink . "</p><br /><br />";
             $mailmessage .= "<p>NOTE: The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the home page and reset your password again.</p>";
@@ -77,7 +78,7 @@ if($mailtype){
             $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
             $mailheaders .= "MIME-Version: 1.0\r\n";
             $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            // mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+            mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             $response = "Mailtype received" . " = " . $mailtype;
             break;
         case 'register_request':
