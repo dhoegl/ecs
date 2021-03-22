@@ -2,11 +2,11 @@
 // Send Mail scripts
 // Updated 2021/03/21
 // This function will send email to users and admins
-session_start();
-if(!$_SESSION['logged in']) {
-	header("location:../welcome.php");
-	exit();
-}
+// session_start();
+// if(!$_SESSION['logged in']) {
+// 	header("location:../welcome.php");
+// 	exit();
+// }
 require_once('../dbconnect.php');
 $text = array();
 
