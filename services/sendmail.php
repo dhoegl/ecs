@@ -11,7 +11,7 @@ require_once('../dbconnect.php');
 $text = array();
 
 // function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) 
-{ // params based on each call to sendmail
+// { // params based on each call to sendmail
     //$mailtype = type of email to send
     //$customer = 'Customer Name' - Name of church/school (email banner)
     //$domain = 'Domain' - Site domain - used to insert domain information into login email
@@ -176,5 +176,4 @@ echo "</script>";
         $response = "ERROR on Mailtype at sendmail.php";
     };
 echo $response;
-}
 ?>
