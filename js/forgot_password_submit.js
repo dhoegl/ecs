@@ -40,7 +40,7 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
         // window.location = "//tec.ourfamilyconnections.org/welcome.php";
         // location.reload();
         return result;
-    })
+    });
     request.fail(function (jqXHR, textStatus) {
             //  Get the result
             //result = (rtnData === undefined) ? null : rtnData.d;
