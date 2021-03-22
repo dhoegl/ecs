@@ -143,7 +143,7 @@ elseif (isset($_POST['login'])) { // Login button clicked
                 <h3 class="text-center">Click Login to return to the Login page</h3>
                 <form name='returnhome' id="return_home" action='' method="POST">
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" name="login" value="Login" />
+                        <input type="submit" class="btn btn-primary" name="login" value="Back to Login Page" />
                     </div>
                 </form>
             </div> <!--card-->
