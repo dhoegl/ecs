@@ -45,14 +45,14 @@ $domain = $_POST['theme_domain'];
 $customer = $_POST['theme_name'];
 $headercolorvalue = $_POST['theme_color'];
 $headerforecolorvalue = $_POST['theme_forecolor'];
-$family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
-$admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
+// $family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
+// $admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
 $login = $_POST['login_id']; //UserName
 $firstname = $_POST['first_name'];
 $lastname = $_POST['last_name'];
 $username = $_POST['user_name'];
 $email = $_POST['email_address'];
-$key = $_POST['ResetKey'];
+// $key = $_POST['ResetKey'];
 
 echo "<script language='javascript'>";
 echo "console.log('Made it to sendmail - just prior to switch');";
