@@ -114,9 +114,6 @@ $email = $_POST['email_address'];
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 // mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 $response = "Mailtype received" . " = " . $mailtype;
-                echo "<script language='javascript'>";
-                echo "console.log('mailmessage = " . $mailmessage . "');";
-                echo "</script>";
             break;
             case 'register_request':
                 // Send notification email to All registration admins (admin_regnotify = 1) for them to ACCEPT/REJECT the request
