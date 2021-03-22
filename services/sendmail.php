@@ -54,9 +54,9 @@ $username = $_POST['user_name'];
 $email = $_POST['email_address'];
 // $key = $_POST['ResetKey'];
 
-echo "<script language='javascript'>";
-echo "console.log('Made it to sendmail - just prior to switch');";
-echo "</script>";
+// echo "<script language='javascript'>";
+// echo "console.log('Made it to sendmail - just prior to switch');";
+// echo "</script>";
 
 
 
