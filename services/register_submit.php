@@ -6,7 +6,7 @@
     require_once('../includes/event_logs_update.php');
     // Add Footer to page
     // Enable sendmail script to notify Admins re: register request
-    include('../js/registration_submit_to_sendmail.js');
+    echo "<script type='text/javascript' src='../js/registration_submit_to_sendmail.js'></script>";
 
 
 if(isset($_POST['registersubmit']))
