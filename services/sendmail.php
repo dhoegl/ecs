@@ -111,7 +111,7 @@ $email = $_POST['email_address'];
                 $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
                 $mailmessage .= "<p>If you did not submit this request, please notify your " . $customer . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
                 $domain_url = "<p>http://" . $maillink . "/pass_renew.php?a=recover&email=";
-                $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($login));
+                $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($username));
                 $mailmessage .= $passwordLink . "</p><br /><br />";
                 $mailmessage .= "<p>NOTE: The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the home page and reset your password again.</p>";
                 $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
