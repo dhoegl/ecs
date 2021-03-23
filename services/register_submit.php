@@ -6,7 +6,7 @@
     require_once('../includes/event_logs_update.php');
     // Add Footer to page
     // Enable sendmail script to notify Admins re: register request
-    include('sendmail.php');
+    include('../js/registration_submit_to_sendmail.js');
 
 
 if(isset($_POST['registersubmit']))
@@ -20,6 +20,7 @@ if(isset($_POST['registersubmit']))
     $full_name = $first_name . ' ' . $last_name;
     $gender = filter_input(INPUT_POST, 'gendercode');
     $email_address = filter_input(INPUT_POST, 'emailaddressname');
+    $LoginID = '';
 
 // Extract email theme elements from config.xml
 if (file_exists("../_tenant/Config.xml")) {
@@ -75,34 +76,40 @@ if (file_exists("../_tenant/Config.xml")) {
     $reglogintableupdate = $mysql->prepare($regloginquery);
     $reglogintableupdate->bind_param("sssssssss",$church_code,$user_name,$pass_word,$regInsert_DirID,$first_name,$last_name,$gender,$email_address,$full_name);
     $reglogintableupdate->execute();
-    // $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
     $regdirtableupdate->close();
     $reglogintableupdate->close();
     // DO NOT ATTEMPT TO CLOSE A NON-PARAMETERIZED QUERY 
 
     // Send notification email to Admins for ACCEPT/REJECT
+    // Send Registration Request to handler at registration_submit_to_sendmail.js
+        echo "
+		    <script type='text/javascript'>
+            registerrequest('$email_address', '$first_name', '$last_name', '$user_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+		    </script>
+		    ";
 
-    $regmailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
-    $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
-    $regmaillink = "https://tec.ourfamilyconnections.org";
-    while ($regmailrow = $regmailquery->fetch_assoc())
-    {
-        $regmailtest = $regmailrow['email_addr'];
-        $regmailto = $regmailtest . " , " . $regmailto;
-    }
-    $regmailsubject = "Registration Request to TEC Family Connections"."\n..";
-    $regmailmessage = "<html><body>";
-    $regmailmessage .= "<p style='background-color: #ff6933; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> Trinity Evangel Church</p>";
-    $regmailmessage .= "<p>Hello! </p>";
-    $regmailmessage .= "<p><strong>" . $first_name . " " . $last_name . "</strong>";
-    $regmailmessage .= " has requested to be added to Trinity Evangel Church's Directory site.</p>";
-    $regmailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request " . "<a href='" . $regmaillink . "'>" . $regmaillink . "</a></p>";
-    $regmailmessage .= "</body></html>";
-    $regmailfrom = "newfamilyrequest@ourfamilyconnections.org";
-    $regmailheaders = "From:" . $regmailfrom . "\r\n";
-    $regmailheaders .= "MIME-Version: 1.0\r\n";
-    $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+    // $regmailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
+    // $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    // $regmaillink = "https://tec.ourfamilyconnections.org";
+    // while ($regmailrow = $regmailquery->fetch_assoc())
+    // {
+    //     $regmailtest = $regmailrow['email_addr'];
+    //     $regmailto = $regmailtest . " , " . $regmailto;
+    // }
+    // $regmailsubject = "Registration Request to TEC Family Connections"."\n..";
+    // $regmailmessage = "<html><body>";
+    // $regmailmessage .= "<p style='background-color: #ff6933; font-size: 30px; font-weight: bold; color: white; padding: 25px; width=100%;'> Trinity Evangel Church</p>";
+    // $regmailmessage .= "<p>Hello! </p>";
+    // $regmailmessage .= "<p><strong>" . $first_name . " " . $last_name . "</strong>";
+    // $regmailmessage .= " has requested to be added to Trinity Evangel Church's Directory site.</p>";
+    // $regmailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request " . "<a href='" . $regmaillink . "'>" . $regmaillink . "</a></p>";
+    // $regmailmessage .= "</body></html>";
+    // $regmailfrom = "newfamilyrequest@ourfamilyconnections.org";
+    // $regmailheaders = "From:" . $regmailfrom . "\r\n";
+    // $regmailheaders .= "MIME-Version: 1.0\r\n";
+    // $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     // mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
 
     // Temp validation that report error is working
