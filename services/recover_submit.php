@@ -52,18 +52,18 @@ if (file_exists("../_tenant/Config.xml")) {
             $firstname = $row['firstname'];
             $lastname = $row['lastname'];
         }
-        echo "<script language='javascript'>";
-        echo "console.log('Login = " . $LoginID . "');";
-        echo "console.log('Email = " . $emailaddr . "');";
-        echo "console.log('User Name = " . $username . "');";
-        echo "console.log('First = " . $firstname . "');";
-        echo "console.log('Last = " . $lastname . "');";
-        echo "console.log('Theme Name = " . $themename . "');";
-        echo "console.log('Theme Domain = " . $themedomain . "');";
-        echo "console.log('Theme Title = " . $themetitle . "');";
-        echo "console.log('Theme Color = " . $themecolor . "');";
-        echo "console.log('Theme ForeColor = " . $themeforecolor . "');";
-        echo "</script>";
+        // echo "<script language='javascript'>";
+        // echo "console.log('Login = " . $LoginID . "');";
+        // echo "console.log('Email = " . $emailaddr . "');";
+        // echo "console.log('User Name = " . $username . "');";
+        // echo "console.log('First = " . $firstname . "');";
+        // echo "console.log('Last = " . $lastname . "');";
+        // echo "console.log('Theme Name = " . $themename . "');";
+        // echo "console.log('Theme Domain = " . $themedomain . "');";
+        // echo "console.log('Theme Title = " . $themetitle . "');";
+        // echo "console.log('Theme Color = " . $themecolor . "');";
+        // echo "console.log('Theme ForeColor = " . $themeforecolor . "');";
+        // echo "</script>";
         $stmt->close();
 
         // Send Reset Request to handler at forgot_password_submit.js
