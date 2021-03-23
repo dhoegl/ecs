@@ -172,5 +172,5 @@ $email = $_POST['email_address'];
     {
         $response = "ERROR on Mailtype at sendmail.php";
     };
-echo $response;
+// echo $response;
 ?>
