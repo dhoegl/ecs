@@ -1,11 +1,11 @@
 //Version 01/11/2021 - Check Password Strength for Password Reset
-
-$(document).ready(function()
+var passresetJQ = jQuery.noConflict();
+passresetJQ(document).ready(function()
 {
     var passwordset = 'N';
     var repeatpasswordset = 'N';
     var all_req_fields = 'N'
-    $('#reset_submit').prop('disabled', true); 
+    passresetJQ('#reset_submit').prop('disabled', true); 
 
 
 
@@ -25,21 +25,21 @@ $(document).ready(function()
 //  If the password contains two special characters, increase the strength value by +1.
 // ---- Allow Passwords whose Strength is either "Good" or "Strong" (Strenght = 2 or greater)
 
-    $('#password').keyup(function(e){
+passresetJQ('#password').keyup(function(e){
         var code = e.keyCode || e.which; //Check for Tab key - don't call checkStrength until actual key is pressed
         if(code == '9'){
             console.log('Tab Key Pressed');
         }
         else {
-            $('#repeatpassword').val(""); 
-            $('#password_match').removeClass(); 
-            $('#password_match').addClass('nomatch'); 
-            $('#password_match').html('No Match'); 
+            passresetJQ('#repeatpassword').val(""); 
+            passresetJQ('#password_match').removeClass(); 
+            passresetJQ('#password_match').addClass('nomatch'); 
+            passresetJQ('#password_match').html('No Match'); 
             repeatpasswordset = 'N';
-            $('#password_result').html(checkStrength($('#password').val()));
+            passresetJQ('#password_result').html(checkStrength(passresetJQ('#password').val()));
         }
 
-        if($('#password_result').html() == 'Good' || $('#password_result').html() == 'Strong') {
+        if(passresetJQ('#password_result').html() == 'Good' || passresetJQ('#password_result').html() == 'Strong') {
             passwordset = 'Y';
             // console.log("passwordset = " + passwordset);
             // console.log('all_req_fields = ' + all_req_fields);
@@ -52,15 +52,15 @@ $(document).ready(function()
         }
         if (passwordset == 'Y' && repeatpasswordset == 'Y') {
             all_req_fields = 'Y';
-            $('#reset_submit').removeClass('disabled'); 
-            $('#reset_submit').prop('disabled', false); 
+            passresetJQ('#reset_submit').removeClass('disabled'); 
+            passresetJQ('#reset_submit').prop('disabled', false); 
             // console.log("passwordset = " + passwordset);
             // console.log('all_req_fields = ' + all_req_fields);
         }
         else {
             all_req_fields = 'N';
-            $('#reset_submit').addClass('disabled'); 
-            $('#reset_submit').prop('disabled', true); 
+            passresetJQ('#reset_submit').addClass('disabled'); 
+            passresetJQ('#reset_submit').prop('disabled', true); 
             // console.log("passwordset = " + passwordset);
             // console.log('all_req_fields = ' + all_req_fields);
         }
@@ -71,9 +71,9 @@ $(document).ready(function()
         var strength = 0; 
         //if the password length is less than 6, return message. 
         if (password.length < 6) { 
-            $('#password_result').removeClass(); 
-            $('#password_result').addClass('short'); 
-    //        $('#register_submit').prop('disabled', true);
+            passresetJQ('#password_result').removeClass(); 
+            passresetJQ('#password_result').addClass('short'); 
+    //        passresetJQ('#register_submit').prop('disabled', true);
             return 'Too short'; 
         } 
     //length is ok, lets continue. 
@@ -95,22 +95,22 @@ $(document).ready(function()
         //now we have calculated strength value, we can return messages 
         //if value is less than 2 
         if (strength < 2 ) {
-            $('#password_result').removeClass(); 
-            $('#password_result').addClass('weak');
+            passresetJQ('#password_result').removeClass(); 
+            passresetJQ('#password_result').addClass('weak');
             // console.log("passwordset = " + passwordset);
             // console.log('all_req_fields = ' + all_req_fields);
             return 'Weak'; 
         } 
         else if (strength == 2 ) { 
-            $('#password_result').removeClass(); 
-            $('#password_result').addClass('good'); 
+            passresetJQ('#password_result').removeClass(); 
+            passresetJQ('#password_result').addClass('good'); 
             // console.log("passwordset = " + passwordset);
             // console.log('all_req_fields = ' + all_req_fields);
             return 'Good'; 
         } 
         else { 
-            $('#password_result').removeClass(); 
-            $('#password_result').addClass('strong'); 
+            passresetJQ('#password_result').removeClass(); 
+            passresetJQ('#password_result').addClass('strong'); 
             // console.log("passwordset = " + passwordset);
             // console.log('all_req_fields = ' + all_req_fields);
             return 'Strong'; 
@@ -118,13 +118,13 @@ $(document).ready(function()
     };
 });
     
-    $('#repeatpassword').keyup(function(e){
+passresetJQ('#repeatpassword').keyup(function(e){
         var code = e.keyCode || e.which; //Check for Tab key - don't call checkStrength until actual key is pressed
         if(code == '9'){
             // console.log('Tab Key Pressed');
         }
         else {
-            $('#password_match').html(checkMatch($('#repeatpassword').val(), $('#password').val()));
+            passresetJQ('#password_match').html(checkMatch(passresetJQ('#repeatpassword').val(), passresetJQ('#password').val()));
         }
     
         function checkMatch(repeatpassword, password){
@@ -132,8 +132,8 @@ $(document).ready(function()
             var check = 0; 
             //if the password check does not match, return message. 
             if (repeatpassword == password) { 
-                $('#password_match').removeClass(); 
-                $('#password_match').addClass('match'); 
+                passresetJQ('#password_match').removeClass(); 
+                passresetJQ('#password_match').addClass('match'); 
                 repeatpasswordset = 'Y';
                 // console.log("passwordset = " + passwordset);
                 // console.log("repeatpasswordset = " + repeatpasswordset);
@@ -141,8 +141,8 @@ $(document).ready(function()
                 return 'Match'; 
             } 
             else { 
-                $('#password_match').removeClass(); 
-                $('#password_match').addClass('nomatch'); 
+                passresetJQ('#password_match').removeClass(); 
+                passresetJQ('#password_match').addClass('nomatch'); 
                 repeatpasswordset = 'N';
                 // console.log("passwordset = " + passwordset);
                 // console.log("repeatpasswordset = " + repeatpasswordset);
@@ -153,16 +153,16 @@ $(document).ready(function()
 
         if (passwordset == 'Y' && repeatpasswordset == 'Y') {
             all_req_fields = 'Y';
-            $('#reset_submit').removeClass('disabled'); 
-            $('#reset_submit').prop('disabled', false); 
+            passresetJQ('#reset_submit').removeClass('disabled'); 
+            passresetJQ('#reset_submit').prop('disabled', false); 
             // console.log("passwordset = " + passwordset);
             // console.log("repeatpasswordset = " + repeatpasswordset);
             // console.log('all_req_fields = ' + all_req_fields);
         }
         else {
             all_req_fields = 'N';
-            $('#reset_submit').addClass('disabled'); 
-            $('#reset_submit').prop('disabled', true); 
+            passresetJQ('#reset_submit').addClass('disabled'); 
+            passresetJQ('#reset_submit').prop('disabled', true); 
             // console.log("passwordset = " + passwordset);
             // console.log("repeatpasswordset = " + repeatpasswordset);
             // console.log('all_req_fields = ' + all_req_fields);
