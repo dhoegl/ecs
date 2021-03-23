@@ -20,6 +20,21 @@ if(isset($_POST['registersubmit']))
     $full_name = $first_name . ' ' . $last_name;
     $gender = filter_input(INPUT_POST, 'gendercode');
     $email_address = filter_input(INPUT_POST, 'emailaddressname');
+
+// Extract email theme elements from config.xml
+if (file_exists("../_tenant/Config.xml")) {
+    $xml = simplexml_load_file("../_tenant/Config.xml");
+    $themename = $xml->customer->name;
+    $themedomain = $xml->customer->domain;
+    $themetitle = $xml->customer->hometitle;
+    $themecolor = $xml->customer->banner_color;
+    $themeforecolor = $xml->customer->banner_forecolor;
+} else {
+    echo "<script language='javascript'>";
+    echo "console.log('Failed to open ../_tenant/Config.xml');";
+    echo "</script>";
+    // exit("Failed to open ../_tenant/Config.xml.");
+}    
     echo "<script language='javascript'>";
     echo "console.log('church_code = " . $church_code . "');";
     echo "console.log('user_name = " . $user_name . "');";
@@ -28,8 +43,15 @@ if(isset($_POST['registersubmit']))
     echo "console.log('last_name = " . $last_name . "');";
     echo "console.log('gender = " . $gender . "');";
     echo "console.log('email_address = " . $email_address . "');";
-    echo "console.log('full_name = " . $full_name . "');";
+    echo "console.log('theme name = " . $themename . "');";
+    echo "console.log('theme domain = " . $themedomain . "');";
+    echo "console.log('theme title = " . $themetitle . "');";
+    echo "console.log('theme color = " . $themecolor . "');";
+    echo "console.log('theme forecolor = " . $themeforecolor . "');";
     echo "</script>";
+
+
+
 
     // insert Registrant into Directory table
     if($gender == 'Male'){
@@ -49,12 +71,15 @@ if(isset($_POST['registersubmit']))
     echo "</script>";
     
     // insert Registrant into Login table
-    $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname) VALUES ('$church_code','$user_name','$pass_word','$regInsert_DirID','$first_name','$last_name','$gender','$email_address','$full_name')";
-    $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname) VALUES (?,?,?,?,?,?,?,?,?)";
+    $reglogintableupdate = $mysql->prepare($regloginquery);
+    $reglogintableupdate->bind_param("sssssssss",$church_code,$user_name,$pass_word,$regInsert_DirID,$first_name,$last_name,$gender,$email_address,$full_name);
+    $reglogintableupdate->execute();
+    // $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
     $regdirtableupdate->close();
+    $reglogintableupdate->close();
     // DO NOT ATTEMPT TO CLOSE A NON-PARAMETERIZED QUERY 
-    // $reglogintableupdate->close();
 
     // Send notification email to Admins for ACCEPT/REJECT
 
@@ -78,10 +103,10 @@ if(isset($_POST['registersubmit']))
     $regmailheaders = "From:" . $regmailfrom . "\r\n";
     $regmailheaders .= "MIME-Version: 1.0\r\n";
     $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+    // mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
 
     // Temp validation that report error is working
-    eventLogUpdate('report error', 'register_submit.php', 'Error: NONE', 'YAY!!');
+    // eventLogUpdate('report error', 'register_submit.php', 'Error: NONE', 'YAY!!');
 
 }
 else {
