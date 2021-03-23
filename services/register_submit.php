@@ -5,9 +5,6 @@
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
     // Add Footer to page
-    // Enable sendmail script to notify Admins re: register request
-    echo "<script type='text/javascript' src='../js/registration_submit_to_sendmail.js'></script>";
-
 
 if(isset($_POST['registersubmit']))
 {
@@ -21,6 +18,10 @@ if(isset($_POST['registersubmit']))
     $gender = filter_input(INPUT_POST, 'gendercode');
     $email_address = filter_input(INPUT_POST, 'emailaddressname');
     $LoginID = '';
+
+echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
+// Enable sendmail script to notify Admins re: register request
+echo "<script type='text/javascript' src='../js/registration_submit_to_sendmail.js'></script>";
 
 // Extract email theme elements from config.xml
 if (file_exists("../_tenant/Config.xml")) {
@@ -159,7 +160,7 @@ else {
     <link href="../_tenant/css/tenant.css" rel="stylesheet">
     
 <!-- Initialize jquery js script -->
-    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <!-- <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script> -->
 
 <!-- jQuery (necessary for Bootstrap's (BOOTSTRAP 4 BETA) JavaScript plugins) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
