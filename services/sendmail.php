@@ -93,12 +93,12 @@ $email = $_POST['email_address'];
 
                 $maillink = $domain;
                 $mailto = $email;
-                $mailsubject = "Password Reset Request for " . $login . "." . "\n..";
+                $mailsubject = "Password Reset Request for " . $username . "." . "\n..";
                 $mailmessage = "<html><body>";
                 $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
                 $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
                 $mailmessage .= $customer . "</p>";
-                $mailmessage .= "<p>Hello <strong>" . $login . "</strong></p>";
+                $mailmessage .= "<p>Hello <strong>" . $username . "</strong></p>";
                 $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
                 $mailmessage .= "<p>If you did not submit this request, please notify your " . $customer . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
                 $domain_url = "<p>http://" . $maillink . "/pass_renew.php?a=recover&email=";
