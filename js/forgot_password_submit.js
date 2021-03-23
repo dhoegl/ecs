@@ -4,19 +4,19 @@
 // Last Updated 20210223
 
 function resetrequest(reset_submit, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
-    console.log("Made it to forgot_password_submit script ");
-    console.log("email address = " + reset_submit);
-    console.log("first name = " + first_submit);
-    console.log("last name = " + last_submit);
-    console.log("user name = " + user_submit);
-    console.log("login ID = " + login_ID);
-    console.log("Theme Name = " + themename);
-    console.log("Theme Domain = " + themedomain);
-    console.log("Theme Title = " + themetitle);
-    console.log("Theme Color = " + themecolor);
-    console.log("Theme ForeColor = " + themeforecolor);
+    // console.log("Made it to forgot_password_submit script ");
+    // console.log("email address = " + reset_submit);
+    // console.log("first name = " + first_submit);
+    // console.log("last name = " + last_submit);
+    // console.log("user name = " + user_submit);
+    // console.log("login ID = " + login_ID);
+    // console.log("Theme Name = " + themename);
+    // console.log("Theme Domain = " + themedomain);
+    // console.log("Theme Title = " + themetitle);
+    // console.log("Theme Color = " + themecolor);
+    // console.log("Theme ForeColor = " + themeforecolor);
 
-    console.log("Made it to forgot_password, just prior to ajax call to sendmail");
+    // console.log("Made it to forgot_password, just prior to ajax call to sendmail");
 
     //Updated
     var jQpwr = jQuery.noConflict();
