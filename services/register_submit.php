@@ -37,20 +37,20 @@ if (file_exists("../_tenant/Config.xml")) {
     echo "</script>";
     // exit("Failed to open ../_tenant/Config.xml.");
 }    
-    echo "<script language='javascript'>";
-    echo "console.log('church_code = " . $church_code . "');";
-    echo "console.log('user_name = " . $user_name . "');";
-    echo "console.log('pass_word = " . $pass_word . "');";
-    echo "console.log('first_name = " . $first_name . "');";
-    echo "console.log('last_name = " . $last_name . "');";
-    echo "console.log('gender = " . $gender . "');";
-    echo "console.log('email_address = " . $email_address . "');";
-    echo "console.log('theme name = " . $themename . "');";
-    echo "console.log('theme domain = " . $themedomain . "');";
-    echo "console.log('theme title = " . $themetitle . "');";
-    echo "console.log('theme color = " . $themecolor . "');";
-    echo "console.log('theme forecolor = " . $themeforecolor . "');";
-    echo "</script>";
+    // echo "<script language='javascript'>";
+    // echo "console.log('church_code = " . $church_code . "');";
+    // echo "console.log('user_name = " . $user_name . "');";
+    // echo "console.log('pass_word = " . $pass_word . "');";
+    // echo "console.log('first_name = " . $first_name . "');";
+    // echo "console.log('last_name = " . $last_name . "');";
+    // echo "console.log('gender = " . $gender . "');";
+    // echo "console.log('email_address = " . $email_address . "');";
+    // echo "console.log('theme name = " . $themename . "');";
+    // echo "console.log('theme domain = " . $themedomain . "');";
+    // echo "console.log('theme title = " . $themetitle . "');";
+    // echo "console.log('theme color = " . $themecolor . "');";
+    // echo "console.log('theme forecolor = " . $themeforecolor . "');";
+    // echo "</script>";
 
 
 
