@@ -43,6 +43,7 @@ $text = array();
 $mailtype = $_POST['mailtype'];
 $domain = $_POST['theme_domain'];
 $customer = $_POST['theme_name'];
+$title = $_POST['theme_title'];
 $headercolorvalue = $_POST['theme_color'];
 $headerforecolorvalue = $_POST['theme_forecolor'];
 // $family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
@@ -53,12 +54,20 @@ $lastname = $_POST['last_name'];
 $username = $_POST['user_name'];
 $email = $_POST['email_address'];
 // $key = $_POST['ResetKey'];
-
-// echo "<script language='javascript'>";
-// echo "console.log('Made it to sendmail - just prior to switch');";
-// echo "</script>";
-
-
+echo "<script language='javascript'>";
+echo "console.log('Made it to sendmail - just prior to switch');";
+echo "console.log('mailtype = " . $mailtype . "');";
+echo "console.log('Login = " . $login . "');";
+echo "console.log('Email = " . $email . "');";
+echo "console.log('User Name = " . $username . "');";
+echo "console.log('First = " . $firstname . "');";
+echo "console.log('Last = " . $lastname . "');";
+echo "console.log('Theme Name = " . $customer . "');";
+echo "console.log('Theme Domain = " . $domain . "');";
+echo "console.log('Theme Title = " . $title . "');";
+echo "console.log('Theme Color = " . $headercolorvalue . "');";
+echo "console.log('Theme ForeColor = " . $headerforecolorvalue . "');";
+echo "</script>";
 
     if($mailtype){
         Switch ($mailtype){
