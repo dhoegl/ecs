@@ -17,7 +17,7 @@ if(isset($_POST['registersubmit']))
     $full_name = $first_name . ' ' . $last_name;
     $gender = filter_input(INPUT_POST, 'gendercode');
     $email_address = filter_input(INPUT_POST, 'emailaddressname');
-    $LoginID = '';
+    $LoginID = ' ';
 
 echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
 // Enable sendmail script to notify Admins re: register request
