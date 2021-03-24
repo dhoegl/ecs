@@ -142,7 +142,7 @@ $email = $_POST['email_address'];
                 $mailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators</p>";
                 $mailmessage .= "<p><strong>" . $firstname . " " . $lastname . "</strong> has reqeuested to be added to <strong>" . $customer . "'s</strong> family directory.</p>";
                 $mailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Registration Admin</strong> menu item, and accept or reject this request.</p>";
-                $mailmessage .= "<p><a href='" . $maillink . "'>" . $customer . "</a></p>";
+                $mailmessage .= "<p><a href=http://'" . $maillink . "'>" . $customer . "</a></p>";
                 $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
                 $mailmessage .= "</body></html>";
                 $mailfrom = "newfamilyrequest@ourfamilyconnections.org";
