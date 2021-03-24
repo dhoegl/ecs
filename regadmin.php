@@ -80,6 +80,7 @@ $count = $result->num_rows;
     include('includes/view_approvedmembers.php');
     // Get Approve Registrant Script
     // include('/services/ofc_approve_registrant.php');
+
     ?>
     <!-- Tenant Configuration JavaScript Call -->
     <!-- <script type="text/javascript" src="/js/ofc_config_ajax_call.js"></script> -->

@@ -4,11 +4,11 @@
   <head>
   </head>
   <body>
-  HI
+
 <?php
 //New Registrant Accept script
 //Called from regadmin.php
-//Last Updated 2020/12/09
+//Last Updated 2021/03/23
 echo "<script language='javascript'>";
 echo "alert('Arrived at ajax_update_new_registrant');";
 echo "console.log('Arrived at ajax_update_new_registrant');";

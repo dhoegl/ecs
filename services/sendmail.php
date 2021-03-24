@@ -1,6 +1,6 @@
 <?php
 // Send Mail scripts
-// Updated 2021/03/21
+// Updated 2021/03/23
 // This function will send email to users and admins
 // session_start();
 // if(!$_SESSION['logged in']) {
@@ -8,6 +8,7 @@
 // 	exit();
 // }
 require_once('../dbconnect.php');
+include('../includes/event_logs_update.php');
 $text = array();
 
 // function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) 
@@ -121,7 +122,12 @@ $email = $_POST['email_address'];
                 $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                if(mail($mailto,$mailsubject,$mailmessage,$mailheaders)) {
+                    eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "SUCCESS");
+                }
+                else {
+                    eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "FAILED");
+                }
                 $response = "Mailtype received" . " = " . $mailtype;
             break;
             case 'register_request':
