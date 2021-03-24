@@ -59,6 +59,7 @@ echo "</script>";
             echo "
             <script type='text/javascript'>
             regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+            console.log('Inside Dir Update Selected 0 script - just sent request to send approval email - regapprovenotify');
             </script>
             ";
             $response = "success entry to new family";

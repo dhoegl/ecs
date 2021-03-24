@@ -171,7 +171,7 @@ $email = $_POST['email_address'];
                 $mailmessage .= "<p>Hello <strong>" . $firstname . " " . $lastname . "</strong></p>";
                 $mailmessage .= "<p>You have been approved to access " . $customer . "'s directory site!</p>";
                 $mailmessage .= "<p>Click on the link below to login<br /></p>";
-                $mailmessage .= "<p><a href='" . $maillink . "'>" . $customer . "</a></p>";
+                $mailmessage .= "<p><a href=http://" . $maillink . ">" . $customer . "</a></p>";
                 $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
                 $mailmessage .= "</body></html>";
                 $mailfrom = "noreply@ourfamilyconnections.org";
