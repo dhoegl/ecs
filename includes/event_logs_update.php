@@ -10,7 +10,7 @@ echo '<script language="javascript">';
 echo "console.log('Entered into event_logs_update.php. Register_Check = " . $_SESSION['register_check'] . "');";
 echo '</script>';
 	// header("location:../welcome.php");
-    header("location:welcome.php");
+    header("location:../welcome.php");
     exit();
 }
 // *********************************************
