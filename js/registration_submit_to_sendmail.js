@@ -16,14 +16,14 @@ function registerrequest(email_addr, first_submit, last_submit, user_submit, log
     // console.log("Theme Color = " + themecolor);
     // console.log("Theme ForeColor = " + themeforecolor);
 
-    // console.log("Made it to forgot_password, just prior to ajax call to sendmail");
+    // console.log("Made it to Register Request, just prior to ajax call to sendmail");
 
     //Updated
     var jQpwr = jQuery.noConflict();
     var request = jQpwr.ajax({
         url: '../services/sendmail.php',
         type: 'POST',
-        dataType: 'json',
+        // dataType: 'json',
         data: { mailtype: 'register_request', email_address: email_addr, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
     });
     request.done(function (data, textStatus, jqXHR) {
