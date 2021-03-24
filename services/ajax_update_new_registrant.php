@@ -17,7 +17,23 @@ echo "</script>";
     if ( isset($_POST['Selected']) ) {
         require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
         include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
-        include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
+        echo "<script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script>";
+
+    // Extract email theme elements from config.xml
+    if (file_exists("../_tenant/Config.xml")) {
+        $xml = simplexml_load_file("../_tenant/Config.xml");
+        $themename = $xml->customer->name;
+        $themedomain = $xml->customer->domain;
+        $themetitle = $xml->customer->hometitle;
+        $themecolor = $xml->customer->banner_color;
+        $themeforecolor = $xml->customer->banner_forecolor;
+    } else {
+        echo "<script language='javascript'>";
+        echo "console.log('Failed to open ../_tenant/Config.xml');";
+        echo "</script>";
+        // exit("Failed to open ../_tenant/Config.xml.");
+    }    
+
         $customer = "";
         $domain = "";
         $headercolor = "";
@@ -39,7 +55,12 @@ echo "</script>";
             $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $Directory2 . "' WHERE login_ID = '". $Login2 . "'";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to New Family - Directory entry: " . $Directory2);
-            // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
+            // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
+            echo "
+            <script type='text/javascript'>
+            regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+            </script>
+            ";
             $response = "success entry to new family";
         }
 // function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
@@ -71,7 +92,12 @@ echo "</script>";
             $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $Selected2 . "' WHERE login_ID = '". $Login2 . "'";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " . $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to Directory entry: " . $Selected2);
-            // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
+            // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
+            echo "
+            <script type='text/javascript'>
+            regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+            </script>
+            ";
         $response = "success entry to existing family";
         // $text[] = array('Status' => 'Accept Success');
 	    // header('Content-type: application/json');
