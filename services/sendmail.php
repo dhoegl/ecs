@@ -9,6 +9,8 @@
 // }
 require_once('../dbconnect.php');
 // include('../includes/event_logs_update.php');
+    // Event Log  trap
+    require_once('../includes/event_logs_update.php');
 $text = array();
 
 // function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) 
