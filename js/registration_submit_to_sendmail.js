@@ -1,6 +1,6 @@
 // Perform AJAX forget password on password reset submit
 //JQuery
-//Called from recover_submit.php
+//Called from register_submit.php
 // Last Updated 20210223
 
 function registerrequest(email_addr, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
