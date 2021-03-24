@@ -57,8 +57,8 @@ echo "</script>";
             // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to New Family - Directory entry: " . $Directory2);
             // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
             echo "<script type='text/javascript'>";
-            echo "regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor')";
             echo "console.log('Inside Dir Update Selected 0 script - just sent request to send approval email - regapprovenotify')";
+            echo "regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor')";
             echo "</script>";
             $response = "success entry to new family";
         }

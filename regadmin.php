@@ -107,6 +107,7 @@ $count = $result->num_rows;
     <script type="text/javascript">
         //var jQA = jQuery.noConflict();
         //jQA(document).ready(function () {
+        // RegistrantUpdate(testforSelect, DirID, LoginID, Gender, FirstName, LastName, Email);
         function RegistrantUpdate(data1, data2, data3, data4, data5, data6, data7) {
             var Selected = "Select = " + data1;
             var DirID = "Directory = " + data2;
