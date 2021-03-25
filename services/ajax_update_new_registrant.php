@@ -60,7 +60,7 @@ echo "</script>";
             echo "console.log('Inside Dir Update Selected 0 script - just sent request to send approval email - regapprovenotify')";
             echo "regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor')";
             echo "</script>";
-            $response = "success entry to new family";
+            $response = "success_entry_to_new_family";
         }
 // function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
     //$mailtype = type of email to send
@@ -97,7 +97,7 @@ echo "</script>";
             regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
             </script>
             ";
-        $response = "success entry to existing family";
+        $response = "success_entry_to_existing_family";
         // $text[] = array('Status' => 'Accept Success');
 	    // header('Content-type: application/json');
         // echo json_encode($text);
