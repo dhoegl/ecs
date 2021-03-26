@@ -110,7 +110,7 @@ echo "</script>";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to New Family - Directory entry: " . $Directory2);
             // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
-            // regapprovenotify($Email2, $FirstName2, $LastName2, $user_name, $Login2, $themename, $themedomain, $themetitle, $themecolor, $themeforecolor);
+            regapprovenotify($Email2, $FirstName2, $LastName2, $user_name, $Login2, $themename, $themedomain, $themetitle, $themecolor, $themeforecolor);
             $response = "success_entry_to_new_family";
         }
 // function sendmail_stage($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $email, $reset) { // params based on each call to sendmail
@@ -143,7 +143,7 @@ echo "</script>";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " . $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to Directory entry: " . $Selected2);
             // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
-            // regapprovenotify($Email2, $FirstName2, $LastName2, $user_name, $Login2, $themename, $themedomain, $themetitle, $themecolor, $themeforecolor);
+            regapprovenotify($Email2, $FirstName2, $LastName2, $user_name, $Login2, $themename, $themedomain, $themetitle, $themecolor, $themeforecolor);
         $response = "success_entry_to_existing_family";
         // $text[] = array('Status' => 'Accept Success');
 	    // header('Content-type: application/json');
