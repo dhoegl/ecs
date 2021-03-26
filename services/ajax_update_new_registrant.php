@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
   <head>
+  <script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script>
   </head>
   <body>
 
@@ -103,6 +104,5 @@ echo "</script>";
     }
     // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
     ?>
-<script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script>
 </body>
 </html>
