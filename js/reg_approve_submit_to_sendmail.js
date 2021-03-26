@@ -4,7 +4,7 @@
 // Last Updated 20210223
 
 function regapprovenotify(email_addr, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
-    // console.log("Made it to forgot_password_submit script ");
+    console.log("Made it to reg_approve_submit_to_sendmail script ");
     // console.log("email address = " + email_addr);
     // console.log("first name = " + first_submit);
     // console.log("last name = " + last_submit);
@@ -16,7 +16,7 @@ function regapprovenotify(email_addr, first_submit, last_submit, user_submit, lo
     // console.log("Theme Color = " + themecolor);
     // console.log("Theme ForeColor = " + themeforecolor);
 
-    // console.log("Made it to Register Request, just prior to ajax call to sendmail");
+    // console.log("Made it to regapprovenotify, just prior to ajax call to sendmail");
 
     //Updated
     var jQpwr = jQuery.noConflict();
