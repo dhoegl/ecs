@@ -471,7 +471,7 @@ var jQ12 = jQuery.noConflict();
         //var jQA = jQuery.noConflict();
         //jQA(document).ready(function () {
         // RegistrantUpdate(testforSelect, DirID, LoginID, Gender, FirstName, LastName, Email);
-        function RegistrantUpdate(data1, data2, data3, data4, data5, data6, data7) {
+        // function RegistrantUpdate(data1, data2, data3, data4, data5, data6, data7) {
             var Selected = "Select = " + data1;
             var DirID = "Directory = " + data2;
             var LoginID = "Login = " + data3;
@@ -512,7 +512,7 @@ var jQ12 = jQuery.noConflict();
                     location.reload();
                     return result;
                 });
-        };
+        // };
 
 </script>
 
@@ -769,6 +769,8 @@ var jQ12 = jQuery.noConflict();
     <script type="text/javascript" src="/js/config_ajax_call.js"></script>
     <!-- Call Image Verify jQuery script -->
     <script src="js/image_verify.js"></script>
+    <!-- Load registrantupdate  -->
+    <script type="text/javascript" src="/js/registrantupdate.js"></script>
 
 
 </body>
