@@ -4,7 +4,7 @@
   <!-- <script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script> -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
 <script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>
-<script>
+<script type="text/javascript">
   function regapprovenotify(email_addr, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
     // console.log("Made it to forgot_password_submit script ");
     // console.log("email address = " + email_addr);
@@ -57,7 +57,7 @@
             // location.reload();
             return result;
         });
-}
+};
 </script>
   </head>
   <body>
