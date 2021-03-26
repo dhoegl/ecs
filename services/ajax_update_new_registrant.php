@@ -17,7 +17,6 @@ echo "</script>";
     if ( isset($_POST['Selected']) ) {
         require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
         include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
-        echo "<script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script>";
 
     // Extract email theme elements from config.xml
     if (file_exists("../_tenant/Config.xml")) {
@@ -112,5 +111,6 @@ echo "</script>";
     }
     // sendmail_stage('approved_member', $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $Login2, $FirstName2, $LastName2, $Email2, $reset);
     ?>
+<script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script>
 </body>
 </html>
