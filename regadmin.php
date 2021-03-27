@@ -79,7 +79,7 @@ $count = $result->num_rows;
     // Get Approved Members List
     include('includes/view_approvedmembers.php');
     // Get Approve Registrant Script
-    // include('/services/ofc_approve_registrant.php');
+    include('../services/registrantupdate.php');
 
     ?>
     <!-- Tenant Configuration JavaScript Call -->
@@ -769,7 +769,7 @@ var jQ12 = jQuery.noConflict();
     <!-- Call Image Verify jQuery script -->
     <script src="js/image_verify.js"></script>
     <!-- Load registrantupdate  -->
-    <script type="text/javascript" src="/js/registrantupdate.js"></script>
+    <!-- <script type="text/javascript" src="/js/registrantupdate.js"></script> -->
 
 
 </body>
