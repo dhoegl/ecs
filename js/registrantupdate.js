@@ -9,6 +9,7 @@
             var Last = "LastName = " + data6;
             var Email = "Email = " + data7;
             var $Response = Selected + " " + DirID + " " + LoginID + " " + Gender + " " + First + " " + Last + " " + Email;
+            console.log("RegistrantUpdate function successfully called");
             console.log("approve_registrant : Response = " + $Response);
             jQ10.ajax({
                 url: '../services/ajax_update_new_registrant.php',
