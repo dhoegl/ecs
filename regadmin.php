@@ -248,13 +248,15 @@ jQ10(document).ready(function () {
                         dataType: 'text',
                         data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName, Email: Email }
                         })
-                    request.done(function (jqXHR, textStatus) {
+                    request.done(function (result, textStatus, xhr) {
                         //  Get the result
-                        var result = "I think it was successful";
+                        // var result = "success";
                         var teststat = textStatus;
-                        teststat2 = jqXHR.responseText;
-                        console.log("ajax response data for regadmin = " + teststat2);
-                        console.log("ajax response text for regadmin = " + textStatus);
+                        teststat2 = xhr.responseText;
+                        console.log("ajax response data result for regadmin = " + result);
+                        console.log("ajax response status for regadmin = " + textStatus);
+                        console.log("ajax response xhr for regadmin = " + xhr);
+                        console.log("ajax response xhr.responseText for regadmin = " + xhr.responseText);
                         alert("Updates have been made. Registrant has been notified.");
                         location.reload();
                         return result;
