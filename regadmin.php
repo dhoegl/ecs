@@ -10,6 +10,8 @@ $sessname = session_name();
 $sessid = session_id();
 $profileID = $_SESSION['idDirectory'];
 require_once('dbconnect.php');
+// Get Approve Registrant Script
+include('../services/registrantupdate.php');
 
 
 //Query for users requesting to register but not yet approved
@@ -78,8 +80,6 @@ $count = $result->num_rows;
     include('includes/view_unregisteredapplicantslist.php');
     // Get Approved Members List
     include('includes/view_approvedmembers.php');
-    // Get Approve Registrant Script
-    include('../services/registrantupdate.php');
 
     ?>
     <!-- Tenant Configuration JavaScript Call -->
