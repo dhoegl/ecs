@@ -109,7 +109,6 @@
         // echo json_encode($text);
         echo $response;
     }
-}
 ?>
 
 <!-- <script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script> -->
