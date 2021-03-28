@@ -10,8 +10,6 @@ $sessname = session_name();
 $sessid = session_id();
 $profileID = $_SESSION['idDirectory'];
 require_once('dbconnect.php');
-// Get Approve Registrant Script
-include('../services/registrantupdate.php');
 
 
 //Query for users requesting to register but not yet approved
@@ -80,6 +78,8 @@ $count = $result->num_rows;
     include('includes/view_unregisteredapplicantslist.php');
     // Get Approved Members List
     include('includes/view_approvedmembers.php');
+// Get Approve Registrant Script
+include('../services/registrantupdate.php');
 
     ?>
     <!-- Tenant Configuration JavaScript Call -->
@@ -240,7 +240,39 @@ jQ10(document).ready(function () {
                     alert("You haven't selected a Family. If no family exists, click 'new family'");
                 }
                 else {
-                    RegistrantUpdate(testforSelect, DirID, LoginID, Gender, FirstName, LastName, Email);
+                    var jQrgu = jQuery.noConflict();
+                    var request = jQrgu.ajax({
+                        url: '../services/registrantupdate.php',
+                        type: 'POST',
+                        //dataType: 'json',
+                        dataType: 'text',
+                        data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName, Email: Email }
+                        })
+                    .done(function (jqXHR, textStatus) {
+                        //  Get the result
+                        var result = "success";
+                        var teststat = textStatus;
+                        teststat2 = jqXHR.responseText;
+                        console.log("ajax response data = " + teststat);
+                        console.log("ajax response text = " + teststat2);
+                        alert("Updates have been made. Registrant has been notified.");
+                        location.reload();
+                        return result;
+                    })
+                    .fail(function (jqXHR, textStatus) {
+                        //  Get the result
+                        //result = (rtnData === undefined) ? null : rtnData.d;
+                        var result = "fail";
+                        var teststat = textStatus;
+                        var teststat2 = jqXHR.responseText;
+                        // console.log("ajax response data = " + teststat);
+                        // console.log("ajax response text = " + teststat2);
+                        reportError(teststat);
+                        //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
+                        location.reload();
+                        return result;
+                    });
+                    // RegistrantUpdate(testforSelect, DirID, LoginID, Gender, FirstName, LastName, Email);
                     jQ10("#ModalApproveRegistrant").fadeOut('slow');
                     jQ10("#ModalApproveRegistrant").modal('hide');
                 }

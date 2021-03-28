@@ -8,17 +8,26 @@
 <?php
 // Collect registrant approval details - send to ajax_update_new_registrant.php
 // RegistrantUpdate(testforSelect, DirID, LoginID, Gender, FirstName, LastName, Email);
-function RegistrantUpdate($data1, $data2, $data3, $data4, $data5, $data6, $data7) {
-    $Selected = "Select = " + $data1;
-    $DirID = "Directory = " + $data2;
-    $LoginID = "Login = " + $data3;
-    $Gender = "Gender = " + $data4;
-    $First = "FirstName = " + $data5;
-    $Last = "LastName = " + $data6;
-    $Email = "Email = " + $data7;
-    $Response = $Selected + " " + $DirID + " " + $LoginID + " " + $Gender + " " + $First + " " + $Last + " " + $Email;
+// function RegistrantUpdate($data1, $data2, $data3, $data4, $data5, $data6, $data7) {
+
+    $SelectID = $_POST['Selected'];
+    $DirID = $_POST['Directory'];
+    $LoginID = $_POST['Login'];
+    $Gender = $_POST['Gender'];
+    $First = $_POST['FirstName'];
+    $Last = $_POST['LastName'];
+    $Email = $_POST['Email'];
+    
+    $data1 = "Select = " + $SelectID;
+    $data2 = "Directory = " + $DirID;
+    $data3 = "Login = " + $LoginID;
+    $data4 = "Gender = " + $Gender;
+    $data5 = "FirstName = " + $First;
+    $data6 = "LastName = " + $Last;
+    $data7 = "Email = " + $Email;
+    $Response = $data1 + " " + $data2 + " " + $data3 + " " + $data4 + " " + $data5 + " " + $data6 + " " + $data7;
     echo "<script language='javascript'>";
-    echo "alert('Arrived at ajax_update_new_registrant');";
+    echo "alert('Arrived at registrantupdate.php');";
     echo "console.log('RegistrantUpdate function successfully called');";
     echo "console.log('approve_registrant : Response = ' + $Response);";
     echo "</script>";
@@ -52,25 +61,25 @@ function RegistrantUpdate($data1, $data2, $data3, $data4, $data5, $data6, $data7
         $headerforecolor = "";
         $family_select = "";
         $admin_dir = "";
-        $Selected2 = $_POST['Selected'];
-        $Directory2 = $_POST['Directory'];
-        $Login2 = $_POST['Login'];
-        $Gender2 = $_POST['Gender'];
-        $FirstName2 = $_POST['FirstName'];
-        $LastName2 = $_POST['LastName'];
-        $Email2 = $_POST['Email'];
+        // $Selected2 = $_POST['Selected'];
+        // $Directory2 = $_POST['Directory'];
+        // $Login2 = $_POST['Login'];
+        // $Gender2 = $_POST['Gender'];
+        // $FirstName2 = $_POST['FirstName'];
+        // $LastName2 = $_POST['LastName'];
+        // $Email2 = $_POST['Email'];
         $reset = "";
         $text = array();
-        if($Selected2 == '0'){ // New family
-            $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1' WHERE idDirectory = '". $Directory2 . "'";
+        if($SelectID == '0'){ // New family
+            $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1' WHERE idDirectory = '". $DirID . "'";
             $regacceptdir = $mysql->query($regacceptdirquery) or die("A database error occurred when trying to update new Registrant info into directory table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
-            $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $Directory2 . "' WHERE login_ID = '". $Login2 . "'";
+            $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $DirID . "' WHERE login_ID = '". $LoginID . "'";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $Login2 . " to New Family - Directory entry: " . $Directory2);
             // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
             echo "
             <script type='text/javascript'>
-            // regapprovenotify('$Email2', '$FirstName2', '$LastName2', '$user_name', '$Login2', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+            // regapprovenotify('$Email', '$First', '$Last', '$user_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
             </script>
 		    ";
 
