@@ -248,10 +248,6 @@ jQ10(document).ready(function () {
                         dataType: 'text',
                         data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName, Email: Email }
                     })
-                    .complete(function (data) {
-                        //  Get the result
-                        console.log(data);
-                    })
                     .done(function (result, textStatus, xhr) {
                         //  Get the result
                         // var result = "success";
