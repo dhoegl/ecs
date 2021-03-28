@@ -248,9 +248,9 @@ jQ10(document).ready(function () {
                         dataType: 'text',
                         data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName, Email: Email }
                         })
-                    .done(function (jqXHR, textStatus) {
+                    request.done(function (jqXHR, textStatus) {
                         //  Get the result
-                        var result = "success";
+                        var result = "I think it was successful";
                         var teststat = textStatus;
                         teststat2 = jqXHR.responseText;
                         console.log("ajax response data for regadmin = " + jqXHR);
@@ -259,7 +259,7 @@ jQ10(document).ready(function () {
                         location.reload();
                         return result;
                     })
-                    .fail(function (jqXHR, textStatus) {
+                    request.fail(function (jqXHR, textStatus) {
                         //  Get the result
                         //result = (rtnData === undefined) ? null : rtnData.d;
                         var result = "fail";
