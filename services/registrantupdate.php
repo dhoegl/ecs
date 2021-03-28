@@ -33,8 +33,8 @@
                 var testdata = data;
                 var teststat = textStatus;
                 teststat2 = jqXHR.responseText;
-                console.log("ajax response data for registration request = " + teststat);
-                console.log("ajax response text for registration request = " + teststat2);
+                console.log("ajax response data for registrantupdate = " + teststat);
+                console.log("ajax response text for registrantupdate = " + teststat2);
                 alert("Your request has been successfully submitted.");
                 $welcomepage = window.location.hostname;
                 window.locaation = $welcomepage;
