@@ -79,7 +79,7 @@
             // Send Registration Approval to handler at reg_approve_submit_to_sendmail.js
             echo "
             <script type='text/javascript'>
-            // regapprovenotify('$Email', '$First', '$Last', '$user_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+            regapprovenotify('$Email', '$First', '$Last', '$user_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
             </script>
 		    ";
 
