@@ -253,7 +253,7 @@ jQ10(document).ready(function () {
                         var result = "I think it was successful";
                         var teststat = textStatus;
                         teststat2 = jqXHR.responseText;
-                        console.log("ajax response data for regadmin = " + jqXHR);
+                        console.log("ajax response data for regadmin = " + teststat2);
                         console.log("ajax response text for regadmin = " + textStatus);
                         alert("Updates have been made. Registrant has been notified.");
                         location.reload();
