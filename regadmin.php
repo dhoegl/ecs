@@ -248,11 +248,11 @@ jQ10(document).ready(function () {
                         dataType: 'text',
                         data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName, Email: Email }
                     })
-                    request.complete(function (data) {
+                    .complete(function (data) {
                         //  Get the result
                         console.log(data);
                     })
-                    request.done(function (result, textStatus, xhr) {
+                    .done(function (result, textStatus, xhr) {
                         //  Get the result
                         // var result = "success";
                         var teststat = textStatus;
@@ -265,7 +265,7 @@ jQ10(document).ready(function () {
                         location.reload();
                         return result;
                     })
-                    request.fail(function (jqXHR, textStatus) {
+                    .fail(function (jqXHR, textStatus) {
                         //  Get the result
                         //result = (rtnData === undefined) ? null : rtnData.d;
                         var result = "fail";
