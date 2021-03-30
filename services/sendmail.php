@@ -18,7 +18,7 @@ function regsendmailnotify($mailtype, $email, $firstname, $lastname, $username, 
 }
 
 // Javascript call from jQuery
-if(!$mailtype == 'approved_member'){
+if(!$mailtype = 'approved_member'){
     $mailtype = $_POST['mailtype'];
     $domain = $_POST['theme_domain'];
     $customer = $_POST['theme_name'];
