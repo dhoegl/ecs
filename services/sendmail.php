@@ -11,66 +11,43 @@ require_once('../dbconnect.php');
 // Event Log  trap
 // require_once('../includes/event_logs_update.php');
 $text = array();
+$mailtype = "";
+// PHP Function call tp PHP
+function regsendmailnotify($mailtype, $email, $firstname, $lastname, $username, $login, $customer, $domain, $title, $headercolorvalue, $headerforecolorvalue){
 
-// function sendmail($mailtype, $customer, $domain, $headercolor, $headerforecolor, $family_select, $admin_dir, $login, $first, $last, $username, $email, $reset) 
-// { // params based on each call to sendmail
-    //$mailtype = type of email to send
-    //$customer = 'Customer Name' - Name of church/school (email banner)
-    //$domain = 'Domain' - Site domain - used to insert domain information into login email
-    //$headercolor = 'headercolor' - brand banner color for email header
-    //$headerforecolor = 'headerforecolor' - brand text color for email header
-    //$family_select = 'Selected' - which family the approved member is being added to
-    //$admin_dir = 'Directory' - Registration Admin's idDirectory entry
-    //$login/$Login2 = 'Login' - approved member's user login id
-    //$first/$FirstNane2 = 'FirstName' - approved member's first name
-    //$last/$LastName2 = 'LastName' - approved member's last name
-    //$email/$Email2 = 'Email' - approved member's email address
-    //$reset = 'ResetKey' - key credential for password reset
-// AJAX data
-    // data: {
-    //     "Mailtype": $mailtype,
-    //     "Domain": domain,
-    //     "Customer": customer,
-    //     "HeaderColor": headercolorvalue,
-    //     "Headerforecolorvalue": headerforecolorvalue,
-    //     "Login": $login,
-    //     "First": $first,
-    //     "Last": $last,
-    //     "Email": $email,
-    //     "ResetKey": $reset
+}
 
-    // data: { mailtype: 'password_reset', email_address: reset_submit, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
-
-
-$mailtype = $_POST['mailtype'];
-$domain = $_POST['theme_domain'];
-$customer = $_POST['theme_name'];
-$title = $_POST['theme_title'];
-$headercolorvalue = $_POST['theme_color'];
-$headerforecolorvalue = $_POST['theme_forecolor'];
-// $family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
-// $admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
-$login = $_POST['login_id']; //UserName
-$firstname = $_POST['first_name'];
-$lastname = $_POST['last_name'];
-$username = $_POST['user_name'];
-$email = $_POST['email_address'];
-// $key = $_POST['ResetKey'];
-// echo "<script language='javascript'>";
-// echo "console.log('Made it to sendmail - just prior to switch');";
-// echo "console.log('mailtype = " . $mailtype . "');";
-// echo "console.log('Login = " . $login . "');";
-// echo "console.log('Email = " . $email . "');";
-// echo "console.log('User Name = " . $username . "');";
-// echo "console.log('First = " . $firstname . "');";
-// echo "console.log('Last = " . $lastname . "');";
-// echo "console.log('Theme Name = " . $customer . "');";
-// echo "console.log('Theme Domain = " . $domain . "');";
-// echo "console.log('Theme Title = " . $title . "');";
-// echo "console.log('Theme Color = " . $headercolorvalue . "');";
-// echo "console.log('Theme ForeColor = " . $headerforecolorvalue . "');";
-// echo "</script>";
-
+// Javascript call from jQuery
+if(!$mailtype == 'approved_member'){
+    $mailtype = $_POST['mailtype'];
+    $domain = $_POST['theme_domain'];
+    $customer = $_POST['theme_name'];
+    $title = $_POST['theme_title'];
+    $headercolorvalue = $_POST['theme_color'];
+    $headerforecolorvalue = $_POST['theme_forecolor'];
+    // $family_select = $_POST['Family']; //family select for new registrants (possibly unused for email comms)
+    // $admin_dir = $_POST['Admin']; //Administrator's Directory ID (possibly unused for email comms)
+    $login = $_POST['login_id']; //UserName
+    $firstname = $_POST['first_name'];
+    $lastname = $_POST['last_name'];
+    $username = $_POST['user_name'];
+    $email = $_POST['email_address'];
+    // $key = $_POST['ResetKey'];
+    // echo "<script language='javascript'>";
+    // echo "console.log('Made it to sendmail - just prior to switch');";
+    // echo "console.log('mailtype = " . $mailtype . "');";
+    // echo "console.log('Login = " . $login . "');";
+    // echo "console.log('Email = " . $email . "');";
+    // echo "console.log('User Name = " . $username . "');";
+    // echo "console.log('First = " . $firstname . "');";
+    // echo "console.log('Last = " . $lastname . "');";
+    // echo "console.log('Theme Name = " . $customer . "');";
+    // echo "console.log('Theme Domain = " . $domain . "');";
+    // echo "console.log('Theme Title = " . $title . "');";
+    // echo "console.log('Theme Color = " . $headercolorvalue . "');";
+    // echo "console.log('Theme ForeColor = " . $headerforecolorvalue . "');";
+    // echo "</script>";
+}
     if($mailtype){
         Switch ($mailtype){
             case 'password_reset':

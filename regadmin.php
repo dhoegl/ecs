@@ -78,8 +78,8 @@ $count = $result->num_rows;
     include('includes/view_unregisteredapplicantslist.php');
     // Get Approved Members List
     include('includes/view_approvedmembers.php');
-// Get Approve Registrant Script
-include('../services/registrantupdate.php');
+// // Get Approve Registrant Script
+// include('../services/registrantupdate.php');
 
     ?>
     <!-- Tenant Configuration JavaScript Call -->
@@ -242,7 +242,7 @@ jQ10(document).ready(function () {
                 else {
                     var jQrgu = jQuery.noConflict();
                     var request = jQrgu.ajax({
-                        url: '../services/registrantupdate.php',
+                        url: '../services/registrantupdate2.php',
                         type: 'POST',
                         //dataType: 'json',
                         dataType: 'text',
