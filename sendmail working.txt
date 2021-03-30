@@ -1,7 +1,7 @@
 http://ecs.ourfamilyconnections.org/
 http://ecs.ourfamilyconnections.org/services/ajax_update_new_registrant.php
 
-http://ecs.ourfamilyconnections.org/services/test_sendmail_stage.php
+http://ecs.ourfamilyconnections.org/services/test_sendmail_stage_old.php
 http://ecs.ourfamilyconnections.org/services/simplexml.php
 
 

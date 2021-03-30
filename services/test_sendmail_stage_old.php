@@ -1,4 +1,4 @@
-Test_sendmail_stage
+<!-- Test_sendmail_stage -->
 <!-- Testing the launch of sendmail_stage.php -->
 <?php
 echo "<script language='javascript'>";
@@ -6,7 +6,7 @@ echo "alert('Arrived at test_sendmail_stage');";
 echo "</script>";
 require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
 include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
-include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage.php');
+include($_SERVER["DOCUMENT_ROOT"] . '/services/sendmail_stage_old.php');
 
         $customer = "Test School";
         $domain = "ecs.ourfamilyconnections.org";
