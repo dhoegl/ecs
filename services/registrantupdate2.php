@@ -89,7 +89,6 @@ include('../services/sendmail.php');
     echo "console.log('RegistrantUpdate function successfully called');";
     echo "console.log('approve_registrant : Response = ' + $Response);";
     echo "</script>";
-exit ('Exit out of registantupdate2');
 //********************************************
 //********************************************
 //New Registrant Accept script
