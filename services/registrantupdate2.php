@@ -3,9 +3,9 @@
   <head>
     <script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>
     <!-- <script type='text/javascript' src='../js/reg_approve_submit_to_sendmail.js'></script> -->
-    <script type="text/javascript">
-        function regapprovenotify(email_addr, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
-            console.log("Made it to reg_approve_submit_to_sendmail script ");
+    <!-- <script type="text/javascript"> -->
+        <!-- // function regapprovenotify(email_addr, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) { -->
+        <!-- //     console.log("Made it to reg_approve_submit_to_sendmail script ");
             // console.log("email address = " + email_addr);
             // console.log("first name = " + first_submit);
             // console.log("last name = " + last_submit);
@@ -19,8 +19,8 @@
 
             // console.log("Made it to regapprovenotify, just prior to ajax call to sendmail");
 
-            //Updated
-            var jQpwr = jQuery.noConflict();
+            //Updated -->
+            <!-- var jQpwr = jQuery.noConflict();
             var request = jQpwr.ajax({
                 url: '../services/sendmail.php',
                 type: 'POST',
@@ -55,9 +55,9 @@
                     //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
                     // location.reload();
                     return result;
-                });
-            }
-    </script>
+                }); -->
+            <!-- } -->
+    <!-- </script> -->
 </head>
   <body>
 <?php
@@ -89,7 +89,7 @@ include('../services/sendmail.php');
     echo "console.log('RegistrantUpdate function successfully called');";
     echo "console.log('approve_registrant : Response = ' + $Response);";
     echo "</script>";
-
+exit;
 //********************************************
 //********************************************
 //New Registrant Accept script
