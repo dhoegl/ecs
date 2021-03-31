@@ -22,6 +22,10 @@ function regsendmailnotify($mailtype, $email, $firstname, $lastname, $username, 
 
 // Javascript call from jQuery
 if(!$mailtype = 'approved_member'){
+    echo "<script language='javascript'>";
+    echo "alert('Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
+    echo "</script>";
+
     $mailtype = $_POST['mailtype'];
     $domain = $_POST['theme_domain'];
     $customer = $_POST['theme_name'];
