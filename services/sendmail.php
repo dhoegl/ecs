@@ -15,7 +15,7 @@ $mailtype = "";
 // PHP Function call tp PHP
 function regsendmailnotify($mailtype, $email, $firstname, $lastname, $username, $login, $customer, $domain, $title, $headercolorvalue, $headerforecolorvalue){
     echo "<script language='javascript'>";
-    echo "alert('Arrived at sendmail. mailtype = ' + '<?php $mailtype; ?>');";
+    echo "alert('Arrived at sendmail. mailtype = ' + '$mailtype');";
     echo "</script>";
     
 }
