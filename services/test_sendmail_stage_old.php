@@ -6,7 +6,7 @@ echo "alert('Arrived at test_sendmail_stage');";
 echo "</script>";
 require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
 // include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
-include($_SERVER["DOCUMENT_ROOT"] . '../services/sendmail.php');
+include('../services/sendmail.php');
 
         $themename = "Evangel Classical School";
         $themetitle = "ECS Family Connections";
