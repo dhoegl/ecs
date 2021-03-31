@@ -36,6 +36,8 @@ echo "<script language='javascript'>";
 echo "alert('Arrived at sendmail_stage');";
 echo "console.log('Arrived at sendmail_stage');";
 echo "</script>";
+regsendmailnotify('approved_member', $Email, $First, $Last, $user_name, $LoginID, $themename, $themedomain, $themetitle, $themecolor, $themeforecolor);
+
 }
 ?>
 
