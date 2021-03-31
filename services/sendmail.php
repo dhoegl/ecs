@@ -22,9 +22,6 @@ function regsendmailnotify($mailtype, $email, $firstname, $lastname, $username, 
 
 // Javascript call from jQuery
 if(!$mailtype = 'approved_member'){
-    echo "<script language='javascript'>";
-    echo "alert('Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
-    echo "</script>";
 
     $mailtype = $_POST['mailtype'];
     $domain = $_POST['theme_domain'];
@@ -55,6 +52,10 @@ if(!$mailtype = 'approved_member'){
     // echo "console.log('Theme ForeColor = " . $headerforecolorvalue . "');";
     // echo "</script>";
 }
+echo "<script language='javascript'>";
+echo "alert('Got past if(!mailtype). mailtype = ' + '$mailtype');";
+echo "</script>";
+
     if($mailtype){
         Switch ($mailtype){
             case 'password_reset':
