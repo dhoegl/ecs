@@ -7,6 +7,9 @@ echo "</script>";
 require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
 // include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
 include('../services/sendmail.php');
+echo "<script language='javascript'>";
+echo "alert('Got past Sendmail include');";
+echo "</script>";
 
         $themename = "Evangel Classical School";
         $themetitle = "ECS Family Connections";
