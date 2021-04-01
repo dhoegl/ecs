@@ -8,7 +8,6 @@ require_once('../includes/event_logs_update.php');
 $text = array();
 $mailtype = "";
 // PHP Function call tp PHP
-
 // Javascript call from jQuery
 if(!$mailtype = 'approved_member'){
 
@@ -47,7 +46,8 @@ if(!$mailtype = 'approved_member'){
                     $result = $stmt->get_result();
                     $text[] = array('Status' => 'Password Seed Success');
                     header('Content-type: application/json');
-                    echo json_encode($text);
+                    // echo json_encode($text);
+                    echo $text;
                     $stmt->close();
 
                 }
