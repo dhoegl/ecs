@@ -49,12 +49,6 @@ $count = $result->num_rows;
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
 
-    <!--CSS Scripts for Datatables Bootstrap 4 Responsive functions    -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css"> -->
-
-    <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 
@@ -62,9 +56,6 @@ $count = $result->num_rows;
     <!-- Call Moment js for date calc functions -->
     <script src="js/moment.js"></script>
     <!-- JQuery -->
-    <!-- <script type="text/javascript" src="js/MDBootstrap4191/jquery.min.js"></script> -->
-
-    <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 
@@ -83,8 +74,6 @@ $count = $result->num_rows;
 
     ?>
     <!-- Tenant Configuration JavaScript Call -->
-    <!-- <script type="text/javascript" src="/js/ofc_config_ajax_call.js"></script> -->
-
 <!-- ********************* Get Which Registrant Item's 'Approve/Reject/Send Email' button was clicked ******************* -->
 <!-- ********************* Get Which Registrant Item's 'Approve/Reject/Send Email' button was clicked ******************* -->
 <!-- ********************* Get Which Registrant Item's 'Approve/Reject/Send Email' button was clicked ******************* -->
@@ -119,9 +108,6 @@ var jQ10 = jQuery.noConflict();
 jQ10(document).ready(function () {
     jQ10("#unregisteredapplicant tbody").off("click", '.applicant_approve');
     jQ10("#unregisteredapplicant tbody").on("click", '.applicant_approve', function () {
-        // console.log("Session Name = " + sname);
-        // console.log("Session ID = " + sid);
-        // console.log("Logged in status = " + loggedin);
         var testforChild = "0";
         var LoginID = "0";
         var DirID = "0";
@@ -215,23 +201,9 @@ jQ10(document).ready(function () {
             testforSelect = "0";
             testforSelect = jQ10(this).closest("tr").find("td.idDirectory").text();
             console.log("Selected = " + testforSelect); // which family will have the new member applied to
-            // console.log("DirectoryID = " + DirID);
-            // console.log("LoginID = " + LoginID);
-            // console.log("Email = " + Email);
-            // console.log("Gender = " + Gender);
-            // console.log("Firstname = " + FirstName);
-            // console.log("Lastname = " + LastName);
 	    });
         jQ10("#modal_approve_submit").off("click");
         jQ10("#modal_approve_submit").on("click", function () {
-            // console.log("Approve Submit clicked");
-            // console.log("Selected = " + testforSelect);
-            // console.log("Directory ID = " + DirID);
-            // console.log("LoginID = " + LoginID);
-            // console.log("Gender = " + Gender);
-            // console.log("Firstname = " + FirstName);
-            // console.log("Lastname = " + LastName);
-           //jQ10("#ModalApproveRegistrant").fadeOut('slow');
 	    });
 
 // When Approve clicked on popup, process the info and extinguish the Approve popup
@@ -303,9 +275,6 @@ var jQ11 = jQuery.noConflict();
 jQ11(document).ready(function () {
     jQ11("#unregisteredapplicant tbody").off("click", '.applicant_reject');
     jQ11("#unregisteredapplicant tbody").on("click", '.applicant_reject', function () {
-        // console.log("Session Name = " + sname);
-        // console.log("Session ID = " + sid);
-        // console.log("Logged in status = " + loggedin);
         var testforChild = "0";
         var LoginID = "0";
         var DirID = "0";
@@ -385,13 +354,6 @@ jQ11(document).ready(function () {
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
         jQ11("#modal_reject_submit").off("click");
         jQ11("#modal_reject_submit").on("click", function () {
-            // console.log("Reject Yes clicked");
-            // console.log("Selected = " + testforSelect);
-            // console.log("Directory ID = " + DirID);
-            // console.log("LoginID = " + LoginID);
-            // console.log("Gender = " + Gender);
-            // console.log("Firstname = " + FirstName);
-            // console.log("Lastname = " + LastName);
             jQ11.ajax({
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
@@ -500,56 +462,6 @@ var jQ12 = jQuery.noConflict();
         });
     });
 </script>
-
-<script type="text/javascript">
-        //var jQA = jQuery.noConflict();
-        //jQA(document).ready(function () {
-        // RegistrantUpdate(testforSelect, DirID, LoginID, Gender, FirstName, LastName, Email);
-        // function RegistrantUpdate(data1, data2, data3, data4, data5, data6, data7) {
-            // var Selected = "Select = " + data1;
-            // var DirID = "Directory = " + data2;
-            // var LoginID = "Login = " + data3;
-            // var Gender = "Gender = " + data4;
-            // var First = "FirstName = " + data5;
-            // var Last = "LastName = " + data6;
-            // var Email = "Email = " + data7;
-            // var $Response = Selected + " " + DirID + " " + LoginID + " " + Gender + " " + First + " " + Last + " " + Email;
-            // console.log("approve_registrant : Response = " + $Response);
-            // jQ10.ajax({
-            //     url: '../services/ajax_update_new_registrant.php',
-            //     type: 'POST',
-            //     dataType: 'text',
-            //     data: { Selected: data1, Directory: data2, Login: data3, Gender: data4, FirstName: data5, LastName: data6, Email: data7 }
-            // })
-            //     .done(function (jqXHR, textStatus) {
-                    //  Get the result
-                //     var result = "success";
-                //     var teststat = textStatus;
-                //     teststat2 = jqXHR.responseText;
-                //     console.log("ajax response data = " + teststat);
-                //     console.log("ajax response text = " + teststat2);
-                //     alert("Updates have been made. Registrant has been notified.");
-                //     location.reload();
-                //     return result;
-                // })
-                // .fail(function (jqXHR, textStatus) {
-                    //  Get the result
-                    //result = (rtnData === undefined) ? null : rtnData.d;
-                    // var result = "fail";
-                    // var teststat = textStatus;
-                    // var teststat2 = jqXHR.responseText;
-                    // console.log("ajax response data = " + teststat);
-                    // console.log("ajax response text = " + teststat2);
-                    // reportError(teststat);
-                    //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
-                //     location.reload();
-                //     return result;
-                // });
-        // };
-
-</script>
-
-
 </head>
 
 <body>
@@ -788,13 +700,7 @@ var jQ12 = jQuery.noConflict();
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
     <!-- Tenant Configuration JavaScript Call in nav -->
-    <!-- Datatables JavaScript plugins - Bootstrap-specific -->
-    <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
-    <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
