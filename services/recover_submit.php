@@ -2,7 +2,8 @@
 // Last Updated: 20210223:
 
 require_once('../dbconnect.php');
-//include_once('/includes/event_logs_update.php');
+//include_once('../includes/event_logs_update.php');
+echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
 
 if(isset($_POST['password_reset']))
 {
@@ -12,7 +13,6 @@ if(isset($_POST['password_reset']))
     echo "</script>";
     echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
     // echo "<script type='text/javascript' src='../js/error_handler.js'></script>";
-    echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
     // echo "<script type='text/javascript'>src='../js/forgot_password_submit.js'</script>";
     //////////////////////////////////////////////////////
 
