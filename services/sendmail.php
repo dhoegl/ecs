@@ -1,24 +1,13 @@
 <?php
 // Send Mail scripts
-// Updated 2021/03/23
+// Updated 2021/03/31
 // This function will send email to users and admins
-// session_start();
-// if(!$_SESSION['logged in']) {
-// 	header("location:../welcome.php");
-// 	exit();
-// }
 require_once('../dbconnect.php');
 // Event Log  trap
-// require_once('../includes/event_logs_update.php');
+require_once('../includes/event_logs_update.php');
 $text = array();
 $mailtype = "";
 // PHP Function call tp PHP
-// function regsendmailnotify($mailtype, $email, $firstname, $lastname, $username, $login, $customer, $domain, $title, $headercolorvalue, $headerforecolorvalue){
-    // echo "<script language='javascript'>";
-    // echo "alert('Arrived at sendmail. mailtype = ' + '$mailtype');";
-    // echo "</script>";
-    
-// }
 
 // Javascript call from jQuery
 if(!$mailtype = 'approved_member'){
@@ -36,21 +25,6 @@ if(!$mailtype = 'approved_member'){
     $lastname = $_POST['last_name'];
     $username = $_POST['user_name'];
     $email = $_POST['email_address'];
-    // $key = $_POST['ResetKey'];
-    // echo "<script language='javascript'>";
-    // echo "console.log('Made it to sendmail - just prior to switch');";
-    // echo "console.log('mailtype = " . $mailtype . "');";
-    // echo "console.log('Login = " . $login . "');";
-    // echo "console.log('Email = " . $email . "');";
-    // echo "console.log('User Name = " . $username . "');";
-    // echo "console.log('First = " . $firstname . "');";
-    // echo "console.log('Last = " . $lastname . "');";
-    // echo "console.log('Theme Name = " . $customer . "');";
-    // echo "console.log('Theme Domain = " . $domain . "');";
-    // echo "console.log('Theme Title = " . $title . "');";
-    // echo "console.log('Theme Color = " . $headercolorvalue . "');";
-    // echo "console.log('Theme ForeColor = " . $headerforecolorvalue . "');";
-    // echo "</script>";
 }
 // echo "<script language='javascript'>";
 // echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
@@ -109,7 +83,7 @@ if(!$mailtype = 'approved_member'){
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 if(mail($mailto,$mailsubject,$mailmessage,$mailheaders)) {
-                    // eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "SUCCESS");
+                    eventLogUpdate('mail', "User: '" .  $username, "' Password Reset email sent to '" . $username . "'", "SUCCESS");
                 }
                 else {
                     // eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "FAILED");
