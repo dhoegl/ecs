@@ -23,7 +23,7 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
     var request = jQpwr.ajax({
         url: '../services/sendmail.php',
         type: 'POST',
-        // dataType: 'json',
+        dataType: 'text',
         data: { mailtype: 'password_reset', email_address: reset_submit, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
     });
     request.done(function (data, textStatus, jqXHR) {
