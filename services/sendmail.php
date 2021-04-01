@@ -83,7 +83,7 @@ if(!$mailtype = 'approved_member'){
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 if(mail($mailto,$mailsubject,$mailmessage,$mailheaders)) {
-                    eventLogUpdate('mail', "User: '" .  $username, "' Password Reset email sent to '" . $username . "'", "SUCCESS");
+                    eventLogUpdate('mail', "User: '" .  $username, "' Password Reset email sent", "SUCCESS");
                 }
                 else {
                     // eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "FAILED");
