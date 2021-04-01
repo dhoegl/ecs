@@ -242,7 +242,7 @@ jQ10(document).ready(function () {
                 else {
                     var jQrgu = jQuery.noConflict();
                     var request = jQrgu.ajax({
-                        url: '../services/registrantupdate2.php',
+                        url: '../services/registrantupdate.php',
                         type: 'POST',
                         //dataType: 'json',
                         dataType: 'text',
