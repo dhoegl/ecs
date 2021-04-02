@@ -83,6 +83,8 @@ $user_name = filter_input(INPUT_POST, 'username');
     ?>    
     <script language='javascript'>
         console.log('Inside the email script')
+        console.log('username = ' + '<?php echo $username; ?>')
+
     </script>
 <?php
 
