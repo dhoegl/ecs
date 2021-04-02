@@ -1,14 +1,11 @@
 <?php
 // Last Updated: 20210402: Consolidated all recover password scripts into recover.php and recover_submit.php
 // why does this script force a redirect to welcome.php??
+// Because event_logs_update.php forces a check whether logged in. If not, shut down and go back to Welcome page!!!
 
 require_once('../dbconnect.php');
 // include_once('../includes/event_logs_update.php');
 // echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
-echo "<script language='javascript'>";
-echo "alert('Arrived before Isset Post password_reset.');";
-echo "console.log('Arrived before Isset Post password_reset.');";
-echo "</script>";
 
 if(isset($_POST['password_reset']))
 {
@@ -67,7 +64,7 @@ $user_name = filter_input(INPUT_POST, 'username');
     try 
     {
         $stmt = $mysql->prepare("UPDATE " . $_SESSION['logintablename'] . " SET temp_pass_key = '" . $key . "', temp_pass_expire = '" . $dateSeed . "' WHERE login_ID = ?");
-        $stmt->bind_param("s", $login);
+        $stmt->bind_param("s", $LoginID);
         $stmt->execute();
         $result = $stmt->get_result();
         $text[] = array('Status' => 'Password Seed Success');
@@ -129,7 +126,7 @@ elseif (isset($_POST['clear'])) { // Clear button clicked
     header("location:../recover.php");
 }
 elseif (isset($_POST['login'])) { // Login button clicked
-    // header("location:../welcome.php");
+    header("location:../welcome.php");
 }
 ?>
 
