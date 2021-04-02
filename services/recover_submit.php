@@ -80,6 +80,11 @@ $user_name = filter_input(INPUT_POST, 'username');
         // $text[] = array('Status' => 'Password Seed Failed');
         // header('Content-type: application/json');
     }
+    ?>    
+    <script language='javascript'>
+        console.log('Inside the email script')
+    </script>
+<?php
 
     $maillink = $domain;
     $mailto = $email;
