@@ -36,7 +36,7 @@ $user_name = filter_input(INPUT_POST, 'username');
         echo "</script>";
         // exit("Failed to open ../_tenant/Config.xml.");
     }    
-
+exit('closing');
     // try {
     $stmt = $mysql->prepare("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE username = ?");
     $stmt->bind_param("s", $user_name);
