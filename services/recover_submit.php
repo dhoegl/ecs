@@ -83,8 +83,17 @@ $user_name = filter_input(INPUT_POST, 'username');
     ?>    
     <script language='javascript'>
         console.log('Inside the email script')
+        console.log('login ID = ' + '<?php echo $LoginID; ?>')
         console.log('username = ' + '<?php echo $username; ?>')
-
+        console.log('email address = ' + '<?php echo $emailaddr; ?>')
+        console.log('first name = ' + '<?php echo $firstname; ?>')
+        console.log('last name = ' + '<?php echo $lastname; ?>')
+        console.log('username = ' + '<?php echo $username; ?>')
+        console.log('domain = ' + '<?php echo $themedomain; ?>')
+        console.log('name = ' + '<?php echo $themename; ?>')
+        console.log('title = ' + '<?php echo $themetitle; ?>')
+        console.log('color = ' + '<?php echo $themecolor; ?>')
+        console.log('forecolor = ' + '<?php echo $themeforecolor; ?>')
     </script>
 <?php
 
@@ -94,7 +103,7 @@ $user_name = filter_input(INPUT_POST, 'username');
     $mailmessage = "<html><body>";
     $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
     $mailmessage .= "<p style='background-color: " .  $themecolor . "; font-size: 30px; font-weight: bold; color: " . $themeforecolor . "; padding: 25px; width=100%;'>";
-    $mailmessage .= $customer . "</p>";
+    $mailmessage .= $themename . "</p>";
     $mailmessage .= "<p>Hello <strong>" . $username . "</strong></p>";
     $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
     $mailmessage .= "<p>If you did not submit this request, please notify your " . $themename . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
