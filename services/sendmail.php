@@ -25,9 +25,9 @@ if(!$mailtype = 'approved_member'){
     $username = $_POST['user_name'];
     $email = $_POST['email_address'];
 }
-// echo "<script language='javascript'>";
-// echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
-// echo "</script>";
+echo "<script language='javascript'>";
+echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
+echo "</script>";
 
     if($mailtype){
         Switch ($mailtype){
