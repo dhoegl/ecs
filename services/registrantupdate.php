@@ -1,6 +1,6 @@
 <!-- ******************************************** -->
 <!-- ******************************************** -->
-<!-- New Registrant Accept script -->
+<!-- New Registrant Accept script - called from regadmin.php -->
 <!-- Last Updated 2021/03/31 - fixed directory and login table updates -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
@@ -9,7 +9,7 @@
 </head>
   <body>
 <?php
-// Include Sendmail Script
+// *** May need to delete this - Include Sendmail Script
 include('../services/sendmail.php');
 
     $SelectID = $_POST['Selected'];
