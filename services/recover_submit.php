@@ -1,14 +1,20 @@
 <?php
 // Last Updated: 20210402: Consolidated all recover password scripts into recover.php and recover_submit.php
+// why does this script force a redirect to welcome.php??
 
 require_once('../dbconnect.php');
 include_once('../includes/event_logs_update.php');
 // echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
+echo "<script language='javascript'>";
+echo "alert('Arrived before Isset Post password_reset.');";
+echo "console.log('Arrived before Isset Post password_reset.');";
+echo "</script>";
 
 if(isset($_POST['password_reset']))
 {
     echo "<script language='javascript'>";
     echo "alert('Arrived in Isset Post password_reset.');";
+    echo "console.log('Arrived in Isset Post password_reset.');";
     echo "</script>";
 $user_name = filter_input(INPUT_POST, 'username');
     echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
