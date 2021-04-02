@@ -165,7 +165,7 @@ require_once 'dbconnect.php';
 
     $username = strip_tags($_POST['username']);
     echo "<script language='javascript'>";
-    echo "console.log('username is ' . $username . ');";
+    echo "console.log('username is ' + $username + ');";
     echo "</script>";
 
     if($clear)
