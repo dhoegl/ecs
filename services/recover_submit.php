@@ -1,5 +1,5 @@
 <?php
-// Last Updated: 20210223:
+// Last Updated: 20210402: Consolidated all recover password scripts into recover.php and recover_submit.php
 
 require_once('../dbconnect.php');
 include_once('../includes/event_logs_update.php');
@@ -7,7 +7,10 @@ include_once('../includes/event_logs_update.php');
 
 if(isset($_POST['password_reset']))
 {
-    $user_name = filter_input(INPUT_POST, 'username');
+    echo "<script language='javascript'>";
+    echo "alert('Arrived in Isset Post password_reset.');";
+    echo "</script>";
+$user_name = filter_input(INPUT_POST, 'username');
     echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
     // echo "<script type='text/javascript' src='../js/error_handler.js'></script>";
     // echo "<script type='text/javascript'>src='../js/forgot_password_submit.js'</script>";
