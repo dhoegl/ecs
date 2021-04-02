@@ -86,10 +86,10 @@
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 if(mail($mailto,$mailsubject,$mailmessage,$mailheaders)){
-                    eventLogUpdate('mail', "User: '" .  $First . "' '" . $Last . "', Registrant Approve email", "SUCCESS");
+                    eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
                 }
                 else {
-                    eventLogUpdate('mail', "User: '" .  $First . "' '" . $Last . "', Registrant Approve email", "FAILED");
+                    eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "FAILED");
                 }
 
             $response = "success_entry_to_new_family";
