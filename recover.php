@@ -163,8 +163,11 @@ require_once 'dbconnect.php';
     $clear = $_POST['clear'];
     $login = $_POST['login'];
 
-    $username = strip_tags($_POST['usernamename']);
-	
+    $username = strip_tags($_POST['username']);
+    echo "<script language='javascript'>";
+    echo "console.log('username is here')";
+    echo "</script>";
+
     if($clear)
     {
         $username = "";
