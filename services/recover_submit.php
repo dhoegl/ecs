@@ -97,8 +97,8 @@ $user_name = filter_input(INPUT_POST, 'username');
     </script>
 <?php
 
-    $maillink = $domain;
-    $mailto = $email;
+    $maillink = $themedomain;
+    $mailto = $emailaddr;
     $mailsubject = "Password Reset Request for " . $username . "." . "\n..";
     $mailmessage = "<html><body>";
     $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
