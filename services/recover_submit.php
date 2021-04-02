@@ -123,7 +123,7 @@ elseif (isset($_POST['clear'])) { // Clear button clicked
     header("location:../recover.php");
 }
 elseif (isset($_POST['login'])) { // Login button clicked
-    header("location:../welcome.php");
+    // header("location:../welcome.php");
 }
 ?>
 
