@@ -9,8 +9,6 @@ $text = array();
 $mailtype = "";
 // PHP Function call tp PHP
 // Javascript call from jQuery
-if(!$mailtype = 'approved_member'){
-
     $mailtype = $_POST['mailtype'];
     $domain = $_POST['theme_domain'];
     $customer = $_POST['theme_name'];
@@ -24,10 +22,9 @@ if(!$mailtype = 'approved_member'){
     $lastname = $_POST['last_name'];
     $username = $_POST['user_name'];
     $email = $_POST['email_address'];
-}
-echo "<script language='javascript'>";
-echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
-echo "</script>";
+// echo "<script language='javascript'>";
+// echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
+// echo "</script>";
 
     if($mailtype){
         Switch ($mailtype){
