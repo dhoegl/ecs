@@ -10,7 +10,6 @@ require_once('../dbconnect.php');
 if(isset($_POST['password_reset']))
 {
     echo "<script language='javascript'>";
-    echo "alert('Arrived in Isset Post password_reset.');";
     echo "console.log('Arrived in Isset Post password_reset.');";
     echo "</script>";
 $user_name = filter_input(INPUT_POST, 'username');
@@ -34,7 +33,7 @@ $user_name = filter_input(INPUT_POST, 'username');
         // exit("Failed to open ../_tenant/Config.xml.");
     }    
 
-    // try {
+    try {
     $stmt = $mysql->prepare("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE username = ?");
     $stmt->bind_param("s", $user_name);
     $stmt->execute();
@@ -114,13 +113,13 @@ $user_name = filter_input(INPUT_POST, 'username');
 		//     </script>
 		//     ";
 
-//     }
-//    catch(Exception $e)
-//     {
-//         echo "<script language='javascript'>";
-//         echo "alert('ERROR at recover_submit.php');";
-//         echo "</script>";
-//     }
+    }
+   catch(Exception $e)
+    {
+        echo "<script language='javascript'>";
+        echo "alert('ERROR at recover_submit.php');";
+        echo "</script>";
+    }
 }
 elseif (isset($_POST['clear'])) { // Clear button clicked
     header("location:../recover.php");
