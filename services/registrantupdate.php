@@ -90,7 +90,7 @@
             $response = "success_entry_to_new_family";
         }
     else { // Apply to existing family
-            if($Gender2 == 'M'){ // New male added to existing family
+            if($Gender == 'M'){ // New male added to existing family
                 $regacceptdirsetassignquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '4' WHERE idDirectory = '". $DirID . "'";
                 $regacceptdirsetassign = $mysql->query($regacceptdirsetassignquery) or die("A database error occurred when trying to update new Registrant info into directory table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
                 $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1', " . " Name_1 = '" . $First . "', Email_1 = '" . $Email . "' WHERE idDirectory = '". $SelectID . "'";
