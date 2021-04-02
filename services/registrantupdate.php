@@ -1,7 +1,7 @@
 <!-- ******************************************** -->
 <!-- ******************************************** -->
 <!-- New Registrant Accept script - called from regadmin.php -->
-<!-- Last Updated 2021/03/31 - fixed directory and login table updates -->
+<!-- Last Updated 2021/04/01 - consolidated registration approve to only 2 files regadmin + registrantupdate -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
   <head>
@@ -10,7 +10,7 @@
   <body>
 <?php
 // *** May need to delete this - Include Sendmail Script
-include('../services/sendmail.php');
+// include('../services/sendmail.php');
 
     $SelectID = $_POST['Selected'];
     $DirID = $_POST['Directory'];
@@ -28,11 +28,11 @@ include('../services/sendmail.php');
     $data6 = "LastName = " + $Last;
     $data7 = "Email = " + $Email;
     $Response = $data1 + " " + $data2 + " " + $data3 + " " + $data4 + " " + $data5 + " " + $data6 + " " + $data7;
-    echo "<script language='javascript'>";
-    echo "alert('Arrived at registrantupdate.php');";
-    echo "console.log('RegistrantUpdate function successfully called');";
-    echo "console.log('approve_registrant : Response = ' + $Response);";
-    echo "</script>";
+    // echo "<script language='javascript'>";
+    // echo "alert('Arrived at registrantupdate.php');";
+    // echo "console.log('RegistrantUpdate function successfully called');";
+    // echo "console.log('approve_registrant : Response = ' + $Response);";
+    // echo "</script>";
 
     require($_SERVER["DOCUMENT_ROOT"] . '/dbconnect.php');
     include($_SERVER["DOCUMENT_ROOT"] . '/includes/event_logs_update.php');
@@ -61,14 +61,11 @@ include('../services/sendmail.php');
         $reset = "";
         $text = array();
         if($SelectID == '0'){ // New family
-            echo "<script language='javascript'>";
-            echo "console.log('SelectID = 0');";
-            echo "</script>";
-                $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1' WHERE idDirectory = '". $DirID . "'";
+            $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1' WHERE idDirectory = '". $DirID . "'";
             $regacceptdir = $mysql->query($regacceptdirquery) or die("A database error occurred when trying to update new Registrant info into directory table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $DirID . "' WHERE login_ID = '". $LoginID . "'";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
-            eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
+            // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
             // Sendmail copy into this PHP flow...
                 $maillink = $themedomain;
                 $mailto = $Email;
@@ -107,7 +104,7 @@ include('../services/sendmail.php');
             }
             $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $SelectID . "' WHERE login_ID = '". $LoginID . "'";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
-            eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " added to existing Family - idDirectory: " . $DirID);
+            // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " added to existing Family - idDirectory: " . $DirID);
             // Sendmail copy into this PHP flow...
             $maillink = $themedomain;
             $mailto = $Email;
@@ -129,7 +126,7 @@ include('../services/sendmail.php');
             $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($mailto,$mailsubject,$mailmessage,$mailheaders);
     $response = "success_entry_to_existing_family";
-        echo $response;
+        // echo $response;
     }
 ?>
 
