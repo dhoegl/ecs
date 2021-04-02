@@ -163,7 +163,8 @@ require_once 'dbconnect.php';
     $clear = $_POST['clear'];
     $login = $_POST['login'];
 
-    $username = $_POST['username'];
+    // $username = $_POST['username'];
+    $username = "Billy";
     
 ?>
     <script language='javascript'>
