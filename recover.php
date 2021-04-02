@@ -164,10 +164,12 @@ require_once 'dbconnect.php';
     $login = $_POST['login'];
 
     $username = $_POST['username'];
-    echo "<script language='javascript'>";
-    echo "console.log('<?php echo ' + $username + '; ?>');";
-    echo "</script>";
-
+    
+    ?>
+    <script language='javascript'>
+        console.log('<?php echo $username; ?>')
+    </script>
+<?php
     if($clear)
     {
         $username = "";
