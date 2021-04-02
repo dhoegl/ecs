@@ -62,7 +62,7 @@ if(isset($_POST['password_reset']))
         $stmt->execute();
         $result = $stmt->get_result();
         $text[] = array('Status' => 'Password Seed Success');
-        header('Content-type: application/json');
+        // header('Content-type: application/json');
         // echo json_encode($text);
         $stmt->close();
 
@@ -72,8 +72,8 @@ if(isset($_POST['password_reset']))
         echo "<script language='javascript'>";
         echo "alert('ERROR IN sendmail.php for password reset');";
         echo "</script>";
-        $text[] = array('Status' => 'Password Seed Failed');
-        header('Content-type: application/json');
+        // $text[] = array('Status' => 'Password Seed Failed');
+        // header('Content-type: application/json');
     }
 
     $maillink = $domain;
