@@ -11,28 +11,6 @@ echo "alert('Arrived before Isset Post password_reset.');";
 echo "console.log('Arrived before Isset Post password_reset.');";
 echo "</script>";
 
-if(isset($_POST['password_reset']))
-{
-    echo "<script language='javascript'>";
-    echo "alert('Arrived in Isset Post password_reset.');";
-    echo "console.log('Arrived in Isset Post password_reset.');";
-    echo "</script>";
-    // Extract email theme elements from config.xml
-    if (file_exists("../_tenant/Config.xml")) {
-        $xml = simplexml_load_file("../_tenant/Config.xml");
-        $themename = $xml->customer->name;
-        $themedomain = $xml->customer->domain;
-        $themetitle = $xml->customer->hometitle;
-        $themecolor = $xml->customer->banner_color;
-        $themeforecolor = $xml->customer->banner_forecolor;
-    } else {
-        echo "<script language='javascript'>";
-        echo "console.log('Failed to open ../_tenant/Config.xml');";
-        echo "</script>";
-        // exit("Failed to open ../_tenant/Config.xml.");
-    }
-}    
-?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">

@@ -120,7 +120,7 @@ require_once 'dbconnect.php';
         <div class="col-sm-6">
             <div class="card bg-light border-primary p-3">
                 <h3 class="text-center">Please enter your username below</h3>
-                <form name='passwordreset' id="reset" action='services/recover_submit2.php' method="POST">
+                <form name='passwordreset' id="reset" action='services/recover_submit.php' method="POST">
                     <div class="form-group">
                         <label for="emailaddress">
                             Enter your username:

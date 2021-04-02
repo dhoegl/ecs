@@ -3,7 +3,7 @@
 // why does this script force a redirect to welcome.php??
 
 require_once('../dbconnect.php');
-include_once('../includes/event_logs_update.php');
+// include_once('../includes/event_logs_update.php');
 // echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
 echo "<script language='javascript'>";
 echo "alert('Arrived before Isset Post password_reset.');";
