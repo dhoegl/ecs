@@ -30,7 +30,8 @@ if(isset($_POST['password_reset']))
         echo "console.log('Failed to open ../_tenant/Config.xml');";
         echo "</script>";
         // exit("Failed to open ../_tenant/Config.xml.");
-    }    
+    }
+}    
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
