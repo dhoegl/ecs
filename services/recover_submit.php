@@ -120,7 +120,7 @@ $user_name = filter_input(INPUT_POST, 'username');
         $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
         if($emailworks){
-            eventLogUpdate('mail', "User: '" .  $username, "' Password Reset email sent", "SUCCESS");
+            eventLogUpdate('mail', "User: " .  $username, " Password Reset email sent", "SUCCESS");
             }
         else {
             eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "FAILED");
