@@ -73,6 +73,7 @@
     $username = "";
     $password = "";
     $repeatpassword = "";
+    $pw_affirm = "";
 
 // Add Footer to page
     require_once('includes/footer.php');
@@ -189,6 +190,15 @@
                             <input type="email" class="form-control" id="repeatemailaddress" aria-describedby="emailHelp" placeholder="Email Address">
                         </div>
                     </div>
+                    <label for="privaffirmcode">Agree to Privacy Policy: <strong><font color="red">*</font></strong></label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input privaffirmcheckyes" type="radio" name="privaffirmcode" id="privyes" value="YES">
+                                <label class="form-check-label" for="privyes">YES</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input privaffirmcheckno" type="radio" name="privaffirmcode" id="privno" value="NO">
+                                <label class="form-check-label" for="privno">NO</label>
+                        </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-secondary" name="clear" value="Clear" />
                         <input type="submit" class="btn btn-primary disabled" name="registersubmit" id="register_submit" value="Register" />
