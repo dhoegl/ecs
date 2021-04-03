@@ -87,8 +87,9 @@
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             // if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
-                // }
+                    // eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
+                    eventLogUpdate('mail', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
+                    // }
                 // else {
                 //     eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "FAILED");
                 // }
