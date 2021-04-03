@@ -87,6 +87,9 @@
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 if($emailworks){
+                    echo "<script language='javascript'>";
+                    echo "console.log('Arrived in email send just before eventLogUpdate');";
+                    echo "</script>";
                     eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
                 }
                 else {
