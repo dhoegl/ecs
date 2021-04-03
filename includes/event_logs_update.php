@@ -31,9 +31,8 @@ echo '</script>';
             $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Admin Update function failed at db INSERT. Please notify your administrator with the following. Error : " . $mysql->error);
         }
         elseif($logpointer == "mail") {
-
-            // $eventlogquery = "INSERT INTO " . $_SESSION['eventlogmail'] . "(log_mail_who, log_mail_what, log_mail_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
-            // $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Mail function failed at db INSERT. Please notify your administrator with the following. Error : " . mysql_errno() . mysql_error());
+            $eventlogquery = "INSERT INTO " . $_SESSION['eventlogmail'] . "(log_mail_who, log_mail_what, log_mail_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
+            $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Mail function failed at db INSERT. Please notify your administrator with the following. Error : " . mysql_errno() . mysql_error());
         }
         elseif($logpointer == "prayer") {
 
