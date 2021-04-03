@@ -257,7 +257,7 @@ function focus_on_start()
 			echo
 			"
 				<script type='text/javascript'>
-					alert('You have successfully reset your password. You will now be re-directed to the Home Page to login with your new password.');
+					alert('You have successfully reset your password.\nYou will now be re-directed to the Home Page to login with your new password.');
 					window.open('/welcome.php', '_self');
 				</script>
 			";
