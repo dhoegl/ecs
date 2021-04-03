@@ -85,7 +85,8 @@
                 $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                if(mail($mailto,$mailsubject,$mailmessage,$mailheaders)){
+                $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                if($emailworks){
                     eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
                 }
                 else {
