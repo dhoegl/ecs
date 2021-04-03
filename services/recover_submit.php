@@ -4,7 +4,7 @@
 // Because event_logs_update.php forces a check whether logged in. If not, shut down and go back to Welcome page!!!
 
 require_once('../dbconnect.php');
-// include_once('../includes/event_logs_update.php');
+include('../includes/event_logs_update.php');
 // echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
 
 if(isset($_POST['password_reset']))
@@ -34,103 +34,99 @@ $user_name = filter_input(INPUT_POST, 'username');
     }    
 
     try {
-    $stmt = $mysql->prepare("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE username = ?");
-    $stmt->bind_param("s", $user_name);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if($result->num_rows === 0)
-    {
-        echo "<script language='javascript'>";
-        echo "alert('You must select a valid username. Please re-enter your username.');";
-        echo "window.location(../recover.php";
-        echo "</script>";
-        // exit('No rows');
-        header("location:../recover.php");
-    } // exit('No rows');
-    while($row = $result->fetch_assoc()) {
-        $LoginID = $row['login_ID'];
-        $emailaddr = $row['email_addr'];
-        $username = $row['username'];
-        $firstname = $row['firstname'];
-        $lastname = $row['lastname'];
-    }
-    $stmt->close();
-
-    $dateFormat = mktime(date("H"),date("i"),date("s"),date("m"),date("d")+3,date("Y"));
-    $dateSeed = date("Y-m-d H:i:s",$dateFormat); //get date 3 days from now (max allowed time to reset password after request)
-    $key = md5($username . '_' . $email . rand(0,10000) .$dateSeed . password_SALT);
-
-    try 
-    {
-        $stmt = $mysql->prepare("UPDATE " . $_SESSION['logintablename'] . " SET temp_pass_key = '" . $key . "', temp_pass_expire = '" . $dateSeed . "' WHERE login_ID = ?");
-        $stmt->bind_param("s", $LoginID);
+        $stmt = $mysql->prepare("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE username = ?");
+        $stmt->bind_param("s", $user_name);
         $stmt->execute();
         $result = $stmt->get_result();
-        $text[] = array('Status' => 'Password Seed Success');
-        // header('Content-type: application/json');
-        // echo json_encode($text);
+        if($result->num_rows === 0)
+        {
+            echo "<script language='javascript'>";
+            echo "alert('You must select a valid username. Please re-enter your username.');";
+            echo "window.location(../recover.php";
+            echo "</script>";
+            // exit('No rows');
+            header("location:../recover.php");
+        } // exit('No rows');
+        while($row = $result->fetch_assoc()) {
+            $LoginID = $row['login_ID'];
+            $emailaddr = $row['email_addr'];
+            $username = $row['username'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+        }
         $stmt->close();
 
+        $dateFormat = mktime(date("H"),date("i"),date("s"),date("m"),date("d")+3,date("Y"));
+        $dateSeed = date("Y-m-d H:i:s",$dateFormat); //get date 3 days from now (max allowed time to reset password after request)
+        $key = md5($username . '_' . $email . rand(0,10000) .$dateSeed . password_SALT);
+
+        try 
+        {
+            $stmt = $mysql->prepare("UPDATE " . $_SESSION['logintablename'] . " SET temp_pass_key = '" . $key . "', temp_pass_expire = '" . $dateSeed . "' WHERE login_ID = ?");
+            $stmt->bind_param("s", $LoginID);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $text[] = array('Status' => 'Password Seed Success');
+            // header('Content-type: application/json');
+            // echo json_encode($text);
+            $stmt->close();
+
+        }
+        catch(Exception $e)
+        {
+            echo "<script language='javascript'>";
+            echo "alert('ERROR IN sendmail.php for password reset');";
+            echo "</script>";
+            // $text[] = array('Status' => 'Password Seed Failed');
+            // header('Content-type: application/json');
+        }
+        ?>    
+        <script language='javascript'>
+            console.log('Inside the email script')
+            console.log('login ID = ' + '<?php echo $LoginID; ?>')
+            console.log('username = ' + '<?php echo $username; ?>')
+            console.log('email address = ' + '<?php echo $emailaddr; ?>')
+            console.log('first name = ' + '<?php echo $firstname; ?>')
+            console.log('last name = ' + '<?php echo $lastname; ?>')
+            console.log('username = ' + '<?php echo $username; ?>')
+            console.log('domain = ' + '<?php echo $themedomain; ?>')
+            console.log('name = ' + '<?php echo $themename; ?>')
+            console.log('title = ' + '<?php echo $themetitle; ?>')
+            console.log('color = ' + '<?php echo $themecolor; ?>')
+            console.log('forecolor = ' + '<?php echo $themeforecolor; ?>')
+        </script>
+        <?php
+
+        $maillink = $themedomain;
+        $mailto = $emailaddr;
+        $mailsubject = "Password Reset Request for " . $username . "." . "\n..";
+        $mailmessage = "<html><body>";
+        $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+        $mailmessage .= "<p style='background-color: " .  $themecolor . "; font-size: 30px; font-weight: bold; color: " . $themeforecolor . "; padding: 25px; width=100%;'>";
+        $mailmessage .= $themename . "</p>";
+        $mailmessage .= "<p>Hello <strong>" . $username . "</strong></p>";
+        $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
+        $mailmessage .= "<p>If you did not submit this request, please notify your " . $themename . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
+        $domain_url = "<p>http://" . $maillink . "/pass_renew.php?a=recover&email=";
+        $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($username));
+        $mailmessage .= $passwordLink . "</p><br /><br />";
+        $mailmessage .= "<p>NOTE: The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the home page and reset your password again.</p>";
+        $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+        $mailmessage .= "</body></html>";
+        $mailfrom = "passwordreset@ourfamilyconnections.org";
+        $mailheaders = "From:" . $mailfrom . "\r\n";
+        $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
+        $mailheaders .= "MIME-Version: 1.0\r\n";
+        $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+        if($emailworks){
+            eventLogUpdate('mail', "User: '" .  $username, "' Password Reset email sent", "SUCCESS");
+            }
+        else {
+            eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "FAILED");
+        }
     }
     catch(Exception $e)
-    {
-        echo "<script language='javascript'>";
-        echo "alert('ERROR IN sendmail.php for password reset');";
-        echo "</script>";
-        // $text[] = array('Status' => 'Password Seed Failed');
-        // header('Content-type: application/json');
-    }
-    ?>    
-    <script language='javascript'>
-        console.log('Inside the email script')
-        console.log('login ID = ' + '<?php echo $LoginID; ?>')
-        console.log('username = ' + '<?php echo $username; ?>')
-        console.log('email address = ' + '<?php echo $emailaddr; ?>')
-        console.log('first name = ' + '<?php echo $firstname; ?>')
-        console.log('last name = ' + '<?php echo $lastname; ?>')
-        console.log('username = ' + '<?php echo $username; ?>')
-        console.log('domain = ' + '<?php echo $themedomain; ?>')
-        console.log('name = ' + '<?php echo $themename; ?>')
-        console.log('title = ' + '<?php echo $themetitle; ?>')
-        console.log('color = ' + '<?php echo $themecolor; ?>')
-        console.log('forecolor = ' + '<?php echo $themeforecolor; ?>')
-    </script>
-<?php
-
-    $maillink = $themedomain;
-    $mailto = $emailaddr;
-    $mailsubject = "Password Reset Request for " . $username . "." . "\n..";
-    $mailmessage = "<html><body>";
-    $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
-    $mailmessage .= "<p style='background-color: " .  $themecolor . "; font-size: 30px; font-weight: bold; color: " . $themeforecolor . "; padding: 25px; width=100%;'>";
-    $mailmessage .= $themename . "</p>";
-    $mailmessage .= "<p>Hello <strong>" . $username . "</strong></p>";
-    $mailmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
-    $mailmessage .= "<p>If you did not submit this request, please notify your " . $themename . " Administrators immediately. Otherwise, within the next 3 days click on the link below to be taken to the Password Reset page.</p>";
-    $domain_url = "<p>http://" . $maillink . "/pass_renew.php?a=recover&email=";
-    $passwordLink = $domain_url . $key . "&u=" . urlencode(base64_encode($username));
-    $mailmessage .= $passwordLink . "</p><br /><br />";
-    $mailmessage .= "<p>NOTE: The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the home page and reset your password again.</p>";
-    $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
-    $mailmessage .= "</body></html>";
-    $mailfrom = "passwordreset@ourfamilyconnections.org";
-    $mailheaders = "From:" . $mailfrom . "\r\n";
-    $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
-    $mailheaders .= "MIME-Version: 1.0\r\n";
-    $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    mail($mailto,$mailsubject,$mailmessage,$mailheaders);
-        // eventLogUpdate('mail', "User: '" .  $username, "' Password Reset email sent", "SUCCESS");
-        // eventLogUpdate('mail', "User: " .  $username, "Password Reset email sent", "FAILED");
-
-        // Send Reset Request to handler at forgot_password_submit.js
-        // echo "
-		//     <script type='text/javascript'>
-		// 	    resetrequest('$emailaddr', '$firstname', '$lastname', '$username', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
-		//     </script>
-		//     ";
-
-    }
-   catch(Exception $e)
     {
         echo "<script language='javascript'>";
         echo "alert('ERROR at recover_submit.php');";
