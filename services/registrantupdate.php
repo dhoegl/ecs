@@ -88,8 +88,8 @@
                 // $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             // if($emailworks){
-                    // eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
-                    eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
+                    eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "SUCCESS");
+                    // eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
                     // }
                 // else {
                 //     eventLogUpdate('mail', "User: " .  $First . " " . $Last, "Registrant Approve email", "FAILED");
