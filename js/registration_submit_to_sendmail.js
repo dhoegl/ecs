@@ -34,7 +34,7 @@ function registerrequest(email_addr, first_submit, last_submit, user_submit, log
         teststat2 = jqXHR.responseText;
         console.log("ajax response data for registration request = " + teststat);
         console.log("ajax response text for registration request = " + teststat2);
-        alert("Your request has been successfully submitted.");
+        alert("Your request has been successfully submitted.\nPlease allow 24-48 hours for our administrators to approve your request.");
         $welcomepage = window.location.hostname;
         window.locaation = $welcomepage;
         // window.location = "//tec.ourfamilyconnections.org/welcome.php";
