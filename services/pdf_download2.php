@@ -54,17 +54,17 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image('../_tenant/images/logo_new.png',10,6,30);
+    $this->Image('../_tenant/images/raggantssbs_or.png',10,6,30);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right
     $this->Cell(30);
-    // Set Fill Color to TEC Orange
-    $this->SetFillColor(235, 115, 50);
-    // Set Font Color to White
-    $this->SetTextColor(255, 255, 255);
+    // Set Fill Color to ECS Beige
+    $this->SetFillColor(255,236,179);
+    // Set Font Color to Black
+    $this->SetTextColor(0, 0, 0);
     // Title
-    $this->Cell(220,10,'Directory - Trinity Evangel Church',0,0,'C',true);
+    $this->Cell(220,10,'Directory - Evangel Classical School',0,0,'C',true);
     // Line break
     $this->Ln(20);
     // Restore Font Color to Black
