@@ -183,7 +183,7 @@ elseif (isset($_POST['login'])) { // Login button clicked
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="headercolor">
-<a class="navbar-brand" href="welcome.php">
+<a class="navbar-brand" href="../welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
     </a>
