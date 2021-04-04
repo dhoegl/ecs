@@ -191,11 +191,11 @@
                         </div>
                         <label for="privaffirmcode">Agree to Privacy Policy: <strong><font color="red">*</font></strong></label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input privaffirmcheckyes" type="radio" name="privaffirmcode" id="privyes" value="Yes">
+                                <input class="form-check-input privaffirmcheckyes" type="radio" name="privaffirmcode" id="privyes" value="Y">
                                     <label class="form-check-label" for="privyes">YES</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input privaffirmcheckno" type="radio" name="privaffirmcode" id="privno" value="No">
+                                <input class="form-check-input privaffirmcheckno" type="radio" name="privaffirmcode" id="privno" value="N">
                                     <label class="form-check-label" for="privno">NO</label>
                             </div>
                         </div>

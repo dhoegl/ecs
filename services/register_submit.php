@@ -17,6 +17,7 @@ if(isset($_POST['registersubmit']))
     $full_name = $first_name . ' ' . $last_name;
     $gender = filter_input(INPUT_POST, 'gendercode');
     $email_address = filter_input(INPUT_POST, 'emailaddressname');
+    $privacy_affirm = filter_input(INPUT_POST, 'privaffirmcode');
     $LoginID = ' ';
 
 echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
@@ -73,9 +74,9 @@ if (file_exists("../_tenant/Config.xml")) {
     echo "</script>";
     
     // insert Registrant into Login table
-    $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname) VALUES (?,?,?,?,?,?,?,?,?)";
+    $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname, affirm_privacy) VALUES (?,?,?,?,?,?,?,?,?,?)";
     $reglogintableupdate = $mysql->prepare($regloginquery);
-    $reglogintableupdate->bind_param("sssssssss",$church_code,$user_name,$pass_word,$regInsert_DirID,$first_name,$last_name,$gender,$email_address,$full_name);
+    $reglogintableupdate->bind_param("ssssssssss",$church_code,$user_name,$pass_word,$regInsert_DirID,$first_name,$last_name,$gender,$email_address,$full_name,$privacy_affirm);
     $reglogintableupdate->execute();
 
     $regdirtableupdate->close();
