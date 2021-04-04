@@ -189,7 +189,7 @@
                             <label for="repeatemailaddress">Re-enter your Email Address: <strong><font color="red">*</font></strong><span id="email_match"></span></label>
                             <input type="email" class="form-control" id="repeatemailaddress" aria-describedby="emailHelp" placeholder="Email Address">
                         </div>
-                        <label for="privaffirmcode">Agree to our <a href="*">Privacy Policy:</a> <strong><font color="red">*</font></strong></label>
+                        <label for="privaffirmcode">Agree to our <a href="../policies/privacy.pdf" target="_blank">Privacy Policy:</a> <strong><font color="red">*</font></strong></label>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input privaffirmcheckyes" type="radio" name="privaffirmcode" id="privyes" value="Y">
                                     <label class="form-check-label" for="privyes">YES</label>
