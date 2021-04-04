@@ -860,6 +860,7 @@ subJQ(document).ready(function()
         }
     });
 // </editor-fold>
+// <editor-fold desc="Privacy Check">
 subJQ('.privaffirmcheckyes').click(function () {
     //            alert("We're Here Yes");
                 console.log('Yes Clicked');
@@ -962,6 +963,7 @@ subJQ('.privaffirmcheckyes').click(function () {
                 console.log('all_req_fields = ' + all_req_fields);
             }
         });
+// </editor-fold>
     
     
 });
