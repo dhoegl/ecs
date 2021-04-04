@@ -13,7 +13,7 @@
       </div>
       <div class="col-4">
         <!--Copyright-->
-        <p class="text-center"><a href="../policies/Privacy.pdf" target="_blank">Privacy Policy</a></p>
+        <a href="../policies/Privacy.pdf" target="_blank">Privacy Policy</a>
       </div>
       <!-- Grid column -->
       <!-- <div class="col-md-5 col-lg-4 ml-lg-0">
