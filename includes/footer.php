@@ -5,6 +5,7 @@
     <div class="row">
       <!-- Grid column -->
       <div class="col-4">
+        <p class="text-center"></p>
       </div>
       <div class="col-4">
         <!--Copyright-->
