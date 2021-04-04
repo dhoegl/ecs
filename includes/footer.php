@@ -12,8 +12,9 @@
         <p>Copyright © 2021:<strong> OurFamilyConnections.org</strong></p>
       </div>
       <div class="col-4">
-        <p class="text-center">Privacy Policy</p>
+        <!-- <p class="text-center">Privacy Policy</p> -->
         <!-- <p class="text-center"><a href="../policies/Privacy.pdf" target="_blank">Privacy Policy</a></p> -->
+        <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
       </div>
       <!-- Grid column -->
       <!-- <div class="col-md-5 col-lg-4 ml-lg-0">
