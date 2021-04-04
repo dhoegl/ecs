@@ -1,5 +1,6 @@
 /* global all_req_fields */
-//Version 08/18/2019 - Add Gender into registry (used to help determine Him/Her selection in Directory table
+//Version 20210403 - Add Privacy script
+// Add Gender into registry (used to help determine Him/Her selection in Directory table
 // Last updated 12/06/2020 - Updated to add Console_Log entries to figure out why unable to complete Registration submission.
 
 //Check that all Registration fields have been correctly filled in
@@ -18,6 +19,8 @@ subJQ(document).ready(function()
     var genderset = 'N';
     var emailset = 'N';
     var repeatemailset = 'N';
+    var privacyset = 'N';
+
     subJQ('#register_submit').prop('disabled', true); 
 
 // <editor-fold desc="Check whether Church Code received from church admin">
@@ -43,7 +46,7 @@ subJQ(document).ready(function()
             console.log("churchcodelen = " + churchcodelen);
         }
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
             all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
@@ -104,8 +107,8 @@ subJQ(document).ready(function()
             console.log('all_req_fields = ' + all_req_fields);
         }
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('all_req_fields = ' + all_req_fields);
@@ -140,7 +143,7 @@ subJQ(document).ready(function()
         var unique_user = subJQ('#unique_user').html();
         subJQ('#unique_user').html(checkAvail(subJQ('#username').val()));
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
             all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
@@ -262,8 +265,8 @@ subJQ(document).ready(function()
             console.log('all_req_fields = ' + all_req_fields);
         }
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('churchcodeset = ' + churchcodeset);
@@ -395,8 +398,8 @@ subJQ(document).ready(function()
         };
 
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('churchcodeset = ' + churchcodeset);
@@ -451,8 +454,8 @@ subJQ(document).ready(function()
             console.log('all_req_fields = ' + all_req_fields);
         }
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('churchcodeset = ' + churchcodeset);
@@ -509,8 +512,8 @@ subJQ(document).ready(function()
             console.log('all_req_fields = ' + all_req_fields);
         }
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('churchcodeset = ' + churchcodeset);
@@ -555,7 +558,7 @@ subJQ(document).ready(function()
             console.log("lastnameset = " + lastnameset);
             console.log("gendercheck = Male");
             console.log("genderset = " + genderset);
-            if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
+            if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
                 subJQ('#register_submit').removeClass('disabled');
                 subJQ('#register_submit').prop('disabled', false); 
                 all_req_fields = 'Y';
@@ -603,7 +606,7 @@ subJQ(document).ready(function()
         console.log("lastnameset = " + lastnameset);
         console.log("gendercheck = Female");
         console.log("genderset = " + genderset);
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
             subJQ('#register_submit').removeClass('disabled');
             subJQ('#register_submit').prop('disabled', false); 
             all_req_fields = 'Y';
@@ -684,8 +687,8 @@ subJQ(document).ready(function()
             console.log('all_req_fields = ' + all_req_fields);
         }
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('churchcodeset = ' + churchcodeset);
@@ -698,6 +701,7 @@ subJQ(document).ready(function()
             console.log("lastnameset = " + lastnameset);
             console.log("genderset = " + genderset);
             console.log("emailset = " + emailset);
+            console.log("privacyset = " + privacyset);
             console.log('all_req_fields = ' + all_req_fields);
         }
         else {
@@ -714,6 +718,7 @@ subJQ(document).ready(function()
             console.log("lastnameset = " + lastnameset);
             console.log("genderset = " + genderset);
             console.log("emailset = " + emailset);
+            console.log("privacyset = " + privacyset);
             console.log('all_req_fields = ' + all_req_fields);
         }
     
@@ -735,6 +740,7 @@ subJQ(document).ready(function()
                 console.log("lastnameset = " + lastnameset);
                 console.log("genderset = " + genderset);
                 console.log("emailset = " + emailset);
+                console.log("privacyset = " + privacyset);
                 console.log('all_req_fields = ' + all_req_fields);
                 return 'Email Accepted'; 
             }
@@ -752,6 +758,7 @@ subJQ(document).ready(function()
                 console.log("lastnameset = " + lastnameset);
                 console.log("genderset = " + genderset);
                 console.log("emailset = " + emailset);
+                console.log("privacyset = " + privacyset);
                 console.log('all_req_fields = ' + all_req_fields);
                 return 'Incorrect Email Format'; 
             }
@@ -789,6 +796,7 @@ subJQ(document).ready(function()
                 console.log("genderset = " + genderset);
                 console.log("emailset = " + emailset);
                 console.log("repeatemailset = " + repeatemailset);
+                console.log("privacyset = " + privacyset);
                 console.log('all_req_fields = ' + all_req_fields);
                 return 'Match'; 
             } 
@@ -807,14 +815,15 @@ subJQ(document).ready(function()
                 console.log("genderset = " + genderset);
                 console.log("emailset = " + emailset);
                 console.log("repeatemailset = " + repeatemailset);
+                console.log("privacyset = " + privacyset);
                 console.log('all_req_fields = ' + all_req_fields);
             return 'No Match'; 
             }; 
         };
 
         //if((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y'){
-        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female')) {
-            all_req_fields = 'Y';
+        if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                all_req_fields = 'Y';
             subJQ('#register_submit').removeClass('disabled'); 
             subJQ('#register_submit').prop('disabled', false); 
             console.log('churchcodeset = ' + churchcodeset);
@@ -828,6 +837,7 @@ subJQ(document).ready(function()
             console.log("genderset = " + genderset);
             console.log("emailset = " + emailset);
             console.log("repeatemailset = " + repeatemailset);
+            console.log("privacyset = " + privacyset);
             console.log('all_req_fields = ' + all_req_fields);
         }
         else {
@@ -845,9 +855,113 @@ subJQ(document).ready(function()
             console.log("genderset = " + genderset);
             console.log("emailset = " + emailset);
             console.log("repeatemailset = " + repeatemailset);
+            console.log("privacyset = " + privacyset);
             console.log('all_req_fields = ' + all_req_fields);
         }
     });
 // </editor-fold>
+subJQ('.privaffirmcheckyes').click(function () {
+    //            alert("We're Here Yes");
+                console.log('Yes Clicked');
+                privacyset = 'Yes';
+                console.log('churchcodeset = ' + churchcodeset);
+                console.log('confirm_code_len = ' + confirm_code_len);
+                console.log("churchcodelen = " + churchcodelen);
+                console.log("usernameset = " + usernameset);
+                console.log("passwordset = " + passwordset);
+                console.log("repeatpasswordset = " + repeatpasswordset);
+                console.log("firstnameset = " + firstnameset);
+                console.log("lastnameset = " + lastnameset);
+                console.log("genderset = " + genderset);
+                console.log("privacycheck = Yes");
+                console.log("privacyset = " + privacyset);
 
+                if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                    subJQ('#register_submit').removeClass('disabled');
+                    subJQ('#register_submit').prop('disabled', false); 
+                    all_req_fields = 'Y';
+                    console.log('churchcodeset = ' + churchcodeset);
+                    console.log('confirm_code_len = ' + confirm_code_len);
+                    console.log("churchcodelen = " + churchcodelen);
+                    console.log("usernameset = " + usernameset);
+                    console.log("passwordset = " + passwordset);
+                    console.log("repeatpasswordset = " + repeatpasswordset);
+                    console.log("firstnameset = " + firstnameset);
+                    console.log("lastnameset = " + lastnameset);
+                    console.log("genderset = " + genderset);
+                    console.log("privacycheck = Yes");
+                    console.log("privacyset = " + privacyset);
+                    console.log('all_req_fields = ' + all_req_fields);
+                }
+                else {
+                    all_req_fields = 'N';
+                    subJQ('#register_submit').addClass('disabled');
+                    subJQ('#register_submit').prop('disabled', true); 
+                    console.log('churchcodeset = ' + churchcodeset);
+                    console.log('confirm_code_len = ' + confirm_code_len);
+                    console.log("churchcodelen = " + churchcodelen);
+                    console.log("usernameset = " + usernameset);
+                    console.log("passwordset = " + passwordset);
+                    console.log("repeatpasswordset = " + repeatpasswordset);
+                    console.log("firstnameset = " + firstnameset);
+                    console.log("lastnameset = " + lastnameset);
+                    console.log("genderset = " + genderset);
+                    console.log("privacycheck = Yes");
+                    console.log("privacyset = " + privacyset);
+                    console.log('all_req_fields = ' + all_req_fields);
+                }
+            //}
+        });
+        subJQ('.privaffirmcheckno').click(function () {
+    //        alert("We're Here No");
+            console.log('No Clicked');
+            privacyset = 'No';
+            console.log('churchcodeset = ' + churchcodeset);
+            console.log('confirm_code_len = ' + confirm_code_len);
+            console.log("churchcodelen = " + churchcodelen);
+            console.log("usernameset = " + usernameset);
+            console.log("passwordset = " + passwordset);
+            console.log("repeatpasswordset = " + repeatpasswordset);
+            console.log("firstnameset = " + firstnameset);
+            console.log("lastnameset = " + lastnameset);
+            console.log("genderset = " + genderset);
+            console.log("privacycheck = No");
+            console.log("privacyset = " + privacyset);
+            if ((churchcodeset == 'N' || (churchcodeset == 'Y' && churchcodelen == 'Y')) && usernameset == 'Y' && passwordset == 'Y' && repeatpasswordset == 'Y' && firstnameset == 'Y' && lastnameset == 'Y' && emailset == 'Y' && repeatemailset == 'Y' && (genderset == 'Male' || genderset == 'Female') && (privacyset == 'Yes' || privacyset == 'No')) {
+                subJQ('#register_submit').removeClass('disabled');
+                subJQ('#register_submit').prop('disabled', false); 
+                all_req_fields = 'Y';
+                console.log('churchcodeset = ' + churchcodeset);
+                console.log('confirm_code_len = ' + confirm_code_len);
+                console.log("churchcodelen = " + churchcodelen);
+                console.log("usernameset = " + usernameset);
+                console.log("passwordset = " + passwordset);
+                console.log("repeatpasswordset = " + repeatpasswordset);
+                console.log("firstnameset = " + firstnameset);
+                console.log("lastnameset = " + lastnameset);
+                console.log("genderset = " + genderset);
+                console.log("privacycheck = No");
+                console.log("privacyset = " + privacyset);
+                console.log('all_req_fields = ' + all_req_fields);
+            }
+            else {
+                all_req_fields = 'N';
+                subJQ('#register_submit').addClass('disabled');
+                subJQ('#register_submit').prop('disabled', true); 
+                console.log('churchcodeset = ' + churchcodeset);
+                console.log('confirm_code_len = ' + confirm_code_len);
+                console.log("churchcodelen = " + churchcodelen);
+                console.log("usernameset = " + usernameset);
+                console.log("passwordset = " + passwordset);
+                console.log("repeatpasswordset = " + repeatpasswordset);
+                console.log("firstnameset = " + firstnameset);
+                console.log("lastnameset = " + lastnameset);
+                console.log("genderset = " + genderset);
+                console.log("privacycheck = No");
+                console.log("privacyset = " + privacyset);
+                console.log('all_req_fields = ' + all_req_fields);
+            }
+        });
+    
+    
 });

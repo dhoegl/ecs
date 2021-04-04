@@ -73,7 +73,7 @@
     $username = "";
     $password = "";
     $repeatpassword = "";
-    $pw_affirm = "";
+    $privaffirm = "";
 
 // Add Footer to page
     require_once('includes/footer.php');
@@ -192,11 +192,11 @@
                     </div>
                     <label for="privaffirmcode">Agree to Privacy Policy: <strong><font color="red">*</font></strong></label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input privaffirmcheckyes" type="radio" name="privaffirmcode" id="privyes" value="YES">
+                            <input class="form-check-input privaffirmcheckyes" type="radio" name="privaffirmcode" id="privyes" value="Yes">
                                 <label class="form-check-label" for="privyes">YES</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input privaffirmcheckno" type="radio" name="privaffirmcode" id="privno" value="NO">
+                            <input class="form-check-input privaffirmcheckno" type="radio" name="privaffirmcode" id="privno" value="No">
                                 <label class="form-check-label" for="privno">NO</label>
                         </div>
                     <div class="form-group">
@@ -226,6 +226,7 @@
     $lastname = strip_tags($_POST['lastnamename']);
     $gender = strip_tags($_POST['gendercode']);
     $emailaddr = strip_tags($_POST['emailaddressname']);
+    $privaffirm = strip_tags($_POST['privaffirmcode']);
     $date = date("Y-m-d");
 	
     if($clear)
@@ -237,6 +238,7 @@
         $lastname = "";
         $emailaddr = "";
         $gender = "";
+        $privaffirm = "";
     }
     if ($submit)
     {
