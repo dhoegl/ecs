@@ -9,10 +9,9 @@
       </div>
       <div class="col-4">
         <!--Copyright-->
-        <p class="text-center">Copyright © 2021:<strong> OurFamilyConnections.org</strong></p>
+        <p>Copyright © 2021:<strong> OurFamilyConnections.org</strong></p>
       </div>
       <div class="col-4">
-        <!--Copyright-->
         <a href="../policies/Privacy.pdf" target="_blank">Privacy Policy</a>
       </div>
       <!-- Grid column -->
