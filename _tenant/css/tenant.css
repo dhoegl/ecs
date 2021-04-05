@@ -1,8 +1,8 @@
 /* Tenant-specific CSS File*/
-/* Customer 00003 - tec*/
+/* Customer 002 - ECS*/
 
 #ModalContactInfo .modal-header h5 {
-    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
     color: black;
     margin: 0px;
@@ -14,7 +14,7 @@
 }*/
 
 #ModalCalendarInfo .modal-header h5 {
-    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
     color: black;
     margin: 0px;
@@ -23,7 +23,7 @@
 }
 
 #ModalChildrenInfo .modal-header h5 {
-    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
     color: black;
     margin: 0px;
@@ -32,14 +32,13 @@
 }
 
 #ModalProfilePic .modal-header h5 {
-    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
     color: black;
     margin: 0px;
     padding: 10px 0 10px 145px;
     font-size: 20px;
 }
-
 #ModalPrayerInfo .modal-header h5 {
     background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
@@ -48,7 +47,6 @@
     padding: 10px 0 10px 145px;
     font-size: 20px;
 }
-
 #ModalPrayerApprove .modal-header h5 {
     background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
@@ -56,8 +54,8 @@
     margin: 0px;
     padding: 10px 0 10px 145px;
     font-size: 20px;
-    }
-
+    #ModalPrayerInfo .modal-header h5
+}
 #ModalPrayerReject .modal-header h5 {
     background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
@@ -66,7 +64,6 @@
     padding: 10px 0 10px 145px;
     font-size: 20px;
 }
-
 #ModalPrayerNew .modal-header h5 {
     background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
@@ -76,7 +73,7 @@
     font-size: 20px;
 }
 #ModalApproveRegistrant .modal-header h5 {
-    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
     color: black;
     margin: 0px;
@@ -84,7 +81,7 @@
     font-size: 20px;
 }
 #ModalRejectRegistrant .modal-header h5 {
-    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
     background-size: 20% auto;
     color: black;
     margin: 0px;
