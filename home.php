@@ -37,12 +37,12 @@ else {
 <body>
 
 <!-- <header> -->
-        <!--Navbar-->
-        <?php
-                $activeparam = '1'; // sets nav element highlight
-                require_once('nav.php');
-                require_once('includes/footer.php');
-            ?>
+  <!--Navbar-->
+  <?php
+    $activeparam = '1'; // sets nav element highlight
+    require_once('nav.php');
+    require_once('includes/footer.php');
+  ?>
 <!-- </header> -->
 
 <!--Mask-->
