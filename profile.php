@@ -1258,7 +1258,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child1_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child1_email" name='child1_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child1_email" name='child1_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -1371,7 +1371,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child2_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child2_email" name='child2_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child2_email" name='child2_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -1484,7 +1484,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child3_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child3_email" name='child3_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child3_email" name='child3_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -1597,7 +1597,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child4_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child4_email" name='child4_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child4_email" name='child4_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -1710,7 +1710,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child5_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child5_email" name='child5_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child5_email" name='child5_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -1823,7 +1823,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child6_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child6_email" name='child6_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child6_email" name='child6_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -1936,7 +1936,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child7_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child7_email" name='child7_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child7_email" name='child7_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
@@ -2049,7 +2049,7 @@ var jQ55 = jQuery.noConflict();
                     <label for="child8_email">Email:</label>
                 </div>
                 <div class="col-9">
-                    <input placeholder="Enter email address (if applicable)" type="text" id="child8_email" name='child8_email' class="form-control" />
+                    <input placeholder="Enter email address (if applicable)" type="email" id="child8_email" name='child8_email' class="form-control" />
                 </div>
             </div>
             <div class="row">
