@@ -10,7 +10,7 @@
       </div>
       <div class="col-4">
         <!--Copyright-->
-        <p class="text-center">Copyright © 2021:<strong> OurFamilyConnections.org</strong></p>
+        <p class="text-center" style="font-weight:bold;">Copyright © 2021: OurFamilyConnections.org</p>
       </div>
       <div class="col-4">
         <!-- <p class="text-center">Privacy Policy</p> -->
