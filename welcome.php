@@ -134,45 +134,12 @@ session_start();
                                     If you forgot your password, click on the FORGOT PASSWORD button above to be sent a temporary password to your email address on file
                                 </h6>
                                 <p class="fs-6 text-start white-text">
-                                    (version ecs_20210208.1)
+                                    (version ecs_20210405.1)
                                 </p>
                             </div><!--btn-->
                         </div><!--card-body-->
                     </div><!--card-->
                 </div><!--Row-->
-                <div class="row mt-4">
-                    <div class="col-md-12 mb-5 mt-5 white-text">
-                        <div class="card">
-                            <div class="card-body">
-                                <!--Header-->
-                                <div class="text-center">
-                                    <h3 class="white-text">
-                                        <i class="white-text"></i> Newly designed!
-                                    </h3>
-                                </div><!--text-center-->
-                                <div class="text-left">
-                                    <p class="white-text">
-                                        <i class="white-text"></i> Welcome to a much more mobile-friendly experience...
-                                        <ul>
-                                            <li>
-                                                Now improved to work on all your mobile devices and computers
-                                            </li>
-                                            <li>
-                                                Easy-to-navigate dropdown menus (when in mobile view, tap the 3-bars at the top of the screen)
-                                            </li>
-                                            <li>
-                                                On busy pages, rotating your device will expose more information - especially on smaller (narrow) devices
-                                            </li>
-                                            <li>
-                                                Helpful tips are included throughout
-                                            </li>
-                                        </ul>
-                                    </p>
-                                </div><!--text-left-->
-                            </div><!--card-body-->
-                        </div><!--card-->
-                    </div><!--Grid column-->
-                </div><!--row-->
             </div><!--gradient-->
         </div><!--container-->
     </header>
