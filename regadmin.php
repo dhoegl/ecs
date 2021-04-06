@@ -499,8 +499,6 @@ var jQ12 = jQuery.noConflict();
                 </div><!-- col-sm-6 -->
                 <div class="col-sm-6">
                 </div><!-- col-sm-6 -->
-            </div><!-- row -->
-            <div class="row">
                 <div class="col-sm-6">
                     <div class="card card-body">
                         <h4 class="card-title">Approving and Rejecting Registration Requests</h4>
