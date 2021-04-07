@@ -60,12 +60,12 @@
         $admin_dir = "";
         $reset = "";
         $text = array();
-        if($SelectID == '0'){ // New family
+        if($SelectID == '0'){ // New family approve
             $regacceptdirquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '1' WHERE idDirectory = '". $DirID . "'";
             $regacceptdir = $mysql->query($regacceptdirquery) or die("A database error occurred when trying to update new Registrant info into directory table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
             $regacceptloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '1', " . " idDirectory = '" . $DirID . "' WHERE login_ID = '". $LoginID . "'";
             $regacceptlogin = $mysql->query($regacceptloginquery) or die("A database error occurred when trying to update new Registrant info into Login table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
-            eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
+            eventLogUpdate('admin_update', "Admin: " .  $_SESSION['username'], "Registrant Approve", "LoginID: " . $LoginID . " to New Family - idDirectory: " . $DirID);
             // Sendmail copy into this PHP flow...
                 $maillink = $themedomain;
                 $mailto = $Email;
@@ -96,7 +96,7 @@
 
             $response = "success_entry_to_new_family";
         }
-    else { // Apply to existing family
+    else { // Apply to existing family approve
             if($Gender == 'M'){ // New male added to existing family
                 $regacceptdirsetassignquery = "UPDATE " . $_SESSION['dirtablename'] . " SET status = '4' WHERE idDirectory = '". $DirID . "'";
                 $regacceptdirsetassign = $mysql->query($regacceptdirsetassignquery) or die("A database error occurred when trying to update new Registrant info into directory table. See ajax_update_new_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
