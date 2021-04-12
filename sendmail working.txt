@@ -11,6 +11,7 @@ https://yagudaev.com/posts/resolving-php-relative-path-problem/#:~:text=When%20a
 
 https://tec.ourfamilyconnections.org/services/mailtest.php
 https://tec.ourfamilyconnections.org/tec_prayer.php
+https://tec.ourfamilyconnections.org/tec_getactiveprayer2.php
 
 http://ecs.ourfamilyconnections.org/services/mailtest.php
 
