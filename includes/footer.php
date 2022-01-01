@@ -14,7 +14,7 @@
       </div>
       <div class="col-4">
         <!-- <p class="text-center">Privacy Policy</p> -->
-        <p class="text-center"><a href="../policies/Privacy.pdf" target="_blank" style="text-decoration:none; color:white; font-weight:bold;">Privacy Policy</a></p>
+        <p class="text-center"><a href="../policies/Privacy.pdf" target="_blank" style="text-decoration:none; color:black; font-weight:bold;">Privacy Policy</a></p>
         <!-- <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a> -->
       </div>
       <!-- Grid column -->
