@@ -16,3 +16,4 @@ https://tec.ourfamilyconnections.org/tec_getactiveprayer2.php
 http://ecs.ourfamilyconnections.org/services/mailtest.php
 
 
+https://tec.ourfamilyconnections.org/tec_welcome.php

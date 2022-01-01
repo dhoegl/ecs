@@ -10,11 +10,11 @@
       </div>
       <div class="col-4">
         <!--Copyright-->
-        <p class="text-center" style="font-weight:bold;">Copyright © 2021 OurFamilyConnections.org</p>
+        <p class="text-center" style="font-weight:bold;">Copyright © 2022 OurFamilyConnections.org</p>
       </div>
       <div class="col-4">
         <!-- <p class="text-center">Privacy Policy</p> -->
-        <p class="text-center"><a href="../policies/Privacy.pdf" target="_blank" style="text-decoration:none; font-weight:bold;">Privacy Policy</a></p>
+        <p class="text-center"><a href="../policies/Privacy.pdf" target="_blank" style="text-decoration:none; color:white; font-weight:bold;">Privacy Policy</a></p>
         <!-- <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a> -->
       </div>
       <!-- Grid column -->
