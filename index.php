@@ -1,5 +1,5 @@
 <?php
-header( 'Location: //ecs.ourfamilyconnections.org/welcome.php' ) ;
+header( 'Location: welcome.php' ) ;
 // echo "I'm Alive!";
 ?>
 
